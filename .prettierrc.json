@@ -11,6 +11,13 @@
       "options": {
         "printWidth": 125
       }
+    },
+    {
+      "files": ["*.css"],
+        "options": {
+            "singleQuote": false,
+            "printWidth": 125
+        }
     }
   ]
 }
