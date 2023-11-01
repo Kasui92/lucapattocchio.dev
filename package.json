@@ -6,9 +6,12 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "3.5.0"
+    "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@types/node": "^20.8.10",
+    "@types/react": "18.2.33",
+    "@types/react-dom": "18.2.14",
     "eslint": "8.52.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-react": "7.33.2",

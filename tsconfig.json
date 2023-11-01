@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "es6",
+    "allowJs": true,
+    "jsx": "react",
+
+    /* Modules */
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "rootDir": "./src",
+
+    /* Interop Constraints */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Type Checking */
+    "strict": true,
+
+    /* Completeness */
+    "skipLibCheck": true,
+    "noEmit": true,
+    "incremental": true
+  },
+  "paths": {
+    "@/*": ["./src/*"],
+    "@/public/*": ["./public/*"],
+  },
+  "include": ["**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
