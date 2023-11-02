@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
     /* Language and Environment */
-    "target": "es6",
+    "target": "ESNext",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
+    "types": ["vite/client"],
     "allowJs": true,
     "jsx": "react-jsx",
 
@@ -29,11 +30,14 @@
     /* Completeness */
     "skipLibCheck": true,
     "noEmit": true,
-    "incremental": true
-  },
-  "paths": {
-    "@/*": ["./src/*"],
-    "@/public/*": ["./public/*"],
+    "incremental": true,
+
+    /* Paths */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/public/*": ["./public/*"],
+    }
   },
   "include": ["src"]
 }
