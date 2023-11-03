@@ -10,7 +10,7 @@ import Hero from '@/components/Hero'
 const App = (): ReactElement => {
     return (
         <>
-            <main className="flex min-h-screen flex-col items-center justify-center">
+            <main className="flex min-h-screen">
                 <Hero />
             </main>
             <Footer />

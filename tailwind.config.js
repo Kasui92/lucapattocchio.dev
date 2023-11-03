@@ -10,6 +10,7 @@ module.exports = {
             colors: {
                 background: '#011b1f',
                 foreground: '#fafaf9',
+                altuofianco: '#067da0',
             },
         },
     },
