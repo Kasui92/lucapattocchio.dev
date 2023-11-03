@@ -1,6 +1,7 @@
 import { ReactElement } from 'react'
 
 import Footer from '@/components/Footer'
+import Hero from '@/components/Hero'
 
 /**
  * App
@@ -10,7 +11,7 @@ const App = (): ReactElement => {
     return (
         <>
             <main className="flex min-h-screen flex-col items-center justify-center">
-                <h1 className="text-3xl font-bold underline">Hello world!</h1>
+                <Hero />
             </main>
             <Footer />
         </>
