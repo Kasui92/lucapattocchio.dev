@@ -9,14 +9,10 @@
 
 @layer base {
     body {
-        @apply bg-background text-foreground;
+        @apply bg-background text-foreground p-0 m-0;
     }
 }
 
 /**
  * Custom Classes
  */
-
-body {
-    margin: 0;
-}
