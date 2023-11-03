@@ -1,6 +1,8 @@
 import { ReactElement } from 'react'
 import social from '@/config/social'
 
+import '@/components/Hero/Hero.styles.css'
+
 /**
  * Hero
  * @constructor
@@ -8,15 +10,18 @@ import social from '@/config/social'
 const Hero = (): ReactElement => {
     return (
         <section className="relative flex h-screen w-full">
-            <div className={`mx-auto flex items-center space-x-4`}>
+            <div className={`mx-auto flex items-center`}>
                 <div>
-                    <h1 className={`text-center text-2xl font-bold uppercase tracking-wider md:text-4xl xl:text-6xl`}>
-                        Ciao👋 I&apos;m&nbsp;
-                        <span className="bg-gradient-to-r from-emerald-600 to-cyan-700 bg-clip-text font-extrabold text-transparent">
-                            Luca Pattocchio
+                    <h1 className={`text-center text-4xl font-bold uppercase tracking-wider xl:text-6xl`}>
+                        Ciao👋
+                        <span className={`inline-block`}>
+                            I&apos;m&nbsp;
+                            <span className="bg-gradient-to-r from-emerald-600 to-cyan-700 bg-clip-text font-extrabold text-transparent">
+                                Luca Pattocchio
+                            </span>
                         </span>
                     </h1>
-                    <div className={`mt-6 px-6 text-center`}>
+                    <div className={`mt-3 px-6 text-center xl:mt-6`}>
                         Nerd Dad ~ Full Stack Developer @{' '}
                         <a
                             className={`text-altuofianco font-bold hover:underline`}
@@ -38,6 +43,9 @@ const Hero = (): ReactElement => {
                             </a>
                         ))}
                     </div>
+                </div>
+                <div className={`absolute bottom-[3%] left-1/2 -translate-x-1/2`}>
+                    <div className={`mouse`} />
                 </div>
             </div>
         </section>
