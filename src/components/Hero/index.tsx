@@ -7,13 +7,11 @@ import social from '@/config/social'
  */
 const Hero = (): ReactElement => {
     return (
-        <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-            <div className={`flex flex-row items-center space-x-4`}>
-                <img className="h-36 w-36 rounded-full object-cover" src="/assets/avatar.gif" alt="Luca Pattocchio" />
+        <div className="container flex h-screen">
+            <div className={`mx-auto flex items-center space-x-4`}>
                 <div>
-                    <h1 className={`text-left text-3xl font-bold md:text-4xl`}>
-                        Ciao! 👋 <br />
-                        I&apos;m&nbsp;
+                    <h1 className={`text-center text-2xl font-bold uppercase tracking-wider md:text-4xl xl:text-6xl`}>
+                        Ciao👋 I&apos;m&nbsp;
                         <span className="bg-gradient-to-r from-emerald-600 to-cyan-700 bg-clip-text font-extrabold text-transparent">
                             Luca Pattocchio
                         </span>
@@ -23,7 +21,7 @@ const Hero = (): ReactElement => {
                             <a key={entry.label} href={entry.url}>
                                 <span className="sr-only">{entry.label}</span>
                                 <img
-                                    className={`h-6 w-6 hover:opacity-70`}
+                                    className={`h-6 w-6 transition-opacity duration-300 hover:opacity-70`}
                                     src={`/assets/icons/${key}.svg`}
                                     alt={entry.label}
                                 />
