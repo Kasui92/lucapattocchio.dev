@@ -1,7 +1,26 @@
 import { ReactElement } from 'react'
+import useScrollPosition from '@/hooks/useScrollPosition'
 import social from '@/config/social'
 
 import '@/components/Hero/Hero.styles.css'
+
+/**
+ * MouseScroll
+ * @constructor
+ */
+const MouseScroll = (): ReactElement => {
+    const mousePosition = useScrollPosition()
+
+    return (
+        <div
+            className={`absolute bottom-[3%] left-1/2 -translate-x-1/2 transition-opacity delay-150 duration-500 ease-in-out ${
+                mousePosition >= 150 ? `opacity-0` : `opacity-100`
+            }`}
+        >
+            <div className={`mouse`} />
+        </div>
+    )
+}
 
 /**
  * Hero
@@ -47,9 +66,7 @@ const Hero = (): ReactElement => {
                         ))}
                     </div>
                 </div>
-                <div className={`absolute bottom-[3%] left-1/2 -translate-x-1/2`}>
-                    <div className={`mouse`} />
-                </div>
+                <MouseScroll />
             </div>
         </section>
     )
