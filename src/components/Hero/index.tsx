@@ -24,7 +24,7 @@ const Hero = (): ReactElement => {
                     <div className={`mt-3 px-6 text-center xl:mt-6`}>
                         Nerd Dad ~ Full Stack Developer @{' '}
                         <a
-                            className={`text-altuofianco font-bold hover:underline`}
+                            className={`font-bold text-altuofianco after:bg-altuofianco`}
                             href={`https://altuofianco.it`}
                             title={`Go to Altuofianco website`}
                         >
