@@ -58,7 +58,7 @@ const Hero = (): ReactElement => {
                             <a key={entry.label} href={entry.url} title={entry.label}>
                                 <span className="sr-only">{entry.label}</span>
                                 <img
-                                    className={`h-6 w-6 transition-opacity duration-300 hover:opacity-70`}
+                                    className={`h-6 w-6 transform transition-transform hover:rotate-12 hover:scale-110`}
                                     src={`/assets/icons/${key}.svg`}
                                     alt={entry.label}
                                 />
