@@ -14,7 +14,10 @@ const Hero = (): ReactElement => {
             <div className={`mx-auto flex items-center`}>
                 <div>
                     <h1 className={`text-center text-4xl font-bold uppercase tracking-wider xl:text-6xl`}>
-                        Ciao{` `}👋{` `}
+                        Ciao
+                        <span role="img" aria-label="waving_hand">
+                            👋
+                        </span>
                         <span className={`inline-block`}>
                             I&apos;m&nbsp;
                             <span className="bg-gradient-to-r from-emerald-600 to-cyan-700 bg-clip-text font-extrabold text-transparent">
