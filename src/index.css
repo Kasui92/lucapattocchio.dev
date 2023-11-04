@@ -6,14 +6,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
     body {
-        @apply bg-background text-foreground p-0 m-0;
-    }
-
-    a{
-        @apply relative after:bg-foreground after:absolute after:h-0.5 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer;
+        @apply m-0 bg-background p-0 text-foreground;
     }
 }
 
