@@ -1,5 +1,4 @@
 import { ReactElement } from 'react'
-import Link from '@/components/Link'
 
 /**
  * Footer
@@ -12,9 +11,12 @@ const Footer = (): ReactElement => {
                 <div className="text-center">&copy; 2023 - All rights reserved.</div>
                 <div className="text-center">
                     Built with <span title={`very much love`}>❤️</span> by{' '}
-                    <Link href={'https://lucapattocchio.dev'} className="font-bold" color={`violet-500`}>
+                    <a
+                        href={'https://lucapattocchio.dev'}
+                        className="underline-transition font-bold text-violet-500 after:bg-violet-500"
+                    >
                         Luca Pattocchio
-                    </Link>
+                    </a>
                 </div>
             </div>
         </footer>

@@ -1,5 +1,4 @@
 import { ReactElement } from 'react'
-import Link from '@/components/Link'
 import social from '@/config/social'
 
 import '@/components/Hero/Hero.styles.css'
@@ -27,14 +26,13 @@ const Hero = (): ReactElement => {
                     </h1>
                     <div className={`mt-3 px-6 text-center xl:mt-6`}>
                         Nerd Dad ~ Full Stack Developer @{' '}
-                        <Link
-                            className={`font-bold`}
-                            color={`altuofianco`}
+                        <a
+                            className={`underline-transition font-bold text-altuofianco after:bg-altuofianco`}
                             href={`https://altuofianco.it`}
                             title={`Go to Altuofianco website`}
                         >
                             Altuofianco Srl
-                        </Link>
+                        </a>
                     </div>
                     <div className="mt-4 flex justify-center space-x-6">
                         {Object.entries(social).map(([key, entry]) => (
