@@ -33,9 +33,11 @@ const Hero = (): ReactElement => {
                 <div>
                     <h1 className={`text-center text-4xl font-bold uppercase tracking-wider xl:text-6xl`}>
                         Ciao
-                        <span role="img" aria-label="waving_hand">
-                            👋
-                        </span>
+                        <img
+                            className={`mx-2 mb-2.5 inline-block h-[2.25rem] w-[2.25rem] xl:h-[3.75rem] xl:w-[3.75rem]`}
+                            src={`/assets/icons/emoji/waving-hand.svg`}
+                            alt={` Waving Hand!`}
+                        />
                         <span className={`inline-block`}>
                             I&apos;m&nbsp;
                             <span className="bg-gradient-to-r from-emerald-600 to-cyan-700 bg-clip-text font-extrabold text-transparent">
@@ -43,7 +45,7 @@ const Hero = (): ReactElement => {
                             </span>
                         </span>
                     </h1>
-                    <div className={`mt-3 px-6 text-center xl:mt-6`}>
+                    <div className={`mt-2.5 px-6 text-center xl:mt-6`}>
                         Nerd Dad ~ Full Stack Developer @{' '}
                         <a
                             className={`underline-transition font-bold text-altuofianco after:bg-altuofianco`}
