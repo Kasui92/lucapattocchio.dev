@@ -6,9 +6,11 @@ import { ReactElement } from 'react'
  */
 const Projects = (): ReactElement => {
     return (
-        <section className={`relative py-32`}>
+        <section className={`relative py-32`} id={`Projects`}>
             <div className={`mx-auto w-[80%] xl:w-7/12`}>
-                <h2 className={`mb-20 text-center text-4xl font-semibold uppercase tracking-wider xl:text-5xl`}>Projects</h2>
+                <h2 className={`mb-20 text-center text-5xl text-6xl font-semibold uppercase tracking-wider xl:text-7xl`}>
+                    <span className={`border-b-4 border-violet-500`}>Projects</span>
+                </h2>
                 <div className={`flex`}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat quam quis est laoreet, sed
                     accumsan lacus porttitor. Cras iaculis posuere sapien, quis cursus tellus mattis non. Morbi in eros quam.
