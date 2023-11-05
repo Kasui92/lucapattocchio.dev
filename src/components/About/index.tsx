@@ -1,5 +1,7 @@
 import { ReactElement } from 'react'
 
+import skills from '@/config/skills'
+
 /**
  * About
  * @constructor
@@ -15,26 +17,47 @@ const About = (): ReactElement => {
                     <div className={`order-2 mx-auto w-4/6 grow xl:w-3/4`}>
                         <div className={`flex flex-col gap-6 leading-7`}>
                             <p>
-                                I consider myself an incurable enthusiast for everything related to technology and the web,
-                                an avid gamer and a passionate{' '}
-                                <span className={`font-bold text-amber-700`}>web developer</span>.
+                                My curiosity about technology and the web sparked in my childhood, back when I got my hands
+                                on my first <span className={`font-bold text-yellow-300`}>Game Boy</span>, and it&apos;s been
+                                burning ever since, fueled by the desire to uncover the{' '}
+                                <span className={`italic text-amber-500`}>magic</span> behind them. During the boom of online
+                                forums I took my first steps into the world of programming, breaking and fixing elements that
+                                I barely understood. was fascinated by what this realm had to offer, so I decided to dive
+                                deeper into a path that would let me be a part of it.
                             </p>
                             <p>
-                                My passion for programming and the web has been going on ever since the boom of online forums
-                                and led me to be involved in{' '}
-                                <span className={`font-bold text-violet-500`}>building websites</span> that could satisfy
-                                more complex needs, developing my skills with perseverance in the challenge and the desire to
-                                learn new technologies and approaches.
+                                When I hit twenty, I realized that this passion could be so much more: I decided to
+                                consolidate what I had learned until then, to venture into the working world and take on{` `}
+                                <span className={`font-bold text-blue-500`}>web development</span>
+                                {` `}in a professional way, no longer as a self-taught tinkerer. I believe that collaborating
+                                with people is a crucial forge for crafting innovative approaches and self-improvement, both
+                                in my skills and in myself.{' '}
+                                <i>I&apos;m always up for any new adventure that comes my way.</i>
                             </p>
                             <p>
-                                When I could turn my passion into a job I decided to focus on the creation and maintenance of{' '}
-                                <u>company-oriented CRMs</u>, taking care of their planning and development
-                                <br />
-                                ... without losing sight of the rest of the &quot;<i>magic</i>&quot; that this world has to
-                                offer.
+                                I love getting lost on trails and going on{' '}
+                                <span className={`text-slate-500`}>long walks</span>, especially when surrounded by nature,
+                                and I always keep a backpack for them. In my free time, I enjoy playing board games and
+                                role-playing games...{' '}
+                                <span className={`italic line-through`}>but mostly, I accumulate side projects</span>.
                             </p>
                         </div>
-                        <div className={`mt-6`}>My Skills</div>
+                        <div className={`mt-6`}>
+                            <h3 className={`mb-2 mb-3 text-2xl font-semibold tracking-wide`}>Skills</h3>
+                            {skills.map((skill, index) => (
+                                <div
+                                    key={index}
+                                    className={`m-1 inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset ring-violet-500 hover:bg-violet-500 hover:text-white`}
+                                >
+                                    <img
+                                        className={`inline-block h-5 w-5`}
+                                        src={`/assets/icons/skills/${skill.icon}.svg`}
+                                        alt={`${skill.label} logo`}
+                                    />
+                                    <span className={`ml-1 text-xl font-semibold`}>{skill.label}</span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                     <div className={`order-1 grow xl:w-1/4`}>
                         <img
