@@ -8,7 +8,7 @@ const About = (): ReactElement => {
     return (
         <section className={`relative py-32`} id={`About`}>
             <div className={`mx-auto w-[80%] xl:w-7/12`}>
-                <h2 className={`mb-20 text-center text-5xl text-6xl font-semibold uppercase tracking-wider xl:text-7xl`}>
+                <h2 className={`mb-20 text-center text-5xl font-semibold uppercase tracking-wider xl:text-7xl`}>
                     <span className={`border-b-4 border-violet-500`}>About Me</span>
                 </h2>
                 <div className={`sxl:gap-32 flex flex-col gap-24 xl:flex-row`}>
@@ -43,7 +43,7 @@ const About = (): ReactElement => {
                             alt={`Luca Pattocchio`}
                         />
                         <img
-                            className={`hidden aspect-square rotate-3 rounded rounded-2xl object-cover object-cover shadow xl:block`}
+                            className={`hidden aspect-square rotate-3 rounded-2xl object-cover shadow xl:block`}
                             src={`/assets/aboutme-xl.jpg`}
                             alt={`Luca Pattocchio`}
                         />
