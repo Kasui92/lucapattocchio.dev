@@ -59,7 +59,7 @@ const Hero = (): ReactElement => {
                                 <span className="sr-only">{entry.label}</span>
                                 <img
                                     className={`h-6 w-6 transform transition-transform hover:rotate-12 hover:scale-110`}
-                                    src={`/assets/icons/${key}.svg`}
+                                    src={`/assets/icons/socials/${key}.svg`}
                                     alt={entry.label}
                                 />
                             </a>
