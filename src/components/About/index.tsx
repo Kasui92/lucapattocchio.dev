@@ -10,12 +10,12 @@ const About = (): ReactElement => {
     return (
         <section className={`relative py-32`} id={`About`}>
             <div className={`mx-auto w-[80%] xl:w-7/12`}>
-                <h2 className={`mb-20 text-center text-5xl font-semibold uppercase tracking-wider xl:text-7xl`}>
+                <h2 className={`mb-20 text-center text-4xl font-semibold uppercase tracking-wider xl:text-7xl`}>
                     <span className={`border-b-4 border-violet-500`}>About Me</span>
                 </h2>
-                <div className={`sxl:gap-32 flex flex-col gap-24 xl:flex-row`}>
-                    <div className={`order-2 mx-auto w-4/6 grow xl:w-3/4`}>
-                        <div className={`flex flex-col gap-6 leading-7`}>
+                <div className={`flex flex-col gap-24 xl:flex-row`}>
+                    <div className={`order-2 mx-auto w-5/6 grow md:w-4/6 xl:w-3/4`}>
+                        <div className={`flex flex-col gap-6 text-center leading-7 md:text-left`}>
                             <p>
                                 My curiosity about technology and the web sparked in my childhood, back when I got my hands
                                 on my first <span className={`font-bold text-yellow-300`}>Game Boy</span>, and it&apos;s been
@@ -42,7 +42,7 @@ const About = (): ReactElement => {
                                 <span className={`italic line-through`}>but mostly, I accumulate side projects</span>.
                             </p>
                         </div>
-                        <div className={`mt-6`}>
+                        <div className={`mt-20 md:mt-6`}>
                             <h3 className={`mb-2 mb-3 text-2xl font-semibold tracking-wide`}>Skills</h3>
                             {skills.map((skill, index) => (
                                 <div
@@ -61,7 +61,7 @@ const About = (): ReactElement => {
                     </div>
                     <div className={`order-1 grow xl:w-1/4`}>
                         <img
-                            className={`mx-auto aspect-square h-1/2 w-1/2 rotate-3 rounded-2xl object-cover shadow xl:hidden`}
+                            className={`mx-auto aspect-square h-3/4 w-3/4 rotate-3 rounded-2xl object-cover shadow md:h-1/2 md:w-1/2 xl:hidden`}
                             src={`/assets/aboutme.jpg`}
                             alt={`Luca Pattocchio`}
                         />
