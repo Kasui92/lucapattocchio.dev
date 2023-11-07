@@ -1,7 +1,14 @@
 {
   "name": "lucapattocchio.dev",
+  "description": "My personal website",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "author": {
+    "name": "Luca Pattocchio",
+    "email": "pattocchioluca@gmail.com",
+    "url": "https://lucapattocchio.dev"
+  },
+  "license": "MIT",
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
