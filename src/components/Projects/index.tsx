@@ -1,4 +1,5 @@
 import { ReactElement } from 'react'
+import TechnologyTag from '@/components/TechnologyTag'
 import projects from '@/config/projects'
 import stack from '@/config/stack'
 
@@ -46,21 +47,11 @@ const Projects = (): ReactElement => {
                                                 const technologyInfo = stack.find((item) => item.label === technology)
 
                                                 return (
-                                                    <div
+                                                    <TechnologyTag
+                                                        icon={technologyInfo?.icon}
+                                                        label={technologyInfo?.label || technology}
                                                         key={index}
-                                                        className={`m-1 inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset ring-violet-500 hover:bg-violet-500 hover:text-white`}
-                                                    >
-                                                        {technologyInfo && (
-                                                            <img
-                                                                className={`inline-block h-5 w-5`}
-                                                                src={`/assets/logos/technologies/${technologyInfo.icon}.svg`}
-                                                                alt={`${technologyInfo.label} logo`}
-                                                            />
-                                                        )}
-                                                        <span className={`ml-1 text-xl font-semibold`}>
-                                                            {technologyInfo?.label || technology}
-                                                        </span>
-                                                    </div>
+                                                    />
                                                 )
                                             })}
                                         </div>
