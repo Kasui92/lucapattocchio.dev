@@ -21,3 +21,7 @@
 /**
  * Custom Classes
  */
+
+html {
+    scroll-behavior: smooth;
+}
