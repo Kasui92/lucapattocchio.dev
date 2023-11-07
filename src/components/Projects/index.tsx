@@ -19,7 +19,7 @@ const Projects = (): ReactElement => {
                             This is a list of some of the projects I&apos;ve worked on in the past few years.
                         </div>
                     </div>
-                    <div className={`mx-auto grid w-3/4 grid-cols-1 gap-6 md:grid-cols-2`}>
+                    <div className={`mx-auto grid grid-cols-1 gap-6 md:w-3/4 md:grid-cols-2`}>
                         {projects.map((project, index) => (
                             <a
                                 key={index}
