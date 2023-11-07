@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 
-import skills from '@/config/skills'
+import stack from '@/config/stack'
 
 /**
  * About
@@ -43,18 +43,18 @@ const About = (): ReactElement => {
                             </p>
                         </div>
                         <div className={`mt-20 md:mt-6`}>
-                            <h3 className={`mb-2 mb-3 text-2xl font-semibold tracking-wide`}>Skills</h3>
-                            {skills.map((skill, index) => (
+                            <h3 className={`mb-2 mb-3 text-2xl font-semibold tracking-wide`}>Tech Stack</h3>
+                            {stack.map((technology, index) => (
                                 <div
                                     key={index}
                                     className={`m-1 inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset ring-violet-500 hover:bg-violet-500 hover:text-white`}
                                 >
                                     <img
                                         className={`inline-block h-5 w-5`}
-                                        src={`/assets/icons/skills/${skill.icon}.svg`}
-                                        alt={`${skill.label} logo`}
+                                        src={`/assets/logos/technologies/${technology.icon}.svg`}
+                                        alt={`${technology.label} logo`}
                                     />
-                                    <span className={`ml-1 text-xl font-semibold`}>{skill.label}</span>
+                                    <span className={`ml-1 text-xl font-semibold`}>{technology.label}</span>
                                 </div>
                             ))}
                         </div>

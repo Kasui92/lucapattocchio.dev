@@ -6,7 +6,7 @@ interface SkillEntry {
 /**
  * Skills
  */
-const skills: Array<SkillEntry> = [
+const stack: Array<SkillEntry> = [
     {
         label: 'HTML',
         icon: 'html',
@@ -69,4 +69,4 @@ const skills: Array<SkillEntry> = [
     },
 ]
 
-export default skills
+export default stack
