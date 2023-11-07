@@ -1,4 +1,4 @@
-interface SkillEntry {
+export interface SkillEntry {
     label: string
     icon: string
 }
