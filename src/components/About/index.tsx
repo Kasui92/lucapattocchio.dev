@@ -15,7 +15,7 @@ const About = (): ReactElement => {
                     <span className={`border-b-4 border-violet-500`}>About Me</span>
                 </h2>
                 <div className={`flex flex-col gap-24 xl:flex-row`}>
-                    <div className={`order-2 mx-auto w-5/6 grow md:w-4/6 xl:w-3/4`}>
+                    <div className={`order-2 mx-auto w-5/6 grow md:w-4/6 xl:w-1/2`}>
                         <div className={`flex flex-col gap-6 text-center leading-7 md:text-left`}>
                             <p>
                                 My curiosity about technology and the web sparked in my childhood, back when I got my hands
