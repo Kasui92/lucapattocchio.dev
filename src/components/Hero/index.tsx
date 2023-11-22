@@ -30,7 +30,7 @@ const Hero = (): ReactElement => {
     return (
         <section className="relative flex h-screen w-full">
             <div className={`mx-auto flex items-center`}>
-                <div>
+                <div className={`animate-scale-fade-in`}>
                     <h1 className={`text-center text-4xl font-bold uppercase tracking-wider xl:text-6xl`}>
                         Ciao
                         <img
