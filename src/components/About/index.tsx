@@ -23,7 +23,7 @@ const About = (): ReactElement => {
                                 burning ever since, fueled by the desire to uncover the{' '}
                                 <span className={`italic text-amber-500`}>magic</span> behind them. During the boom of online
                                 forums I took my first steps into the world of programming, breaking and fixing elements that
-                                I barely understood. was fascinated by what this realm had to offer, so I decided to dive
+                                I barely understood. I was fascinated by what this realm had to offer, so I decided to dive
                                 deeper into a path that would let me be a part of it.
                             </p>
                             <p>
