@@ -1,8 +1,12 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/452ad6fc-5bc7-4cee-9b17-35bef96423fb/deploy-status)](https://app.netlify.com/sites/lucapattocchio/deploys)
-
 <div align="center">
   <h1><a href="https://lucapattocchio.dev" target="_blank">lucapattocchio.dev</a></h1>
   My personal website built with React & TailwindCSS
+</div>
+
+<div align="center">
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/452ad6fc-5bc7-4cee-9b17-35bef96423fb/deploy-status)](https://app.netlify.com/sites/lucapattocchio/deploys)
+
 </div>
 
 ## Built With
@@ -27,5 +31,5 @@ The above commands will start the application on http://localhost:3000/
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.<br/>
 Remove all my personal data and use it as you wish.
