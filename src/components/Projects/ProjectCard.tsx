@@ -1,3 +1,4 @@
+import { ReactElement } from 'react'
 import TechnologyTag from '@/components/TechnologyTag'
 import ProjectTag from '@/components/Projects/ProjectTag'
 
@@ -10,7 +11,7 @@ import stack from '@/config/stack'
  * @param props
  * @constructor
  */
-const ProjectCard = ({ project, ...props }: { project: Project }) => {
+const ProjectCard = ({ project, ...props }: { project: Project }): ReactElement => {
     return (
         <a
             className={`relative mb-4 w-full rounded-xl border transition duration-300 ease-in-out hover:scale-110 `}

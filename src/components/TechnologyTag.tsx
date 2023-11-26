@@ -1,3 +1,5 @@
+import { ReactElement } from 'react'
+
 /**
  * TechnologyTag Props
  */
@@ -13,7 +15,7 @@ interface TechnologyTagProps {
  * @param props
  * @constructor
  */
-const TechnologyTag = ({ icon, label, ...props }: TechnologyTagProps) => {
+const TechnologyTag = ({ icon, label, ...props }: TechnologyTagProps): ReactElement => {
     return (
         <div
             className={`m-1 inline-flex cursor-pointer items-center rounded-md px-2 py-1 ring-1 ring-inset ring-violet-500 transition-colors duration-300 hover:bg-violet-500 hover:text-white`}
