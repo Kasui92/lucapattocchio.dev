@@ -36,7 +36,7 @@ const Hero = (): ReactElement => {
                         <img
                             className={`mx-2 mb-2.5 inline-block h-[2.25rem] w-[2.25rem] xl:h-[3.75rem] xl:w-[3.75rem]`}
                             src={`/assets/icons/emoji/waving-hand.svg`}
-                            alt={` Waving Hand!`}
+                            alt={`Waving Hand!`}
                         />
                         <span className={`inline-block`}>
                             I&apos;m&nbsp;
