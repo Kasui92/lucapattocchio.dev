@@ -19,7 +19,6 @@ const Projects = (): ReactElement => {
      * @param tag
      */
     const handleTagClick = (tag: string) => {
-        console.log(tag)
         // If tag is already in filteredTags, remove it
         if (filteredTags.includes(tag)) {
             setFilteredTags(filteredTags.filter((item) => item !== tag))
