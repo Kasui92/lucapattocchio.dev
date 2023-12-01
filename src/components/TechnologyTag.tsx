@@ -28,7 +28,7 @@ const TechnologyTag = ({ icon, label, ...props }: TechnologyTagProps): ReactElem
                     alt={`${label} logo`}
                 />
             )}
-            <span className={`ml-1 text-xl font-semibold`}>{label}</span>
+            <span className={`ml-1 font-semibold`}>{label}</span>
         </div>
     )
 }
