@@ -11,7 +11,6 @@ export interface Project {
 
 export interface ProjectTag {
     label: string
-    color: string
 }
 
 /**
@@ -20,20 +19,11 @@ export interface ProjectTag {
 export const projectsTags: Array<ProjectTag> = [
     {
         label: 'Open Source',
-        color: '#22c55e',
     },
     {
-        label: 'Closed Source',
-        color: '#ef4444',
-    },
-    {
-        label: 'Work in Progress',
-        color: '#eab308',
+        label: 'Proprietary',
     },
 ]
-// Force TailwindCSS to generate the colors
-const projectsTagsColors: string =
-    'ring-[#22c55e] ring-[#ef4444] ring-[#eab308] text-[#22c55e] text-[#ef4444] text-[#eab308]'
 
 /**
  * Projects
@@ -42,17 +32,19 @@ const projects: Array<Project> = [
     {
         title: 'MonitorCRM',
         description: 'A CRM for monitoring and managing the activities of a company, with a focus on the sales department.',
+        image: '/assets/logos/projects/fm.svg',
         url: 'https://monitorcrm.it/',
         technologies: ['PHP', 'MySQL', 'Javascript', 'CSS'],
-        tags: ['Closed Source'],
+        tags: ['Proprietary'],
     },
     {
         title: 'MonitorInCloud',
         description:
             'A powerful and flexible cloud-based CRM, with a focus on the sales department. It is the evolution of MonitorCRM.',
-        url: '',
+        image: '/assets/logos/projects/fm.svg',
+        url: 'https://monitorincloud.it/',
         technologies: ['Next.js', 'Bootstrap', 'PHP', 'MySQL', 'Docker'],
-        tags: ['Closed Source', 'Work in Progress'],
+        tags: ['Proprietary'],
     },
     {
         title: 'GDRCD',
@@ -74,6 +66,7 @@ const projects: Array<Project> = [
     {
         title: 'lucapattocchio.dev',
         description: 'My personal website.',
+        image: '/assets/logos/projects/website.svg',
         url: 'https://lucapattocchio.dev/',
         technologies: ['React', 'Typescript', 'TailwindCSS'],
         tags: ['Open Source'],
