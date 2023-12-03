@@ -14,7 +14,7 @@ import stack from '@/config/stack'
 const ProjectCard = ({ project, ...props }: { project: Project }): ReactElement => {
     return (
         <a
-            className={`relative mb-4 w-full rounded-xl border transition duration-300 ease-in-out hover:scale-110 `}
+            className={`relative mb-1 w-full rounded-xl border transition duration-300 ease-in-out hover:scale-110 `}
             href={project.url}
             aria-label={`Go to ${project.title} website`}
             target={`_blank`}

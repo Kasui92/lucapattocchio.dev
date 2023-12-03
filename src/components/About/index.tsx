@@ -10,7 +10,7 @@ import stack from '@/config/stack'
 const About = (): ReactElement => {
     return (
         <section className={`relative py-32`} id={`About`}>
-            <div className={`mx-auto w-[80%] xl:w-7/12`}>
+            <div className={`mx-auto max-w-6xl px-8`}>
                 <h2 className={`mb-20 text-center text-4xl font-semibold uppercase tracking-wider xl:text-7xl`}>
                     <span className={`border-b-4 border-violet-500`}>About Me</span>
                 </h2>
@@ -50,14 +50,14 @@ const About = (): ReactElement => {
                             ))}
                         </div>
                     </div>
-                    <div className={`order-1 grow xl:w-1/4`}>
+                    <div className={`order-1 grow`}>
                         <img
-                            className={`mx-auto aspect-square h-3/4 w-3/4 rotate-3 rounded-2xl object-cover shadow md:h-1/2 md:w-1/2 xl:hidden`}
+                            className={`mx-auto aspect-square h-[350px] w-[350px] rotate-3 rounded-2xl object-cover shadow xl:hidden`}
                             src={`/assets/aboutme.jpg`}
                             alt={`Luca Pattocchio`}
                         />
                         <img
-                            className={`hidden aspect-square rotate-3 rounded-2xl object-cover shadow xl:block`}
+                            className={`hidden aspect-square h-[520px] w-[390px] rotate-3 rounded-2xl object-cover shadow xl:block`}
                             src={`/assets/aboutme-xl.jpg`}
                             alt={`Luca Pattocchio`}
                         />
