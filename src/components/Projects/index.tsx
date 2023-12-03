@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect } from 'react'
 import ProjectCard from '@/components/Projects/ProjectCard'
-import ProjectTag from '@/components/Projects/ProjectTag'
+import { ProjectTagSelector } from '@/components/Projects/ProjectTag'
 
 import projects, { projectsTags } from '@/config/projects'
 import social from '@/config/social'
@@ -10,29 +10,29 @@ import social from '@/config/social'
  * @constructor
  */
 const Projects = (): ReactElement => {
-    // Set filtered tags to all tags by default
-    const [filteredTags, setFilteredTags] = React.useState<string[]>([...projectsTags.map((tag) => tag.label)])
+    const [filteredTag, setFilteredTag] = React.useState<string | null>(null)
     const [filteredProjects, setFilteredProjects] = React.useState(projects)
 
     /**
-     * Handle tag click event
+     * Filter projects by tag
      * @param tag
      */
-    const handleTagClick = (tag: string) => {
-        // If tag is already in filteredTags, remove it
-        if (filteredTags.includes(tag)) {
-            setFilteredTags(filteredTags.filter((item) => item !== tag))
-        } else {
-            // Otherwise, add it
-            setFilteredTags([...filteredTags, tag])
-        }
+    const handleTagClick = (tag: string | null) => {
+        setFilteredTag(tag)
     }
 
     useEffect(() => {
-        setFilteredProjects(
-            projects.filter((project) => project?.tags && project.tags.some((tag) => filteredTags.includes(tag))),
-        )
-    }, [filteredTags])
+        // If no tag is selected, show all projects
+        if (!filteredTag) {
+            setFilteredProjects(projects)
+            return
+        }
+        // Filter projects by tag
+        else {
+            const filtered = projects.filter((project) => project.tags && project.tags.includes(filteredTag))
+            setFilteredProjects(filtered)
+        }
+    }, [filteredTag])
 
     return (
         <section className={`relative py-32`} id={`About`}>
@@ -49,12 +49,12 @@ const Projects = (): ReactElement => {
                     <div className={'mx-auto flex w-5/6 flex-col gap-5 md:w-4/6 xl:w-3/4'}>
                         <div className={'text-center'}>You can filter them by clicking on the tags below.</div>
                         <div className={'flex justify-center'}>
+                            <ProjectTagSelector label={'All'} active={!filteredTag} onClick={() => handleTagClick(null)} />
                             {projectsTags.map((tag, index) => (
-                                <ProjectTag
-                                    color={tag.color}
+                                <ProjectTagSelector
                                     label={tag.label}
+                                    active={tag.label === filteredTag}
                                     key={index}
-                                    className={`cursor-pointer ${!filteredTags.includes(tag.label) && `opacity-60 ring-2`}`}
                                     onClick={() => handleTagClick(tag.label)}
                                 />
                             ))}

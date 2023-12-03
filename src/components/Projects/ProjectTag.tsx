@@ -1,24 +1,26 @@
 import React, { ReactElement } from 'react'
 
 interface ProjectTagProps extends React.HTMLAttributes<HTMLDivElement> {
-    color: string
     label: string
-    className?: string
+}
+
+interface ProjectTagSelectorProps extends React.HTMLAttributes<HTMLDivElement> {
+    label: string
+    active: boolean
 }
 
 /**
- * ProjectTag
- * @param color
+ * ProjectTagSelector
  * @param label
- * @param className
+ * @param active
  * @param props
  * @constructor
  */
-const ProjectTag = ({ color, label, className, ...props }: ProjectTagProps): ReactElement => {
+export const ProjectTagSelector = ({ label, active, ...props }: ProjectTagSelectorProps): ReactElement => {
     return (
         <div
-            className={`mb-2 mr-2 rounded-full ring-1 ring-[${color}] px-2 py-1 text-center text-xs font-bold ${
-                className && ` ${className}`
+            className={`mx-1 cursor-pointer rounded-full px-3 py-2 text-center text-xs font-bold uppercase tracking-wider transition-colors duration-300 ${
+                active ? `bg-violet-500` : `bg-slate-500 hover:bg-violet-500`
             }`}
             {...props}
         >
@@ -27,4 +29,16 @@ const ProjectTag = ({ color, label, className, ...props }: ProjectTagProps): Rea
     )
 }
 
-export default ProjectTag
+/**
+ * ProjectCardTag
+ * @param label
+ * @param props
+ * @constructor
+ */
+export const ProjectTag = ({ label, ...props }: ProjectTagProps): ReactElement => {
+    return (
+        <div className={`px-2 py-1 text-center text-xs uppercase italic tracking-wider text-white`} {...props}>
+            {label}
+        </div>
+    )
+}
