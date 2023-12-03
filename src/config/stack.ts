@@ -1,4 +1,4 @@
-export interface SkillEntry {
+export interface StackEntry {
     label: string
     icon: string
 }
@@ -6,7 +6,7 @@ export interface SkillEntry {
 /**
  * Skills
  */
-const stack: Array<SkillEntry> = [
+const stack: Array<StackEntry> = [
     {
         label: 'HTML',
         icon: 'html',
