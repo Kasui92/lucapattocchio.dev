@@ -1,61 +1,61 @@
 {
-  "name": "lucapattocchio.dev",
-  "description": "My personal website",
-  "version": "0.1.0",
-  "private": false,
-  "author": {
-    "name": "Luca Pattocchio",
-    "email": "pattocchioluca@gmail.com",
-    "url": "https://lucapattocchio.dev"
-  },
-  "license": "MIT",
-  "scripts": {
-    "start": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "eslint -c .eslintrc.json --ext .js,.jsx .",
-    "lint:fix": "npm run lint -- --fix"
-  },
-  "dependencies": {
-    "@vitejs/plugin-react": "4.2.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "5.4.3",
-    "vite": "5.2.7",
-    "vite-tsconfig-paths": "4.3.2"
-  },
-  "devDependencies": {
-    "@types/node": "20.12.2",
-    "@types/react": "18.2.73",
-    "@types/react-dom": "18.2.23",
-    "@typescript-eslint/eslint-plugin": "7.4.0",
-    "@typescript-eslint/parser": "7.4.0",
-    "autoprefixer": "10.4.19",
-    "eslint": "8.57.0",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-react": "7.34.1",
-    "eslint-plugin-react-hooks": "4.6.0",
-    "postcss": "8.4.38",
-    "prettier": "3.2.5",
-    "prettier-plugin-tailwindcss": "0.5.13",
-    "tailwindcss": "3.4.3"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "lucapattocchio.dev",
+    "description": "My personal website",
+    "version": "0.1.0",
+    "private": false,
+    "author": {
+        "name": "Luca Pattocchio",
+        "email": "pattocchioluca@gmail.com",
+        "url": "https://lucapattocchio.dev"
+    },
+    "license": "MIT",
+    "scripts": {
+        "start": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "lint": "eslint -c .eslintrc.json --ext .js,.jsx .",
+        "lint:fix": "npm run lint -- --fix"
+    },
+    "dependencies": {
+        "@vitejs/plugin-react": "4.3.1",
+        "react": "18.3.1",
+        "react-dom": "18.3.1",
+        "typescript": "5.6.2",
+        "vite": "5.4.8",
+        "vite-tsconfig-paths": "5.0.1"
+    },
+    "devDependencies": {
+        "@types/node": "20.14.9",
+        "@types/react": "18.3.9",
+        "@types/react-dom": "18.3.0",
+        "@typescript-eslint/eslint-plugin": "8.7.0",
+        "@typescript-eslint/parser": "8.7.0",
+        "autoprefixer": "10.4.20",
+        "eslint": "8.57.0",
+        "eslint-config-prettier": "9.1.0",
+        "eslint-plugin-react": "7.37.0",
+        "eslint-plugin-react-hooks": "4.6.2",
+        "postcss": "8.4.47",
+        "prettier": "3.3.3",
+        "prettier-plugin-tailwindcss": "0.6.8",
+        "tailwindcss": "3.4.13"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
 }
