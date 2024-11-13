@@ -3,6 +3,9 @@ import TechnologyTag from '@/components/TechnologyTag'
 
 import stack from '@/config/stack'
 
+import aboutMe from '@/assets/images/aboutme.jpg'
+import aboutMeXL from '@/assets/images/aboutme-xl.jpg'
+
 /**
  * About
  * @constructor
@@ -44,7 +47,7 @@ const About = (): ReactElement => {
                             </p>
                         </div>
                         <div className={`mt-20 md:mt-6`}>
-                            <h3 className={`mb-2 mb-3 text-2xl font-semibold tracking-wide`}>Tech Stack</h3>
+                            <h3 className={`mb-3 text-2xl font-semibold tracking-wide`}>Tech Stack</h3>
                             {stack.map((technology, index) => (
                                 <TechnologyTag icon={technology.icon} label={technology.label} key={index} />
                             ))}
@@ -53,12 +56,12 @@ const About = (): ReactElement => {
                     <div className={`order-1 grow`}>
                         <img
                             className={`mx-auto aspect-square h-[350px] w-[350px] rotate-3 rounded-2xl object-cover shadow xl:hidden`}
-                            src={`/assets/aboutme.jpg`}
+                            src={aboutMe}
                             alt={`Luca Pattocchio`}
                         />
                         <img
                             className={`hidden aspect-square h-[520px] w-[390px] rotate-3 rounded-2xl object-cover shadow xl:block`}
-                            src={`/assets/aboutme-xl.jpg`}
+                            src={aboutMeXL}
                             alt={`Luca Pattocchio`}
                         />
                     </div>

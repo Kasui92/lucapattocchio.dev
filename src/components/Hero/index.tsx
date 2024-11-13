@@ -2,6 +2,8 @@ import { ReactElement } from 'react'
 import useScrollPosition from '@/hooks/useScrollPosition'
 import social from '@/config/social'
 
+import wavingHand from '@/assets/images/emoji/waving-hand.svg'
+
 import '@/components/Hero/Hero.styles.css'
 
 /**
@@ -35,7 +37,7 @@ const Hero = (): ReactElement => {
                         Ciao
                         <img
                             className={`mx-2 mb-2.5 inline-block h-[2.25rem] w-[2.25rem] xl:h-[3.75rem] xl:w-[3.75rem]`}
-                            src={`/assets/icons/emoji/waving-hand.svg`}
+                            src={wavingHand}
                             alt={`Waving Hand!`}
                         />
                         <span className={`inline-block`}>
@@ -56,12 +58,12 @@ const Hero = (): ReactElement => {
                         </a>
                     </div>
                     <div className="mt-4 flex justify-center space-x-6">
-                        {Object.entries(social).map(([key, entry]) => (
+                        {Object.entries(social).map(([, entry]) => (
                             <a key={entry.label} href={entry.url} title={entry.label}>
                                 <span className="sr-only">{entry.label}</span>
                                 <img
                                     className={`h-6 w-6 transform transition-transform hover:rotate-12 hover:scale-110`}
-                                    src={`/assets/icons/socials/${key}.svg`}
+                                    src={entry.icon}
                                     alt={entry.label}
                                 />
                             </a>

@@ -79,7 +79,7 @@ const Projects = (): ReactElement => {
                             href={social.github.url}
                         >
                             <span className={`mr-2`}>See more at</span>
-                            <img className={`h-6 w-6`} src={`/assets/icons/socials/github.svg`} alt={`Github Logo`} />
+                            <img className={`h-6 w-6`} src={social.github.icon} alt={`Github Logo`} />
                         </a>
                     </div>
                 </div>
