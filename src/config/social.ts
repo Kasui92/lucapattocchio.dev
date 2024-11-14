@@ -1,4 +1,5 @@
 import iconGithub from '@/assets/images/icons/socials/github.svg'
+import iconGitlab from '@/assets/images/icons/socials/gitlab.svg'
 import iconLinkedin from '@/assets/images/icons/socials/linkedin.svg'
 
 export interface SocialEntry {
@@ -11,15 +12,20 @@ export interface SocialEntry {
  * Social links
  */
 const social: Record<string, SocialEntry> = {
+    linkedin: {
+        label: 'Linkedin',
+        url: 'https://www.linkedin.com/in/lucapattocchio/',
+        icon: iconLinkedin,
+    },
     github: {
         label: 'Github',
         url: 'https://github.com/Kasui92',
         icon: iconGithub,
     },
-    linkedin: {
-        label: 'Linkedin',
-        url: 'https://www.linkedin.com/in/lucapattocchio/',
-        icon: iconLinkedin,
+    gitlab: {
+        label: 'Gitlab',
+        url: 'https://gitlab.com/Kasui92',
+        icon: iconGitlab,
     },
 }
 
