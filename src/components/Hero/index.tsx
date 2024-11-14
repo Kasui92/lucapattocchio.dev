@@ -1,5 +1,5 @@
-import { ReactElement } from 'react'
-import useScrollPosition from '@/hooks/useScrollPosition'
+import { ReactElement, useState } from 'react'
+import { motion, useMotionValueEvent, useScroll } from 'motion/react'
 import social from '@/data/social'
 
 import wavingHand from '@/assets/images/emoji/waving-hand.svg'
@@ -11,15 +11,20 @@ import '@/components/Hero/Hero.styles.css'
  * @constructor
  */
 const MouseScroll = (): ReactElement => {
-    const mousePosition = useScrollPosition()
+    const [isScrolled, setIsScrolled] = useState<boolean>(false)
+    const { scrollY } = useScroll()
+
+    useMotionValueEvent(scrollY, 'change', (latest) => {
+        setIsScrolled(latest > 20)
+    })
 
     return (
         <div
             className={`absolute bottom-[3%] left-1/2 -translate-x-1/2 transition-opacity delay-150 duration-500 ease-in-out ${
-                mousePosition >= 150 ? `opacity-0` : `opacity-100`
+                isScrolled ? `opacity-0` : `opacity-100`
             }`}
         >
-            <div className={`mouse`} />
+            <div className="arrow"></div>
         </div>
     )
 }
@@ -32,7 +37,11 @@ const Hero = (): ReactElement => {
     return (
         <section className="relative flex h-screen w-full">
             <div className={`mx-auto flex items-center`}>
-                <div className={`animate-scale-fade-in`}>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5, duration: 1 }}
+                >
                     <h1 className={`text-center text-4xl font-bold uppercase tracking-wider xl:text-6xl`}>
                         Ciao
                         <img
@@ -69,7 +78,7 @@ const Hero = (): ReactElement => {
                             </a>
                         ))}
                     </div>
-                </div>
+                </motion.div>
                 <MouseScroll />
             </div>
         </section>

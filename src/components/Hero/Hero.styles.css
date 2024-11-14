@@ -1,33 +1,43 @@
-.mouse {
-    width: 25px;
-    height: 40px;
-    border: 2px solid #eee;
-    border-radius: 60px;
-    position: relative;
-    overflow: hidden; }
-
-.mouse::before {
-    content: '';
-    width: 5px;
-    height: 5px;
+.arrow,
+.arrow:before {
     position: absolute;
-    top: 7px;
     left: 50%;
-    transform: translateX(-50%);
-    background-color: #eee;
-    border-radius: 50%;
-    opacity: 1;
-    animation: wheel 1.3s infinite;
-    -webkit-animation: wheel 1.3s infinite; }
-
-@keyframes wheel {
-    to {
-        opacity: 0;
-        top: 27px; }
 }
 
-@-webkit-keyframes wheel {
-    to {
+.arrow {
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    margin: -40px 0 0 -20px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-left: none;
+    border-top: none;
+    border-right: 2px #fff solid;
+    border-bottom: 2px #fff solid;
+}
+
+.arrow:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    margin: -10px 0 0 -10px;
+    border-left: none;
+    border-top: none;
+    border-right: 1px #fff solid;
+    border-bottom: 1px #fff solid;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: arrow;
+}
+
+@keyframes arrow {
+    0% {
+        opacity: 1;
+    }
+    100% {
         opacity: 0;
-        top: 27px; }
+        transform: translate(-10px, -10px);
+    }
 }
