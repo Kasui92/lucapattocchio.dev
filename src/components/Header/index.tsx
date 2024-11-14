@@ -1,9 +1,8 @@
 import { ReactElement, useState } from 'react'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'motion/react'
+import navLinks from '@/data/navlinks'
 
 import HamburgerIcon from './HamburgerIcon'
-
-import navLinks from '@/data/navlinks'
 
 import '@/components/Header/Header.styles.css'
 
