@@ -1,4 +1,4 @@
-import { StackEntry } from '@/config/stack'
+import { StackEntry } from '@/data/stack'
 
 import iconMonitorCRM from '@/assets/images/icons/projects/fm.svg'
 import iconGDRCD from '@/assets/images/icons/projects/gdrcd.svg'

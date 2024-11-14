@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 import TechnologyTag from '@/components/TechnologyTag'
 
-import stack from '@/config/stack'
+import stack from '@/data/stack'
 
 import aboutMe from '@/assets/images/aboutme.jpg'
 import aboutMeXL from '@/assets/images/aboutme-xl.jpg'

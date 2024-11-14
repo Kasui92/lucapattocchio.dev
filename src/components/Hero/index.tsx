@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 import useScrollPosition from '@/hooks/useScrollPosition'
-import social from '@/config/social'
+import social from '@/data/social'
 
 import wavingHand from '@/assets/images/emoji/waving-hand.svg'
 
