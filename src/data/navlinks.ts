@@ -1,18 +1,18 @@
 export interface NavLinksEntry {
-    label: string
+    id: string
     url: string
 }
 
 /**
- * Social links
+ * Nav links
  */
 const navLinks: Array<NavLinksEntry> = [
     {
-        label: 'About',
+        id: 'about',
         url: 'about',
     },
     {
-        label: 'Projects',
+        id: 'projects',
         url: 'projects',
     },
 ]
