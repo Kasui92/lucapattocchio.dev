@@ -1,5 +1,6 @@
 import { ReactElement, useState } from 'react'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'motion/react'
+import { useTranslation } from 'react-i18next'
 import navLinks from '@/data/navlinks'
 
 import HamburgerIcon from './HamburgerIcon'
@@ -38,6 +39,9 @@ const navVariants = {
  * @return {ReactElement} Header
  */
 const Header = (): ReactElement => {
+    // Get the transition
+    const { t } = useTranslation()
+
     const [isScrolled, setIsScrolled] = useState<boolean>(false)
     const [sectionOnScreen, setSectionOnScreen] = useState<string>('')
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
@@ -89,7 +93,7 @@ const Header = (): ReactElement => {
                                         onClick={() => setSectionOnScreen(navLink.url)}
                                         className={`group relative overflow-hidden rounded-lg px-2 py-1 font-normal tracking-wider transition duration-300 ease-in-out hover:scale-110 sm:px-3 sm:py-2`}
                                     >
-                                        <span className={`relative z-10`}>{navLink.label}</span>
+                                        <span className={`relative z-10`}>{t(`navigation.${navLink.id}`)}</span>
                                         {sectionOnScreen === navLink.url && (
                                             <motion.span
                                                 layoutId="nav-underline"
@@ -135,7 +139,7 @@ const Header = (): ReactElement => {
                                         whileHover={{ x: 5 }}
                                         whileTap={{ x: -5 }}
                                     >
-                                        {navLink.label}
+                                        {t(`navigation.${navLink.id}`)}
                                     </motion.a>
                                 </li>
                             ))}
