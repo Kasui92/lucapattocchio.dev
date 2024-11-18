@@ -87,19 +87,30 @@ const Header = (): ReactElement => {
                         </motion.button>
                     </div>
 
-                    <ul className="relative hidden gap-3 sm:gap-4 md:flex">
-                        {navLinks.map((navLink, index) => (
-                            <motion.li key={index} custom={index + 1}>
-                                <a href={`#${navLink.url}`}>
-                                    <button
-                                        onClick={() => setSectionOnScreen(navLink.url)}
-                                        className={`group relative overflow-hidden rounded-lg px-2 py-1 font-normal tracking-wider transition duration-300 ease-in-out hover:scale-110 sm:px-3 sm:py-2`}
-                                    >
-                                        <span className={`relative z-10`}>{t(`navigation.${navLink.id}`)}</span>
-                                        {sectionOnScreen === navLink.url && (
+                    <div className="hidden items-center justify-center md:flex">
+                        <ul className="relative hidden gap-3 sm:gap-4 md:flex">
+                            {navLinks.map((navLink, index) => (
+                                <motion.li key={index} custom={index + 1}>
+                                    <a href={`#${navLink.url}`}>
+                                        <button
+                                            onClick={() => setSectionOnScreen(navLink.url)}
+                                            className={`group relative overflow-hidden rounded-lg px-2 py-1 font-normal tracking-wider transition duration-300 ease-in-out hover:scale-110 sm:px-3 sm:py-2`}
+                                        >
+                                            <span className={`relative z-10`}>{t(`navigation.${navLink.id}`)}</span>
+                                            {sectionOnScreen === navLink.url && (
+                                                <motion.span
+                                                    layoutId="nav-underline"
+                                                    className="absolute inset-x-0 bottom-0 h-0.5 bg-foreground"
+                                                    initial={false}
+                                                    transition={{
+                                                        type: 'spring',
+                                                        stiffness: 350,
+                                                        damping: 30,
+                                                    }}
+                                                />
+                                            )}
                                             <motion.span
-                                                layoutId="nav-underline"
-                                                className="absolute inset-x-0 bottom-0 h-0.5 bg-foreground"
+                                                className="absolute inset-0 rounded-lg bg-foreground/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                                                 initial={false}
                                                 transition={{
                                                     type: 'spring',
@@ -107,23 +118,11 @@ const Header = (): ReactElement => {
                                                     damping: 30,
                                                 }}
                                             />
-                                        )}
-                                        <motion.span
-                                            className="absolute inset-0 rounded-lg bg-foreground/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                                            initial={false}
-                                            transition={{
-                                                type: 'spring',
-                                                stiffness: 350,
-                                                damping: 30,
-                                            }}
-                                        />
-                                    </button>
-                                </a>
-                            </motion.li>
-                        ))}
-                    </ul>
-
-                    <div className="hidden items-center justify-center md:flex">
+                                        </button>
+                                    </a>
+                                </motion.li>
+                            ))}
+                        </ul>
                         <LanguageSwitcher headerVariants={navVariants} isScrolled={isScrolled} />
                     </div>
                 </div>

@@ -89,7 +89,7 @@ const LanguageSwitcher = ({
             <button
                 id="language-switcher"
                 type="button"
-                className="inline-flex w-full justify-center rounded-full border-none px-4 py-2 text-sm font-medium shadow-sm transition duration-300 ease-in-out hover:bg-foreground/10 focus:outline-none"
+                className="inline-flex w-full justify-center rounded-md border-none px-4 py-2 text-sm font-medium shadow-sm transition duration-300 ease-in-out hover:bg-foreground/10 focus:outline-none"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
                 <img
