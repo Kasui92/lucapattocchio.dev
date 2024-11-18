@@ -2,9 +2,12 @@ import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 
-// import locales
+// import locales - en
 import globalsEn from '@/locale/en/globals'
+import heroEn from '@/locale/en/hero'
+// import locales - it
 import globalsIt from '@/locale/it/globals'
+import heroIt from '@/locale/it/hero'
 
 i18n
     // detect user language
@@ -24,11 +27,13 @@ i18n
             en: {
                 translation: {
                     ...globalsEn,
+                    ...heroEn,
                 },
             },
             it: {
                 translation: {
                     ...globalsIt,
+                    ...heroIt,
                 },
             },
         },

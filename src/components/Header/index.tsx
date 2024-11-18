@@ -77,7 +77,7 @@ const Header = (): ReactElement => {
                         </a>
                     </motion.div>
 
-                    <div className="flex items-center justify-center md:hidden">
+                    <div className="flex items-center justify-center gap-2 md:hidden">
                         <LanguageSwitcher headerVariants={navVariants} isScrolled={isScrolled} />
                         <motion.button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

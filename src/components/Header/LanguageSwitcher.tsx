@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next'
 import langs from '@/data/langs'
 
 /**
- * LanguageSwitcher component
- * @param {Record<string, Variant>} headerVariants - Header variants
- * @param {boolean} isScrolled - Is the header scrolled
+ * LanguageSwitcher
+ * @param {Variants} headerVariants
+ * @param {boolean} isScrolled
  * @returns {JSX.Element} LanguageSwitcher component
  * @constructor
  */
@@ -47,7 +47,7 @@ const LanguageSwitcher = ({
 
     /**
      * Handle language change
-     * @param {string} lang - Language code
+     * @param {string} lang
      * @returns {void}
      */
     const handleLanguageChange = (lang: string): void => {
@@ -56,17 +56,16 @@ const LanguageSwitcher = ({
         setIsMenuOpen(false)
     }
 
-    // when click outside the dropdown, close it
+    /**
+     * Handles the click event outside of the language switcher menu and button.
+     * If the click is detected outside of these elements, it triggers the handleCloseMenu function after a delay.
+     *
+     * @param event - The mouse event triggered by the click.
+     *
+     * @remarks
+     * The delay is added to ensure any other click-related events are processed before closing the menu.
+     */
     useEffect(() => {
-        /**
-         * Handles the click event outside of the language switcher menu and button.
-         * If the click is detected outside of these elements, it triggers the handleCloseMenu function after a delay.
-         *
-         * @param event - The mouse event triggered by the click.
-         *
-         * @remarks
-         * The delay is added to ensure any other click-related events are processed before closing the menu.
-         */
         const handleClickOutside = (event: MouseEvent) => {
             const menu = document.getElementById('language-switcher-menu')
             const button = document.getElementById('language-switcher')
@@ -89,7 +88,7 @@ const LanguageSwitcher = ({
             <button
                 id="language-switcher"
                 type="button"
-                className="inline-flex w-full justify-center rounded-md border-none px-4 py-2 text-sm font-medium shadow-sm transition duration-300 ease-in-out hover:bg-foreground/10 focus:outline-none"
+                className="inline-flex w-full justify-center rounded-full border-none px-2 py-2 text-sm font-medium shadow-sm transition duration-300 ease-in-out hover:bg-foreground/10 focus:outline-none md:rounded-md md:px-4"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
                 <img
