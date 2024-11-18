@@ -84,7 +84,7 @@ const LanguageSwitcher = ({
                     variants={headerVariants}
                     initial="top"
                     animate={isScrolled ? 'scroll' : 'top'}
-                    className="border-[#a9a9a9 absolute right-0 mt-4 w-28 origin-top-right rounded-md border shadow-lg ring-1 ring-black ring-opacity-5"
+                    className="absolute right-0 mt-4 w-28 origin-top-right rounded-md border border-[#a9a9a9] shadow-lg ring-1 ring-black ring-opacity-5"
                 >
                     <div className="py-1">
                         {Object.keys(langs).map((lang) => (
