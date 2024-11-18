@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import navLinks from '@/data/navlinks'
 
 import HamburgerIcon from './HamburgerIcon'
+import LanguageSwitcher from './LanguageSwitcher'
 
 import '@/components/Header/Header.styles.css'
 
@@ -77,6 +78,7 @@ const Header = (): ReactElement => {
                     </motion.div>
 
                     <div className="flex items-center justify-center md:hidden">
+                        <LanguageSwitcher headerVariants={navVariants} isScrolled={isScrolled} />
                         <motion.button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                             className="text-[#F4F0E6] focus:outline-none"
@@ -120,6 +122,10 @@ const Header = (): ReactElement => {
                             </motion.li>
                         ))}
                     </ul>
+
+                    <div className="hidden items-center justify-center md:flex">
+                        <LanguageSwitcher headerVariants={navVariants} isScrolled={isScrolled} />
+                    </div>
                 </div>
 
                 <AnimatePresence>
