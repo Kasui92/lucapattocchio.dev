@@ -3,11 +3,11 @@ import { initReactI18next } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 
 // import locales - en
-import globalsEn from '@/locale/en/globals'
-import heroEn from '@/locale/en/hero'
+import globalsEn from '@/locales/en/globals'
+import heroEn from '@/locales/en/hero'
 // import locales - it
-import globalsIt from '@/locale/it/globals'
-import heroIt from '@/locale/it/hero'
+import globalsIt from '@/locales/it/globals'
+import heroIt from '@/locales/it/hero'
 
 i18n
     // detect user language
