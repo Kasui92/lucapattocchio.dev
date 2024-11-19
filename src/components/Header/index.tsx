@@ -56,7 +56,7 @@ const Header = (): ReactElement => {
 
     return (
         <motion.header
-            className="fixed left-0 right-0 top-0 z-40 mx-auto flex w-full max-w-5xl justify-center transition-all duration-500 ease-in-out"
+            className="fixed left-0 right-0 top-0 z-40 mx-auto flex w-full max-w-6xl justify-center transition-all duration-500 ease-in-out"
             initial="hidden"
             animate="visible"
         >
