@@ -1,5 +1,5 @@
-import iconIt from '@/assets/images/icons/locale/it.svg'
-import iconEn from '@/assets/images/icons/locale/en.svg'
+import iconIt from '@/assets/images/icons/locales/it.svg'
+import iconEn from '@/assets/images/icons/locales/en.svg'
 
 interface Lang {
     nativeName: string
