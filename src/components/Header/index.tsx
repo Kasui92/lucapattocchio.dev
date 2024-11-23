@@ -54,6 +54,18 @@ const Header = (): ReactElement => {
         setIsScrolled(latest > 20)
     })
 
+    useMotionValueEvent(scrollY, 'change', () => {
+        const section = navLinks.find((navLink) => {
+            const element = document.getElementById(navLink.url)
+            if (element) {
+                const { top, bottom } = element.getBoundingClientRect()
+                return top <= 0 && bottom > 0
+            }
+        })
+
+        setSectionOnScreen(section ? section.url : '')
+    })
+
     return (
         <motion.header
             className="fixed left-0 right-0 top-0 z-40 mx-auto flex w-full max-w-6xl justify-center transition-all duration-500 ease-in-out"
