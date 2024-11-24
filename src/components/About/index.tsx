@@ -18,7 +18,7 @@ const About = (): ReactElement => {
         <section className={`relative py-32`} id={`about`}>
             <div className={`mx-auto max-w-6xl px-8`}>
                 <h2 className={`mb-20 text-center text-4xl font-semibold uppercase tracking-wider xl:text-7xl`}>
-                    <span className={`border-b-4 border-violet-500`}>About Me</span>
+                    <span className={`border-b-4 border-violet-500`}>{t(`about.title`)}</span>
                 </h2>
                 <div className={`flex flex-col gap-24 xl:flex-row`}>
                     <div className={`order-2 mx-auto w-5/6 grow md:w-4/6 xl:w-1/2`}>
