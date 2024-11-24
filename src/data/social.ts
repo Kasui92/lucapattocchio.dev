@@ -1,6 +1,7 @@
 import iconGithub from '@/assets/images/icons/socials/github.svg'
 import iconGitlab from '@/assets/images/icons/socials/gitlab.svg'
 import iconLinkedin from '@/assets/images/icons/socials/linkedin.svg'
+import iconBluesky from '@/assets/images/icons/socials/bluesky.svg'
 
 export interface SocialEntry {
     label: string
@@ -26,6 +27,11 @@ const social: Record<string, SocialEntry> = {
         label: 'Gitlab',
         url: 'https://gitlab.com/Kasui92',
         icon: iconGitlab,
+    },
+    bluesky: {
+        label: 'Bluesky',
+        url: 'https://bsky.app/profile/lucapattocchio.dev',
+        icon: iconBluesky,
     },
 }
 
