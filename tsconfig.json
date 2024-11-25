@@ -1,43 +1,38 @@
 {
-  "compilerOptions": {
-    /* Language and Environment */
-    "target": "ESNext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "types": ["vite/client"],
-    "allowJs": true,
-    "jsx": "react-jsx",
+    "compilerOptions": {
+        /* Language and Environment */
+        "target": "ESNext",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "types": ["vite/client"],
+        "allowJs": true,
+        "jsx": "react-jsx",
 
+        /* Modules */
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "rootDir": "./src",
 
-    /* Modules */
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "rootDir": "./src",
+        /* Interop Constraints */
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
 
-    /* Interop Constraints */
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+        /* Type Checking */
+        "strict": true,
 
-    /* Type Checking */
-    "strict": true,
+        /* Completeness */
+        "skipLibCheck": true,
+        "noEmit": true,
+        "incremental": true,
 
-    /* Completeness */
-    "skipLibCheck": true,
-    "noEmit": true,
-    "incremental": true,
-
-    /* Paths */
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"],
-      "@/public/*": ["./public/*"],
-    }
-  },
-  "include": ["src"]
+        /* Paths */
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"],
+            "@/public/*": ["./public/*"]
+        }
+    },
+    "include": ["src"]
 }
