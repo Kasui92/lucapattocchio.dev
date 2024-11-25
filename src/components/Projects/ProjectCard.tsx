@@ -32,7 +32,6 @@ const ProjectCard = ({ project, ...props }: { project: Project }): ReactElement 
                                 {project.tags.map((tag, index) => {
                                     // Retrieve tag info from projectsTags
                                     const tagInfo = projectsTags.find((item) => item.label === tag)
-
                                     return <ProjectTag label={tagInfo?.label || tag} key={index} />
                                 })}
                             </div>

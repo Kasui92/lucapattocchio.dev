@@ -6,10 +6,12 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import globalsEn from '@/locales/en/globals'
 import heroEn from '@/locales/en/hero'
 import aboutEn from '@/locales/en/about'
+import projectsEn from '@/locales/en/projects'
 // import locales - it
 import globalsIt from '@/locales/it/globals'
 import heroIt from '@/locales/it/hero'
 import aboutIt from '@/locales/it/about'
+import projectsIt from '@/locales/it/projects'
 
 i18n
     // detect user language
@@ -31,6 +33,7 @@ i18n
                     ...globalsEn,
                     ...heroEn,
                     ...aboutEn,
+                    ...projectsEn,
                 },
             },
             it: {
@@ -38,6 +41,7 @@ i18n
                     ...globalsIt,
                     ...heroIt,
                     ...aboutIt,
+                    ...projectsIt,
                 },
             },
         },

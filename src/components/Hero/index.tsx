@@ -57,7 +57,7 @@ const Hero = (): ReactElement => {
                             className="flex flex-col justify-center gap-4 sm:flex-row"
                         >
                             <button
-                                className="focus-visible:ring-ring inline-flex h-11 items-center justify-center whitespace-nowrap rounded-md bg-purple-600 px-8 text-sm font-semibold text-foreground ring-offset-background transition-colors hover:bg-purple-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                                className="focus-visible:ring-ring inline-flex h-11 items-center justify-center whitespace-nowrap rounded-lg bg-purple-600 px-8 text-sm font-semibold text-foreground ring-offset-background transition-colors hover:bg-purple-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                                 onClick={() => window.open('/CV.pdf', '_blank')}
                             >
                                 {t('hero.resume')}

@@ -73,7 +73,7 @@ const Header = (): ReactElement => {
             animate="visible"
         >
             <motion.nav
-                className={`mx-3 mt-3 w-full rounded-3xl border border-[#a9a9a9] px-4 py-3 shadow-lg md:mx-4 md:mt-4 lg:mx-5 lg:mt-5`}
+                className={`mx-3 mt-3 w-full rounded-2xl border border-[#a9a9a9] px-4 py-3 shadow-lg md:mx-4 md:mt-4 lg:mx-5 lg:mt-5`}
                 variants={navVariants}
                 initial="top"
                 animate={isScrolled ? 'scroll' : 'top'}
