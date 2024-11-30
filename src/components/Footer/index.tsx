@@ -4,11 +4,11 @@ import { ReactElement } from 'react'
  * Footer
  * @constructor
  */
-const Footer = (): ReactElement => {
+export const Footer = (): ReactElement => {
     return (
         <footer>
             <div className="w-100 mx-auto mb-3 flex overflow-hidden px-5 text-sm md:w-3/5 md:px-0 xl:w-2/5">
-                <div className="grow text-left">&copy; 2023 - All rights reserved.</div>
+                <div className="grow text-left">&copy; 2024 - All rights reserved.</div>
                 <div className="grow text-right">
                     Built with <span title={`very much love`}>❤️</span> by{' '}
                     <a
@@ -22,5 +22,3 @@ const Footer = (): ReactElement => {
         </footer>
     )
 }
-
-export default Footer

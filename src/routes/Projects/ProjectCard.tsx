@@ -2,8 +2,8 @@ import { ReactElement } from 'react'
 import TechnologyTag from '@/components/TechnologyTag'
 import { ProjectTag } from '@/components/Projects/ProjectTag'
 
-import { Project, projectsTags } from '@/config/projects'
-import stack from '@/config/stack'
+import { Project, projectsTags } from '@/data/projects'
+import stack from '@/data/stack'
 
 /**
  * ProjectCard
@@ -14,7 +14,7 @@ import stack from '@/config/stack'
 const ProjectCard = ({ project, ...props }: { project: Project }): ReactElement => {
     return (
         <a
-            className={`relative mb-1 w-full rounded-xl border transition duration-300 ease-in-out hover:scale-110 `}
+            className={`relative mb-1 w-full rounded-xl border transition duration-300 ease-in-out hover:scale-110`}
             href={project.url}
             aria-label={`Go to ${project.title} website`}
             target={`_blank`}
@@ -39,7 +39,7 @@ const ProjectCard = ({ project, ...props }: { project: Project }): ReactElement 
                         )}
                     </div>
                     <h4 className={`tracking-tigh text-xl font-bold`}>{project.title}</h4>
-                    <div className={`pt-4 leading-6 `}>{project.description}</div>
+                    <div className={`pt-4 leading-6`}>{project.description}</div>
                     <div className={`flex flex-wrap pt-4 md:flex-row`}>
                         {project.technologies.map((technology, index) => {
                             // Retrieve technology info from stack

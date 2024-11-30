@@ -1,4 +1,4 @@
-import { StackEntry } from '@/config/stack'
+import { StackEntry } from '@/data/stack'
 
 export interface Project {
     title: string

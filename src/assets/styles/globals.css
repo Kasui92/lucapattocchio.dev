@@ -8,7 +8,7 @@
 
 @layer base {
     body {
-        @apply m-0 bg-background p-0 text-foreground;
+        @apply overscroll-y-none bg-black p-0 font-sans text-white antialiased;
     }
 }
 

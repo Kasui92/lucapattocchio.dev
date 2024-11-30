@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 import TechnologyTag from '@/components/TechnologyTag'
 
-import stack from '@/config/stack'
+import stack from '@/data/stack'
 
 /**
  * About

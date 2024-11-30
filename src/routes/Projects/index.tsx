@@ -2,8 +2,8 @@ import React, { ReactElement, useEffect } from 'react'
 import ProjectCard from '@/components/Projects/ProjectCard'
 import { ProjectTagSelector } from '@/components/Projects/ProjectTag'
 
-import projects, { projectsTags } from '@/config/projects'
-import social from '@/config/social'
+import projects, { projectsTags } from '@/data/projects'
+import social from '@/data/social'
 
 /**
  * About

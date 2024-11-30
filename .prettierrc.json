@@ -1,24 +1,31 @@
 {
-  "plugins": ["prettier-plugin-tailwindcss"],
-  "semi": false,
-  "singleQuote": true,
-  "trailingComma": "all",
-  "tabWidth": 4,
-  "arrowParens": "always",
-  "endOfLine": "lf",
-  "overrides": [
-    {
-      "files": ["*.jsx", "*.js", "*.tsx", "*.ts"],
-      "options": {
-        "printWidth": 125
-      }
-    },
-    {
-      "files": ["*.css"],
-        "options": {
-            "singleQuote": false,
-            "printWidth": 125
+    "plugins": ["prettier-plugin-tailwindcss"],
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "tabWidth": 4,
+    "arrowParens": "always",
+    "endOfLine": "lf",
+    "overrides": [
+        {
+            "files": ["*.jsx", "*.js", "*.tsx", "*.ts"],
+            "options": {
+                "printWidth": 125
+            }
+        },
+        {
+            "files": ["*.css"],
+            "options": {
+                "singleQuote": false,
+                "printWidth": 125
+            }
+        },
+        {
+            "files": ["*.html"],
+            "options": {
+                "parser": "html",
+                "printWidth": 125
+            }
         }
-    }
-  ]
+    ]
 }
