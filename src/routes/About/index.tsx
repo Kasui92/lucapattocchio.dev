@@ -1,71 +1,66 @@
 import { ReactElement } from 'react'
-import TechnologyTag from '@/components/TechnologyTag'
 
-import stack from '@/data/stack'
-
-/**
- * About
- * @constructor
- */
-const About = (): ReactElement => {
+export const About = (): ReactElement => {
     return (
-        <section className={`relative py-32`} id={`About`}>
-            <div className={`mx-auto max-w-6xl px-8`}>
-                <h2 className={`mb-20 text-center text-4xl font-semibold uppercase tracking-wider xl:text-7xl`}>
-                    <span className={`border-b-4 border-violet-500`}>About Me</span>
-                </h2>
-                <div className={`flex flex-col gap-24 xl:flex-row`}>
-                    <div className={`order-2 mx-auto w-5/6 grow md:w-4/6 xl:w-1/2`}>
-                        <div className={`flex flex-col gap-6 text-center leading-7 md:text-left`}>
-                            <p>
-                                My curiosity about technology and the web sparked in my childhood, back when I got my hands
-                                on my first <span className={`font-bold text-yellow-300`}>Game Boy</span>, and it&apos;s been
-                                burning ever since, fueled by the desire to uncover the{' '}
-                                <span className={`italic text-amber-500`}>magic</span> behind them. During the boom of online
-                                forums I took my first steps into the world of programming, breaking and fixing elements that
-                                I barely understood. I was fascinated by what this realm had to offer, so I decided to dive
-                                deeper into a path that would let me be a part of it.
-                            </p>
-                            <p>
-                                When I hit twenty, I realized that this passion could be so much more: I decided to
-                                consolidate what I had learned until then, to venture into the working world and take on{` `}
-                                <span className={`font-bold text-blue-500`}>web development</span>
-                                {` `}in a professional way, no longer as a self-taught tinkerer. I believe that collaborating
-                                with people is a crucial forge for crafting innovative approaches and self-improvement, both
-                                in my skills and in myself.{' '}
-                                <i>I&apos;m always up for any new adventure that comes my way.</i>
-                            </p>
-                            <p>
-                                I love getting lost on trails and going on{' '}
-                                <span className={`text-slate-500`}>long walks</span>, especially when surrounded by nature,
-                                and I always keep a backpack for them. In my free time, I enjoy playing board games and
-                                role-playing games...{' '}
-                                <span className={`italic line-through`}>but mostly, I accumulate side projects</span>.
-                            </p>
-                        </div>
-                        <div className={`mt-20 md:mt-6`}>
-                            <h3 className={`mb-2 mb-3 text-2xl font-semibold tracking-wide`}>Tech Stack</h3>
-                            {stack.map((technology, index) => (
-                                <TechnologyTag icon={technology.icon} label={technology.label} key={index} />
-                            ))}
-                        </div>
-                    </div>
-                    <div className={`order-1 grow`}>
-                        <img
-                            className={`mx-auto aspect-square h-[350px] w-[350px] rotate-3 rounded-2xl object-cover shadow xl:hidden`}
-                            src={`/assets/aboutme.jpg`}
-                            alt={`Luca Pattocchio`}
-                        />
-                        <img
-                            className={`hidden aspect-square h-[520px] w-[390px] rotate-3 rounded-2xl object-cover shadow xl:block`}
-                            src={`/assets/aboutme-xl.jpg`}
-                            alt={`Luca Pattocchio`}
-                        />
+        <div className="space-y-16">
+            <div className="flex flex-col items-center">
+                <h3 className="w-full text-lg font-bold text-silver-900/90 underline decoration-green-500/50 decoration-4 underline-offset-[6px]">
+                    About me
+                </h3>
+                <div className="mt-4">
+                    <div className={`text-md space-y-4 text-justify leading-7 text-silver-700/90`}>
+                        <p>
+                            My curiosity about technology and the web was sparked in my childhood, back when I got my hands
+                            on my first <span className={`font-semibold text-yellow-300/70`}>Game Boy</span>, and it’s been
+                            burning ever since, fueled by a desire to uncover the{' '}
+                            <span className={`italic text-purple-500/70`}>magic</span> behind it. During the rise of online
+                            forums, I took my first steps into the world of programming, breaking and fixing elements I
+                            barely understood. Fascinated by what this realm had to offer, I decided to dive deeper into a
+                            path that would allow me to be part of it.
+                        </p>
+                        <p>
+                            At twenty, I realized this passion could become something more. I consolidated what I had learned
+                            and ventured into the working world, pursuing{' '}
+                            <span className={`font-semibold text-cerulean`}>web development</span> professionally—no longer
+                            just as a self-taught tinkerer. I believe collaboration is a powerful forge for crafting
+                            innovative solutions and self-improvement, both in my skills and personal growth.{' '}
+                            <i>I'm always ready for new adventures.</i>
+                        </p>
+                        <p>
+                            I love getting lost on trails and going for <span className={`text-green`}>long walks</span>,
+                            especially when surrounded by nature, with a backpack always at the ready. In my free time, I
+                            enjoy playing board games and role-playing games—
+                            <span className={`italic line-through`}>but mostly, I end up accumulating side projects</span>.
+                        </p>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <div className="flex flex-col items-center">
+                <h3 className="w-full text-lg font-bold text-silver-900/90 underline decoration-green-500/50 decoration-4 underline-offset-[6px]">
+                    Experience
+                </h3>
+                <div className="mt-4">
+                    <div className={`text-md space-y-4 text-justify leading-7 text-silver-700/90`}>
+                        <p>
+                            Laboris in nulla irure magna enim eiusmod enim dolor. Laborum deserunt est enim et ut.
+                            Exercitation consequat consequat adipisicing non cillum ad id eiusmod consectetur laboris
+                            pariatur cupidatat non. Consequat dolore officia cillum mollit pariatur nulla elit. Id sunt id
+                            dolor sunt exercitation reprehenderit sint officia dolore aliqua et nulla minim consectetur.
+                            Proident irure pariatur enim excepteur et sit sunt ex aute aliqua velit laboris incididunt
+                            nostrud. Duis quis mollit occaecat adipisicing deserunt incididunt commodo. Sit adipisicing amet
+                            ea ullamco commodo sint minim ut labore excepteur dolor eiusmod nulla. Amet fugiat exercitation
+                            eu eiusmod anim. Tempor labore aliqua esse proident dolore ullamco elit excepteur qui eiusmod
+                            labore fugiat pariatur. Excepteur et culpa esse sint elit laboris proident enim et mollit. Est
+                            anim velit culpa voluptate est deserunt Lorem aute aliquip exercitation est incididunt. Esse amet
+                            irure minim duis deserunt aliqua ad ex culpa anim enim laborum est. Id cillum deserunt id labore
+                            sunt mollit duis nisi. Dolore Lorem occaecat ipsum officia ullamco veniam nulla enim. Excepteur
+                            pariatur est fugiat ea adipisicing cillum excepteur ipsum est veniam est est. Irure aute amet eu
+                            ut ipsum ipsum.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 }
-
-export default About
