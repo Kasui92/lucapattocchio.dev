@@ -25,15 +25,15 @@ export const Header = (): ReactElement => {
     }
 
     return (
-        <header className="mx-auto flex w-full max-w-2xl flex-col gap-8">
-            <div
+        <>
+            <header
                 className={clsx('sticky top-6 z-30 -mx-px transition duration-75 will-change-transform', {
                     '-translate-y-2 scale-95 opacity-0': !showPrimary,
                     'opacity-100': showPrimary,
                 })}
             >
                 <HeaderNav />
-            </div>
+            </header>
             <div ref={interserctionRef}>
                 <div
                     className={clsx('transition duration-150 will-change-transform', {
@@ -44,6 +44,6 @@ export const Header = (): ReactElement => {
                     <HeaderHero />
                 </div>
             </div>
-        </header>
+        </>
     )
 }

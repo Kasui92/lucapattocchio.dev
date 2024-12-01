@@ -57,7 +57,7 @@ export default {
                     800: '#9ccde5',
                     900: '#cee6f2',
                 },
-                hookers_green: {
+                green: {
                     DEFAULT: '#496f5d',
                     100: '#0f1613',
                     200: '#1d2c25',
