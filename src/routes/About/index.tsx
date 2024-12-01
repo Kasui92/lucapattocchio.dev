@@ -8,7 +8,7 @@ export const About = (): ReactElement => {
                     About me
                 </h3>
                 <div className="mt-4">
-                    <div className={`text-md space-y-4 text-justify leading-7 text-silver-700/90`}>
+                    <div className={`text-md space-y-4 text-justify leading-7 text-silver-700/70`}>
                         <p>
                             My curiosity about technology and the web was sparked in my childhood, back when I got my hands
                             on my first <span className={`font-semibold text-yellow-300/70`}>Game Boy</span>, and it’s been
@@ -41,7 +41,7 @@ export const About = (): ReactElement => {
                     Experience
                 </h3>
                 <div className="mt-4">
-                    <div className={`text-md space-y-4 text-justify leading-7 text-silver-700/90`}>
+                    <div className={`text-md space-y-4 text-justify leading-7 text-silver-700/70`}>
                         <p>
                             Laboris in nulla irure magna enim eiusmod enim dolor. Laborum deserunt est enim et ut.
                             Exercitation consequat consequat adipisicing non cillum ad id eiusmod consectetur laboris

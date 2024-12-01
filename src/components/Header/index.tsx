@@ -2,7 +2,7 @@ import { ReactElement, useRef } from 'react'
 import clsx from 'clsx'
 import { useIntersection } from 'react-use'
 
-import { HeaderHero } from './HeaderHero'
+import { Hero } from './Hero'
 import { HeaderNav } from './HeaderNav'
 
 /**
@@ -41,7 +41,7 @@ export const Header = (): ReactElement => {
                         'opacity-100 delay-100': !showPrimary,
                     })}
                 >
-                    <HeaderHero />
+                    <Hero />
                 </div>
             </div>
         </>
