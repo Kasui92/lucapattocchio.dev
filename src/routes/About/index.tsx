@@ -1,4 +1,7 @@
 import { ReactElement } from 'react'
+import { ExperienceCard } from '../../components/ExperienceCard'
+
+import { experiences } from '../../data/experiences'
 
 export const About = (): ReactElement => {
     return (
@@ -40,25 +43,10 @@ export const About = (): ReactElement => {
                 <h3 className="w-full text-lg font-bold text-silver-900/90 underline decoration-green-500/50 decoration-4 underline-offset-[6px]">
                     Experience
                 </h3>
-                <div className="mt-4">
-                    <div className={`text-md space-y-4 text-justify leading-7 text-silver-700/70`}>
-                        <p>
-                            Laboris in nulla irure magna enim eiusmod enim dolor. Laborum deserunt est enim et ut.
-                            Exercitation consequat consequat adipisicing non cillum ad id eiusmod consectetur laboris
-                            pariatur cupidatat non. Consequat dolore officia cillum mollit pariatur nulla elit. Id sunt id
-                            dolor sunt exercitation reprehenderit sint officia dolore aliqua et nulla minim consectetur.
-                            Proident irure pariatur enim excepteur et sit sunt ex aute aliqua velit laboris incididunt
-                            nostrud. Duis quis mollit occaecat adipisicing deserunt incididunt commodo. Sit adipisicing amet
-                            ea ullamco commodo sint minim ut labore excepteur dolor eiusmod nulla. Amet fugiat exercitation
-                            eu eiusmod anim. Tempor labore aliqua esse proident dolore ullamco elit excepteur qui eiusmod
-                            labore fugiat pariatur. Excepteur et culpa esse sint elit laboris proident enim et mollit. Est
-                            anim velit culpa voluptate est deserunt Lorem aute aliquip exercitation est incididunt. Esse amet
-                            irure minim duis deserunt aliqua ad ex culpa anim enim laborum est. Id cillum deserunt id labore
-                            sunt mollit duis nisi. Dolore Lorem occaecat ipsum officia ullamco veniam nulla enim. Excepteur
-                            pariatur est fugiat ea adipisicing cillum excepteur ipsum est veniam est est. Irure aute amet eu
-                            ut ipsum ipsum.
-                        </p>
-                    </div>
+                <div className="mt-6 flex w-full flex-col items-center gap-6">
+                    {experiences.map((experience, index) => (
+                        <ExperienceCard key={index} experience={experience} />
+                    ))}
                 </div>
             </div>
         </div>
