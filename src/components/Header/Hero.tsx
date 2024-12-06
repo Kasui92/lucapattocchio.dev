@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 import { HeroProfilePic } from '../ProfilePic'
-import { Nav } from '../Nav'
+import { NavInline } from '../Nav'
 
 /**
  * Hero
@@ -35,7 +35,7 @@ export const Hero = (): ReactElement => (
         </div>
 
         <div className="flex items-center">
-            <Nav />
+            <NavInline />
         </div>
     </div>
 )
