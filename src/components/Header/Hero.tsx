@@ -13,15 +13,17 @@ export const Hero = (): ReactElement => (
             <div className="mt-2">
                 <h1 className="text-3xl font-semibold leading-none text-silver-900/90">Luca Pattocchio</h1>
                 <h2 className="mt-2 items-center space-y-2 text-lg font-medium leading-none text-silver-700/50 lg:mt-0 lg:flex lg:space-x-2 lg:space-y-0">
-                    <div className="space-x-2 whitespace-nowrap">
+                    <div className="whitespace-nowrap">
                         <span>Full Stack Developer @</span>
-                        <a
-                            href={`https://altuofianco.it`}
-                            className="underline-transition font-bold text-altuofianco after:bg-altuofianco"
-                            title={`Go to Altuofianco website`}
-                        >
-                            Altuofianco
-                        </a>
+                        <div className="mt-1 flex">
+                            <a
+                                href={`https://altuofianco.it`}
+                                className="underline-transition font-bold text-altuofianco after:bg-altuofianco"
+                                title={`Go to Altuofianco website`}
+                            >
+                                Altuofianco
+                            </a>
+                        </div>
                     </div>
                 </h2>
             </div>
