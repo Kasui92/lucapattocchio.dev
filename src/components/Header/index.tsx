@@ -27,7 +27,7 @@ export const Header = (): ReactElement => {
     return (
         <>
             <header
-                className={clsx('sticky top-6 z-30 -mx-px transition duration-75 will-change-transform', {
+                className={clsx('fixed left-0 top-6 z-30 w-full transition duration-75 will-change-transform', {
                     '-translate-y-2 scale-95 opacity-0': !showPrimary,
                     'opacity-100': showPrimary,
                 })}
