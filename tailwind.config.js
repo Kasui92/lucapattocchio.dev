@@ -72,6 +72,20 @@ export default {
                 // Custom
                 altuofianco: '#067da0',
             },
+            keyframes: {
+                slideInSection: {
+                    '0%': { opacity: 0, transform: 'translate(-20px, 0)' },
+                    '100%': { opacity: 1, transform: 'translate(0, 0)' },
+                },
+                slideOutSection: {
+                    '0%': { opacity: 1, transform: 'translate(0, 0)' },
+                    '100%': { opacity: 0, transform: 'translate(-20px, 0)' },
+                },
+            },
+        },
+        animation: {
+            slideInSection: '0.5s slideInSection forwards',
+            slideOutSection: '0.5s slideOutSection forwards',
         },
     },
     plugins: [require('tailwindcss-animate')],
