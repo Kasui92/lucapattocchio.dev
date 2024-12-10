@@ -2,6 +2,7 @@ import { ReactElement } from 'react'
 import { ExperienceCard } from '../../components/ExperienceCard'
 
 import { experiences } from '../../data/experiences'
+import { DownloadResume } from '../../components/Buttons'
 
 export const About = (): ReactElement => {
     return (
@@ -48,6 +49,10 @@ export const About = (): ReactElement => {
                         <ExperienceCard key={index} experience={experience} />
                     ))}
                 </div>
+            </div>
+
+            <div className="flex items-center justify-center">
+                <DownloadResume />
             </div>
         </div>
     )

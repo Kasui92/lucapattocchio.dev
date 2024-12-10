@@ -16,6 +16,7 @@ export const ExperienceCard = ({ experience }: { experience: Expercience }): Rea
                         href={experience.companyUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        title={`Visit ${experience.company}`}
                         className="underline-transition after:bg-silver-700/90"
                     >
                         {experience.company}
