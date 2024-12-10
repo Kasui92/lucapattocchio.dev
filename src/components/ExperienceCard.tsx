@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 import { Expercience } from '../data/experiences'
-import { CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline'
+import { BriefcaseIcon, CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline'
 import { date2Period } from '../lib/utils'
 
 export const ExperienceCard = ({ experience }: { experience: Expercience }): ReactElement => {
@@ -22,7 +22,7 @@ export const ExperienceCard = ({ experience }: { experience: Expercience }): Rea
                     </a>
                 </div>
             </div>
-            <div className="flex w-full flex-col gap-x-2 text-sm text-silver-700/70 md:flex-row">
+            <div className="flex w-full flex-col gap-x-2 text-sm text-silver-700/70">
                 <div className="flex space-x-1">
                     <CalendarIcon className="h-4 w-4" />
                     <span>{date2Period(experience.startDate)}</span>
@@ -35,6 +35,13 @@ export const ExperienceCard = ({ experience }: { experience: Expercience }): Rea
                         <span>{experience.location}</span>
                     </div>
                 )}
+                {experience.workExperience && (
+                    <div className="flex items-center space-x-1">
+                        <BriefcaseIcon className="h-4 w-4" />
+                        <span className="font-semibold">{experience.workExperience}</span>
+                    </div>
+                )}
+                {experience?.description && <div className="mt-2 flex text-silver-700/70">{experience.description}</div>}
             </div>
         </div>
     )

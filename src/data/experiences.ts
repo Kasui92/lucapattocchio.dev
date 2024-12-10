@@ -17,6 +17,7 @@ export const experiences: Expercience[] = [
         workExperience: 'Employee',
         startDate: '2015-06-01',
         location: 'Modena, Italy',
+        description: `Throughout my experience as a Full Stack Developer, I have worked on the development and maintenance of the company's CRM, managing all stages of the process—from design to deployment on dedicated systems. I have gained expertise in DevOps, handling deployment pipelines and managing Git repositories. Additionally, I have provided support to the IT department and Help Desk, assisting with the management of IT terminals, configuration of corporate emails, and troubleshooting issues related to Microsoft Office and Microsoft Business suite.`,
     },
     {
         position: 'Embedded System Analyst',
