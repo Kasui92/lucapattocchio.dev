@@ -86,7 +86,8 @@ export default {
         animation: {
             slideInSection: '0.5s slideInSection forwards',
             slideOutSection: '0.5s slideOutSection forwards',
+            bounce: 'bounce 1s infinite',
         },
     },
-    plugins: [require('tailwindcss-animate')],
+    plugins: [],
 }
