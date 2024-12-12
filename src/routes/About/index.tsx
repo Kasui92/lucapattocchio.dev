@@ -1,13 +1,13 @@
 import { ReactElement } from 'react'
-import { ExperienceCard } from '../../components/ExperienceCard'
+import { ExperienceCard } from '../../components/Cards'
+import { DownloadResume } from '../../components/Buttons'
 
 import { experiences } from '../../data/experiences'
-import { DownloadResume } from '../../components/Buttons'
 
 export const About = (): ReactElement => {
     return (
         <div className="space-y-16">
-            <div className="flex flex-col items-center">
+            <section className="container flex flex-col items-center">
                 <h3 className="w-full text-lg font-bold text-silver-900/90 underline decoration-green-500/50 decoration-4 underline-offset-[6px]">
                     About me
                 </h3>
@@ -38,9 +38,9 @@ export const About = (): ReactElement => {
                         </p>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div className="flex flex-col items-center">
+            <section className="container flex flex-col items-center">
                 <h3 className="w-full text-lg font-bold text-silver-900/90 underline decoration-green-500/50 decoration-4 underline-offset-[6px]">
                     Experience
                 </h3>
@@ -49,7 +49,7 @@ export const About = (): ReactElement => {
                         <ExperienceCard key={index} experience={experience} />
                     ))}
                 </div>
-            </div>
+            </section>
 
             <div className="flex items-center justify-center">
                 <DownloadResume />
