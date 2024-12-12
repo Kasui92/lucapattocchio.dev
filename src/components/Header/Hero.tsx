@@ -16,7 +16,7 @@ export const Hero = (): ReactElement => (
                     <div className="whitespace-nowrap">
                         <span>Full Stack Developer @</span>
                     </div>
-                    <div className="flex">
+                    <div className="whitespace-nowrap">
                         <a
                             href={`https://altuofianco.it`}
                             className="underline-transition font-bold text-altuofianco after:bg-altuofianco"
