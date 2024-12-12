@@ -1,25 +1,49 @@
-import { ReactElement } from 'react'
+import { ReactElement, useEffect, useState } from 'react'
+import { Route, Routes, useLocation } from 'react-router'
 
-import Hero from '@/components/Hero'
-import About from '@/components/About'
-import Projects from '@/components/Projects'
-import Footer from '@/components/Footer'
+import { Footer } from './components/Footer'
+import { Header } from './components/Header'
+
+// Routes
+import { About } from './routes/About'
+import { Projects } from './routes/Projects'
+import { NotFound } from './routes/NotFound'
 
 /**
- * App
+ * Layout
  * @constructor
  */
-const App = (): ReactElement => {
+export const App = (): ReactElement => {
+    const location = useLocation()
+
+    const [displayLocation, setDisplayLocation] = useState(location)
+    const [transitionStage, setTransistionStage] = useState('animate-slideInSection')
+
+    useEffect(() => {
+        if (location !== displayLocation) setTransistionStage('animate-slideOutSection')
+    }, [location, displayLocation])
+
     return (
         <>
-            <main className="flex min-h-screen flex-col">
-                <Hero />
-                <About />
-                <Projects />
-            </main>
-            <Footer />
+            <div className="relative z-10 mx-auto flex w-full max-w-2xl flex-col px-4 pt-12 xl:px-0">
+                <Header />
+                <main
+                    className={`mt-24 flex-auto space-y-10 ${transitionStage}`}
+                    onAnimationEnd={() => {
+                        if (transitionStage === 'animate-slideOutSection') {
+                            setTransistionStage('animate-slideInSection')
+                            setDisplayLocation(location)
+                        }
+                    }}
+                >
+                    <Routes location={displayLocation}>
+                        <Route index element={<About />} />
+                        <Route path="projects" element={<Projects />} />
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
+                </main>
+                <Footer />
+            </div>
         </>
     )
 }
-
-export default App
