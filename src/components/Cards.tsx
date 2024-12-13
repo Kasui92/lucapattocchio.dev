@@ -54,11 +54,15 @@ export const ExperienceCard = ({ experience }: { experience: Expercience }): Rea
 
 export const ProjectsCard = ({ project }: { project: Project }): ReactElement => {
     return (
-        <div className="group flex h-full flex-col gap-4 rounded-lg border border-silver-700/50 p-4 shadow-sm transition duration-300 hover:scale-[1.01] hover:border-silver-700/70 hover:shadow-lg md:flex-row">
+        <div className="group flex h-full flex-col gap-4 rounded-lg border border-silver-700/50 p-0 shadow-sm transition duration-300 hover:scale-[1.01] hover:border-silver-700/70 hover:shadow-lg md:flex-row md:p-4">
             <div className="relative h-full w-full md:w-48">
-                <img src={project.image} alt={project.title} className="h-24 w-full rounded-lg object-cover md:h-full" />
+                <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-36 w-full rounded-t-lg object-cover md:h-full md:rounded-lg"
+                />
             </div>
-            <div className="flex flex-1 flex-col gap-2">
+            <div className="flex flex-1 flex-col gap-2 p-4 md:p-0">
                 <h4 className="text-silver-900/90 group-hover:text-green-500/90">{project.title}</h4>
                 <p className="text-sm text-silver-700/70">{project.description}</p>
                 <div className="flex flex-wrap gap-1">
@@ -71,7 +75,7 @@ export const ProjectsCard = ({ project }: { project: Project }): ReactElement =>
                         </span>
                     ))}
                 </div>
-                <div className="flex gap-2">
+                <div className="flex justify-between gap-2 md:justify-start">
                     <a
                         href={project.url}
                         target="_blank"
