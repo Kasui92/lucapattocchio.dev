@@ -36,7 +36,7 @@ export const Hero = (): ReactElement => (
             </span>
         </div>
 
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-center justify-between gap-4 lg:flex-row lg:gap-0">
             <SocialNav />
             <NavInline />
         </div>
