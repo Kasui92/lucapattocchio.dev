@@ -12,13 +12,13 @@
 ## Built With
 
 - **Framework**: [React](https://react.dev/)
-- **Development**: [Vite](https://vitejs.dev/)
+- **Development**: [Vite](https://vite.dev/)
 - **Deployment**: [Netlify](https://www.netlify.com/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com)
 
 ## Running Locally
 
-To run the project locally, you need to have [Node.js](https://nodejs.org/en/), [Yarn](https://yarnpkg.com/) and [Vite](https://vitejs.dev/) installed on your machine
+To run the project locally, you need to have [Node.js](https://nodejs.org/en/), [Yarn](https://yarnpkg.com/) and [Vite](https://vite.dev/) installed on your machine
 
 ```bash
 git clone https://github.com/Kasui92/lucapattocchio.dev.git
@@ -27,7 +27,7 @@ yarn install
 yarn dev
 ```
 
-The above commands will start the application on http://localhost:3000/
+The above commands will start the application on `http://localhost:5173/`
 
 ## License
 
