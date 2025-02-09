@@ -4,6 +4,7 @@ import { NavLink } from 'react-router'
 import { routes, RoutesEntry } from '../data/routes'
 import { SocialEntry, socials } from '../data/socials'
 import { DownloadResumeInline } from './Buttons'
+import { EnvelopeIcon } from '@heroicons/react/24/solid'
 
 export const NavInline = (): ReactElement => (
     <nav>
@@ -67,6 +68,15 @@ export const SocialNav = (): ReactElement => (
                     </a>
                 </li>
             ))}
+            <li>
+                <a
+                    href={`mailto:luca.pattocchio@gmail.com`}
+                    className="text-silver-700/90 transition-colors duration-300 hover:text-green-700/90"
+                    title={`Send me an email`}
+                >
+                    <EnvelopeIcon className="h-6 w-6 transform transition-transform hover:rotate-12 hover:scale-110" />
+                </a>
+            </li>
         </ul>
     </nav>
 )
