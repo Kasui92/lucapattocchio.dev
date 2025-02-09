@@ -47,6 +47,15 @@ const projects: Array<Project> = [
         viewSourceUrl: 'https://github.com/Kasui92/lucapattocchio.dev',
         technologies: ['React', 'Typescript', 'TailwindCSS'],
     },
+    {
+        title: 'Slice & Dice',
+        description:
+            'A small directory of game systems for aspiring play by chat admin. This is a porting of the original project built with WordPress, now with Next.js & MDX.',
+        image: '/projects/slicendice.png',
+        url: 'https://slicendice.vercel.app/',
+        viewSourceUrl: 'https://github.com/slice-dice/website',
+        technologies: ['Next.js', 'MDX', 'TailwindCSS', 'Typescript'],
+    },
 ]
 
 export default projects
