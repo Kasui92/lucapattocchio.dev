@@ -1,10 +1,4 @@
-import {
-    IconBrandGithubFilled,
-    IconBrandGitlab,
-    IconBrandLinkedinFilled,
-    IconBrandBluesky,
-    TablerIcon,
-} from '@tabler/icons-react'
+import { IconBrandGithub, IconBrandGitlab, IconBrandLinkedin, IconBrandBluesky, TablerIcon } from '@tabler/icons-react'
 
 export interface SocialEntry {
     label: string
@@ -19,7 +13,7 @@ export const socials: Record<string, SocialEntry> = {
     github: {
         label: 'Github',
         url: 'https://github.com/Kasui92',
-        icon: IconBrandGithubFilled,
+        icon: IconBrandGithub,
     },
     gitlab: {
         label: 'Gitlab',
@@ -29,7 +23,7 @@ export const socials: Record<string, SocialEntry> = {
     linkedin: {
         label: 'Linkedin',
         url: 'https://www.linkedin.com/in/lucapattocchio/',
-        icon: IconBrandLinkedinFilled,
+        icon: IconBrandLinkedin,
     },
     bluesky: {
         label: 'Bluesky',
