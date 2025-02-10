@@ -15,6 +15,7 @@
 - **Development**: [Vite](https://vite.dev/)
 - **Deployment**: [Netlify](https://www.netlify.com/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com)
+- **Icons**: [Tabler Icons](https://tabler.io/icons)
 
 ## Running Locally
 

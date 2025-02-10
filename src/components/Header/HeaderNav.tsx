@@ -2,7 +2,7 @@ import { ReactElement, useState } from 'react'
 import { NavProfilePic } from '../ProfilePic'
 import { NavInline, Nav } from '../Nav'
 
-import { Bars3Icon } from '@heroicons/react/24/outline'
+import { IconMenu2 } from '@tabler/icons-react'
 
 /**
  * HeaderNav
@@ -29,7 +29,7 @@ export const HeaderNav = (): ReactElement => {
                             type="button"
                             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
                         >
-                            <Bars3Icon className="h-6 w-6 text-silver-900/90" />
+                            <IconMenu2 className="h-6 w-6 text-silver-900/90" />
                         </button>
                     </div>
                 </div>

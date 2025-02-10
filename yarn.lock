@@ -358,11 +358,6 @@
   dependencies:
     levn "^0.4.1"
 
-"@heroicons/react@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-2.2.0.tgz#0c05124af50434a800773abec8d3af6a297d904b"
-  integrity sha512-LMcepvRaS9LYHJGsF0zzmgKCUim/X3N/DQKc4jepAXJ7l8QxJ1PmxJzqplF2Z3FE4PqBAIGyJAQ/w4B5dsqbtQ==
-
 "@humanfs/core@^0.19.1":
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/@humanfs/core/-/core-0.19.1.tgz#17c55ca7d426733fe3c561906b8173c336b40a77"
@@ -555,6 +550,18 @@
   version "4.27.4"
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.27.4.tgz#67d516613c9f2fe42e2d8b78e252d0003179d92c"
   integrity sha512-3j4jx1TppORdTAoBJRd+/wJRGCPC0ETWkXOecJ6PPZLj6SptXkrXcNqdj0oclbKML6FkQltdz7bBA3rUSirZug==
+
+"@tabler/icons-react@^3.30.0":
+  version "3.30.0"
+  resolved "https://registry.yarnpkg.com/@tabler/icons-react/-/icons-react-3.30.0.tgz#38159e19aa0c743182796193dd0bef6595de9a29"
+  integrity sha512-9KZ9D1UNAyjlLkkYp2HBPHdf6lAJ2aelDqh8YYAnnmLF3xwprWKxxW8+zw5jlI0IwdfN4XFFuzqePkaw+DpIOg==
+  dependencies:
+    "@tabler/icons" "3.30.0"
+
+"@tabler/icons@3.30.0":
+  version "3.30.0"
+  resolved "https://registry.yarnpkg.com/@tabler/icons/-/icons-3.30.0.tgz#4f80f52cc6355b440a4ee0dadd4c3e3775e50663"
+  integrity sha512-c8OKLM48l00u9TFbh2qhSODMONIzML8ajtCyq95rW8vzkWcBrKRPM61tdkThz2j4kd5u17srPGIjqdeRUZdfdw==
 
 "@types/babel__core@^7.20.5":
   version "7.20.5"

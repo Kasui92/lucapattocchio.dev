@@ -4,7 +4,7 @@ import { NavLink } from 'react-router'
 import { routes, RoutesEntry } from '../data/routes'
 import { SocialEntry, socials } from '../data/socials'
 import { DownloadResumeInline } from './Buttons'
-import { EnvelopeIcon } from '@heroicons/react/24/solid'
+import { IconMail } from '@tabler/icons-react'
 
 export const NavInline = (): ReactElement => (
     <nav>
@@ -53,28 +53,28 @@ export const Nav = (): ReactElement => (
 export const SocialNav = (): ReactElement => (
     <nav>
         <ul className="flex space-x-4">
-            {Object.entries(socials as Record<string, SocialEntry>).map(([key, { label, url, icon }]) => (
-                <li key={key}>
-                    <a
-                        href={url}
-                        className="text-silver-700/90 transition-colors duration-300 hover:text-green-700/90"
-                        title={`Go to ${label}`}
-                    >
-                        <img
-                            className={`h-6 w-6 transform transition-transform hover:rotate-12 hover:scale-110`}
-                            src={icon}
-                            alt={label}
-                        />
-                    </a>
-                </li>
-            ))}
+            {Object.entries(socials as Record<string, SocialEntry>).map(([key, { label, url, icon }]) => {
+                const SocialIcon = icon
+
+                return (
+                    <li key={key}>
+                        <a
+                            href={url}
+                            className="text-silver-700/90 transition-colors duration-300 hover:text-green-700/90"
+                            title={`Go to ${label}`}
+                        >
+                            <SocialIcon className="h-6 w-6 transform text-silver-700/90 transition-transform hover:rotate-12 hover:scale-110" />
+                        </a>
+                    </li>
+                )
+            })}
             <li>
                 <a
                     href={`mailto:luca.pattocchio@gmail.com`}
                     className="text-silver-700/90 transition-colors duration-300 hover:text-green-700/90"
-                    title={`Send me an email`}
+                    title={`Send me an email! 📧`}
                 >
-                    <EnvelopeIcon className="h-6 w-6 transform transition-transform hover:rotate-12 hover:scale-110" />
+                    <IconMail className="h-6 w-6 transform text-silver-700/90 transition-transform hover:rotate-12 hover:scale-110" />
                 </a>
             </li>
         </ul>

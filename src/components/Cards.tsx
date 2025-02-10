@@ -1,8 +1,7 @@
 import { ReactElement } from 'react'
 import { date2Period } from '../lib/utils'
 
-import { ArrowTopRightOnSquareIcon, BriefcaseIcon, CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline'
-import githubIcon from '../assets/images/socials/github.svg'
+import { IconExternalLink, IconBrandGithub, IconBriefcase, IconCalendar, IconMap } from '@tabler/icons-react'
 
 import { Expercience } from '../data/experiences'
 import { Project } from '../data/projects'
@@ -29,20 +28,20 @@ export const ExperienceCard = ({ experience }: { experience: Expercience }): Rea
             </div>
             <div className="flex w-full flex-col gap-x-2 text-sm text-silver-700/70">
                 <div className="flex space-x-1">
-                    <CalendarIcon className="h-4 w-4" />
+                    <IconCalendar className="h-4 w-4" />
                     <span>{date2Period(experience.startDate)}</span>
                     <span>-</span>
                     {experience.endDate ? <span>{date2Period(experience.endDate)}</span> : <span>Present</span>}
                 </div>
                 {experience.location && (
                     <div className="flex items-center space-x-1">
-                        <MapPinIcon className="h-4 w-4" />
+                        <IconMap className="h-4 w-4" />
                         <span>{experience.location}</span>
                     </div>
                 )}
                 {experience.workExperience && (
                     <div className="flex items-center space-x-1">
-                        <BriefcaseIcon className="h-4 w-4" />
+                        <IconBriefcase className="h-4 w-4" />
                         <span className="font-semibold">{experience.workExperience}</span>
                     </div>
                 )}
@@ -83,7 +82,7 @@ export const ProjectsCard = ({ project }: { project: Project }): ReactElement =>
                         className="text-green-500/90 hover:underline"
                     >
                         <span className="flex items-center gap-1">
-                            <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+                            <IconExternalLink className="h-4 w-4" />
                             Visit
                         </span>
                     </a>
@@ -95,7 +94,7 @@ export const ProjectsCard = ({ project }: { project: Project }): ReactElement =>
                             className="text-green-500/90 hover:underline"
                         >
                             <span className="flex items-center gap-1">
-                                <img src={githubIcon} alt="GitHub" className="h-4 w-4" />
+                                <IconBrandGithub className="h-4 w-4" />
                                 Source
                             </span>
                         </a>
