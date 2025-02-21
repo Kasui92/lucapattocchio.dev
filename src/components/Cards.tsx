@@ -1,7 +1,7 @@
-import { ReactElement } from 'react'
+import { Fragment, ReactElement } from 'react'
 import { date2Period } from '../lib/utils'
 
-import { IconExternalLink, IconBrandGithub, IconBriefcase, IconCalendar, IconMap } from '@tabler/icons-react'
+import { IconExternalLink, IconBrandGithub, IconBriefcase, IconCalendar, IconMap, IconFolderCode } from '@tabler/icons-react'
 
 import { Expercience } from '../data/experiences'
 import { Project } from '../data/projects'
@@ -46,6 +46,31 @@ export const ExperienceCard = ({ experience }: { experience: Expercience }): Rea
                     </div>
                 )}
                 {experience?.description && <div className="mt-2 flex text-silver-700/70">{experience.description}</div>}
+                {experience?.projects && (
+                    <div className="mt-2 flex items-center space-x-1">
+                        <IconFolderCode className="h-4 w-4" />
+                        <div className="flex flex-wrap gap-1">
+                            <span className="font-semibold">Projects</span>:
+                            {experience.projects.map((project, index) => (
+                                <Fragment key={index}>
+                                    {index > 0 && <span>, </span>}
+                                    <a
+                                        href={project.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="underline-transition text-green-500/90 after:bg-green-500/90"
+                                        title={`Visit ${project.title}`}
+                                    >
+                                        <span className="flex items-center gap-1">
+                                            <IconExternalLink className="h-4 w-4" />
+                                            {project.title}
+                                        </span>
+                                    </a>
+                                </Fragment>
+                            ))}
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     )
@@ -58,6 +83,7 @@ export const ProjectsCard = ({ project }: { project: Project }): ReactElement =>
                 <img
                     src={project.image}
                     alt={project.title}
+                    title={project.title}
                     className="h-36 w-full rounded-t-lg object-cover md:h-full md:rounded-lg"
                 />
             </div>
@@ -79,7 +105,8 @@ export const ProjectsCard = ({ project }: { project: Project }): ReactElement =>
                         href={project.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-green-500/90 hover:underline"
+                        className="underline-transition text-green-500/90 after:bg-green-500/90"
+                        title={`Visit ${project.title}`}
                     >
                         <span className="flex items-center gap-1">
                             <IconExternalLink className="h-4 w-4" />
@@ -91,7 +118,8 @@ export const ProjectsCard = ({ project }: { project: Project }): ReactElement =>
                             href={project.viewSourceUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-green-500/90 hover:underline"
+                            className="underline-transition text-green-500/90 after:bg-green-500/90"
+                            title={`View source code of ${project.title}`}
                         >
                             <span className="flex items-center gap-1">
                                 <IconBrandGithub className="h-4 w-4" />

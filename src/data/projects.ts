@@ -18,26 +18,13 @@ export interface ProjectTag {
  */
 const projects: Array<Project> = [
     {
-        title: 'MonitorInCloud',
-        description: 'A powerful and flexible cloud-based CRM, with a focus on the sales department.',
-        image: '/projects/monitorincloud.png',
-        url: 'https://monitorincloud.it/',
-        technologies: ['Next.js', 'Bootstrap', 'PHP', 'MySQL', 'Docker'],
-    },
-    {
-        title: 'MonitorCRM',
-        description: 'A CRM for monitoring and managing the activities of a company.',
-        image: '/projects/monitorcrm.png',
-        url: 'https://monitorcrm.it/',
-        technologies: ['PHP', 'MySQL', 'Javascript', 'CSS'],
-    },
-    {
-        title: 'GDRCD',
-        description: 'A PHP framework for creating "play by chat role-playing game" browser games.',
-        image: '/projects/gdrcd.png',
-        url: 'https://lucapattocchio.altervista.org',
-        viewSourceUrl: 'https://github.com/GDRCD/GDRCD',
-        technologies: ['PHP', 'MySQL', 'Javascript', 'CSS', 'Docker'],
+        title: 'Slice & Dice',
+        description:
+            'A small directory of game systems for aspiring play by chat admin. This is a porting of the original project built with WordPress, now with Next.js & MDX.',
+        image: '/projects/slicendice.png',
+        url: 'https://slicendice.vercel.app/',
+        viewSourceUrl: 'https://github.com/slice-dice/website',
+        technologies: ['Next.js', 'MDX', 'TailwindCSS', 'Typescript'],
     },
     {
         title: 'lucapattocchio.dev',
@@ -48,13 +35,12 @@ const projects: Array<Project> = [
         technologies: ['React', 'Typescript', 'TailwindCSS'],
     },
     {
-        title: 'Slice & Dice',
-        description:
-            'A small directory of game systems for aspiring play by chat admin. This is a porting of the original project built with WordPress, now with Next.js & MDX.',
-        image: '/projects/slicendice.png',
-        url: 'https://slicendice.vercel.app/',
-        viewSourceUrl: 'https://github.com/slice-dice/website',
-        technologies: ['Next.js', 'MDX', 'TailwindCSS', 'Typescript'],
+        title: 'GDRCD',
+        description: 'A PHP framework for creating "play by chat role-playing game" browser games.',
+        image: '/projects/gdrcd.png',
+        url: 'https://lucapattocchio.altervista.org',
+        viewSourceUrl: 'https://github.com/GDRCD/GDRCD',
+        technologies: ['PHP', 'MySQL', 'Javascript', 'CSS', 'Docker'],
     },
 ]
 
