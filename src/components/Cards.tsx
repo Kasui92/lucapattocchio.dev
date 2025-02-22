@@ -47,13 +47,17 @@ export const ExperienceCard = ({ experience }: { experience: Expercience }): Rea
                 )}
                 {experience?.description && <div className="mt-2 flex text-silver-700/70">{experience.description}</div>}
                 {experience?.projects && (
-                    <div className="mt-2 flex items-center space-x-1">
-                        <IconFolderCode className="h-4 w-4" />
+                    <div className="mt-2 flex items-start space-x-1 md:items-center">
+                        <div className="flex items-center space-x-1">
+                            <IconFolderCode className="h-4 w-4 flex-shrink-0" />
+                            <span className="font-semibold">
+                                Projects
+                            </span>:
+                        </div>
                         <div className="flex flex-wrap gap-1">
-                            <span className="font-semibold">Projects</span>:
                             {experience.projects.map((project, index) => (
                                 <Fragment key={index}>
-                                    {index > 0 && <span>, </span>}
+                                    {index > 0 && <span className="hidden md:block">, </span>}
                                     <a
                                         href={project.url}
                                         target="_blank"
