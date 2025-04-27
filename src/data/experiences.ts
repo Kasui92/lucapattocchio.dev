@@ -1,6 +1,6 @@
 import { Project } from './projects'
 
-export interface Expercience {
+export interface Experience {
     position: string
     company: string
     companyUrl?: string
@@ -12,7 +12,7 @@ export interface Expercience {
     projects?: Project[]
 }
 
-export const experiences: Expercience[] = [
+export const experiences: Experience[] = [
     {
         position: 'Full Stack Developer',
         company: 'Altuofianco',
