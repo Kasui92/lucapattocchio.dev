@@ -8,7 +8,7 @@ import { Project } from '../data/projects'
 
 export const ExperienceCard = ({ experience }: { experience: Expercience }): ReactElement => {
     return (
-        <div className="flex w-full flex-col rounded-lg border border-silver-700/50 px-4 py-2 shadow-sm transition duration-300 hover:scale-[1.01] hover:border-silver-700/70 hover:shadow-lg">
+        <div className="flex w-full flex-col rounded-lg border border-silver-700/50 px-4 py-2 shadow-xs transition duration-300 hover:scale-[1.01] hover:border-silver-700/70 hover:shadow-lg">
             <div className="flex w-full flex-wrap gap-x-1 font-semibold text-silver-700/90 lg:space-x-1">
                 <div className="whitespace-nowrap">
                     {experience.position}
@@ -49,7 +49,7 @@ export const ExperienceCard = ({ experience }: { experience: Expercience }): Rea
                 {experience?.projects && (
                     <div className="mt-2 flex items-start space-x-1 md:items-center">
                         <div className="flex items-center space-x-1">
-                            <IconFolderCode className="h-4 w-4 flex-shrink-0" />
+                            <IconFolderCode className="h-4 w-4 shrink-0" />
                             <span className="font-semibold">
                                 Projects
                             </span>:
@@ -82,7 +82,7 @@ export const ExperienceCard = ({ experience }: { experience: Expercience }): Rea
 
 export const ProjectsCard = ({ project }: { project: Project }): ReactElement => {
     return (
-        <div className="group flex h-full flex-col gap-4 rounded-lg border border-silver-700/50 p-0 shadow-sm transition duration-300 hover:scale-[1.01] hover:border-silver-700/70 hover:shadow-lg md:flex-row md:p-4">
+        <div className="group flex h-full flex-col gap-4 rounded-lg border border-silver-700/50 p-0 shadow-xs transition duration-300 hover:scale-[1.01] hover:border-silver-700/70 hover:shadow-lg md:flex-row md:p-4">
             <div className="relative h-full w-full md:w-48">
                 <img
                     src={project.image}
