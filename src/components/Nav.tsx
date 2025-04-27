@@ -72,7 +72,7 @@ export const SocialNav = (): ReactElement => (
             })}
             <li>
                 <a
-                    href={`mailto:luca.pattocchio@gmail.com`}
+                    href={`mailto:me@lucapattocchio.dev`}
                     className="text-silver-700/90 transition-colors duration-300 hover:text-green-700/90"
                     title={`Send me an email! 📧`}
                 >
