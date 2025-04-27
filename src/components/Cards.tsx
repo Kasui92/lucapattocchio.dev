@@ -3,13 +3,13 @@ import { date2Period } from '../lib/utils'
 
 import { IconExternalLink, IconBrandGithub, IconBriefcase, IconCalendar, IconMap, IconFolderCode } from '@tabler/icons-react'
 
-import { Expercience } from '../data/experiences'
+import { Experience } from '../data/experiences'
 import { Project } from '../data/projects'
 
-export const ExperienceCard = ({ experience }: { experience: Expercience }): ReactElement => {
+export const ExperienceCard = ({ experience }: { experience: Experience }): ReactElement => {
     return (
-        <div className="flex w-full flex-col rounded-lg border border-silver-700/50 px-4 py-2 shadow-sm transition duration-300 hover:scale-[1.01] hover:border-silver-700/70 hover:shadow-lg">
-            <div className="flex w-full flex-wrap gap-x-1 font-semibold text-silver-700/90 lg:space-x-1">
+        <div className="border-silver-700/50 hover:border-silver-700/70 flex w-full flex-col rounded-lg border px-4 py-2 shadow-xs transition duration-300 hover:scale-[1.01] hover:shadow-lg">
+            <div className="text-silver-700/90 flex w-full flex-wrap gap-x-1 font-semibold lg:space-x-1">
                 <div className="whitespace-nowrap">
                     {experience.position}
                     <span className="text-green-500/70"> @</span>
@@ -26,7 +26,7 @@ export const ExperienceCard = ({ experience }: { experience: Expercience }): Rea
                     </a>
                 </div>
             </div>
-            <div className="flex w-full flex-col gap-x-2 text-sm text-silver-700/70">
+            <div className="text-silver-700/70 flex w-full flex-col gap-x-2 text-sm">
                 <div className="flex space-x-1">
                     <IconCalendar className="h-4 w-4" />
                     <span>{date2Period(experience.startDate)}</span>
@@ -45,14 +45,12 @@ export const ExperienceCard = ({ experience }: { experience: Expercience }): Rea
                         <span className="font-semibold">{experience.workExperience}</span>
                     </div>
                 )}
-                {experience?.description && <div className="mt-2 flex text-silver-700/70">{experience.description}</div>}
+                {experience?.description && <div className="text-silver-700/70 mt-2 flex">{experience.description}</div>}
                 {experience?.projects && (
                     <div className="mt-2 flex items-start space-x-1 md:items-center">
                         <div className="flex items-center space-x-1">
-                            <IconFolderCode className="h-4 w-4 flex-shrink-0" />
-                            <span className="font-semibold">
-                                Projects
-                            </span>:
+                            <IconFolderCode className="h-4 w-4 shrink-0" />
+                            <span className="font-semibold">Projects</span>:
                         </div>
                         <div className="flex flex-wrap gap-1">
                             {experience.projects.map((project, index) => (
@@ -82,7 +80,7 @@ export const ExperienceCard = ({ experience }: { experience: Expercience }): Rea
 
 export const ProjectsCard = ({ project }: { project: Project }): ReactElement => {
     return (
-        <div className="group flex h-full flex-col gap-4 rounded-lg border border-silver-700/50 p-0 shadow-sm transition duration-300 hover:scale-[1.01] hover:border-silver-700/70 hover:shadow-lg md:flex-row md:p-4">
+        <div className="group border-silver-700/50 hover:border-silver-700/70 flex h-full flex-col gap-4 rounded-lg border p-0 shadow-xs transition duration-300 hover:scale-[1.01] hover:shadow-lg md:flex-row md:p-4">
             <div className="relative h-full w-full md:w-48">
                 <img
                     src={project.image}
@@ -93,12 +91,12 @@ export const ProjectsCard = ({ project }: { project: Project }): ReactElement =>
             </div>
             <div className="flex flex-1 flex-col gap-2 p-4 md:p-0">
                 <h4 className="text-silver-900/90 group-hover:text-green-500/90">{project.title}</h4>
-                <p className="text-sm text-silver-700/70">{project.description}</p>
+                <p className="text-silver-700/70 text-sm">{project.description}</p>
                 <div className="flex flex-wrap gap-1">
                     {project.technologies.map((technology) => (
                         <span
                             key={technology}
-                            className="rounded-xl bg-cerulean-500/20 px-2 py-1 text-sm text-cerulean-700/90"
+                            className="bg-cerulean-500/20 text-cerulean-700/90 rounded-xl px-2 py-1 text-sm"
                         >
                             {technology}
                         </span>

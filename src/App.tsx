@@ -17,10 +17,10 @@ export const App = (): ReactElement => {
     const location = useLocation()
 
     const [displayLocation, setDisplayLocation] = useState(location)
-    const [transitionStage, setTransistionStage] = useState('animate-slideInSection')
+    const [transitionStage, setTransitionStage] = useState('animate-slide-in-section')
 
     useEffect(() => {
-        if (location !== displayLocation) setTransistionStage('animate-slideOutSection')
+        if (location !== displayLocation) setTransitionStage('animate-slide-out-section')
     }, [location, displayLocation])
 
     return (
@@ -30,8 +30,8 @@ export const App = (): ReactElement => {
                 <main
                     className={`mt-24 flex-auto space-y-10 ${transitionStage}`}
                     onAnimationEnd={() => {
-                        if (transitionStage === 'animate-slideOutSection') {
-                            setTransistionStage('animate-slideInSection')
+                        if (transitionStage === 'animate-slide-out-section') {
+                            setTransitionStage('animate-slide-in-section')
                             setDisplayLocation(location)
                         }
                     }}
