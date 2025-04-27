@@ -50,10 +50,6 @@ export const About = (): ReactElement => {
                     ))}
                 </div>
             </section>
-
-            <div className="flex items-center justify-center">
-                <DownloadResume />
-            </div>
         </div>
     )
 }

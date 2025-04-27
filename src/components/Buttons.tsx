@@ -22,10 +22,13 @@ export const DownloadResumeInline = (): ReactElement => {
             href="/CV-LucaPattocchio.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-silver-700/90 transition duration-300 hover:text-cerulean-700/90"
+            className="group flex items-center gap-x-1 text-cerulean-600 transition duration-300 hover:text-cerulean-800"
             title="Download Resume"
         >
-            Resume
+            <span className="border-b border-dashed border-transparent font-medium transition-all group-hover:border-cerulean-800">
+                Resume
+            </span>
+            <IconDownload className="h-3.5 w-3.5 opacity-70 transition-transform group-hover:animate-bounce" />
         </a>
     )
 }
