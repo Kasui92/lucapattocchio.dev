@@ -1,6 +1,7 @@
-import { ReactElement, useRef } from 'react'
+import { ReactElement } from 'react'
 import clsx from 'clsx'
-import { useIntersection } from 'react-use'
+
+import { useInView } from 'react-intersection-observer'
 
 import { Hero } from './Hero'
 import { HeaderNav } from './HeaderNav'
@@ -10,31 +11,24 @@ import { HeaderNav } from './HeaderNav'
  * @returns {JSX.Element}
  */
 export const Header = (): ReactElement => {
-    const interserctionRef = useRef(null)
-    const intersection = useIntersection(interserctionRef, {
-        root: null,
+    const { ref, inView } = useInView({
         rootMargin: '-100px',
     })
 
-    // we do the reverse `intersection.isIntersecting` to ensure we show the
-    // correct state even before React initializes
-    // @source: https://github.com/delbaoliveira/website/blob/main/ui/IntersectionSwap.tsx
-    let showPrimary = false
-    if (intersection && !intersection.isIntersecting) {
-        showPrimary = true
-    }
+    // invert inView to show the primary header
+    const showPrimary = !inView
 
     return (
         <>
             <header
-                className={clsx('fixed left-0 top-6 z-30 w-full transition duration-75 will-change-transform', {
+                className={clsx('fixed top-6 left-0 z-30 w-full transition duration-75 will-change-transform', {
                     '-translate-y-2 scale-95 opacity-0': !showPrimary,
                     'opacity-100': showPrimary,
                 })}
             >
                 <HeaderNav />
             </header>
-            <div ref={interserctionRef}>
+            <div ref={ref}>
                 <div
                     className={clsx('transition duration-150 will-change-transform', {
                         '-translate-y-2 scale-[0.98] opacity-0': showPrimary,
