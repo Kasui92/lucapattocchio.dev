@@ -71,7 +71,7 @@ export const ProjectsCard = ({ project }: { project: Project }): ReactElement =>
                 />
             </div>
             <div className="flex flex-1 flex-col gap-2 p-4 md:p-0">
-                <h4 className="text-silver-900/90 group-hover:text-green-500/90">{project.title}</h4>
+                <h4 className="text-silver-900/90 font-semibold">{project.title}</h4>
                 <p className="text-silver-700/70 text-sm">{project.description}</p>
                 <div className="flex flex-wrap gap-1">
                     {project.technologies.map((technology) => (
@@ -83,12 +83,12 @@ export const ProjectsCard = ({ project }: { project: Project }): ReactElement =>
                         </span>
                     ))}
                 </div>
-                <div className="flex justify-between gap-2 md:justify-start">
+                <div className="flex justify-start gap-2">
                     <a
                         href={project.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline-transition text-green-500/90 after:bg-green-500/90"
+                        className="underline-transition text-green-700/90 after:bg-green-700/90"
                         title={`Visit ${project.title}`}
                     >
                         <span className="flex items-center gap-1">
@@ -101,7 +101,7 @@ export const ProjectsCard = ({ project }: { project: Project }): ReactElement =>
                             href={project.viewSourceUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="underline-transition text-green-500/90 after:bg-green-500/90"
+                            className="underline-transition text-green-700/90 after:bg-green-700/90"
                             title={`View source code of ${project.title}`}
                         >
                             <span className="flex items-center gap-1">
