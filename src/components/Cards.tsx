@@ -1,7 +1,7 @@
 import { Fragment, ReactElement } from 'react'
 import { date2Period } from '../lib/utils'
 
-import { IconExternalLink, IconBrandGithub, IconBriefcase, IconCalendar, IconMap, IconFolderCode } from '@tabler/icons-react'
+import { IconExternalLink, IconBrandGithub, IconCalendar, IconFolderCode, IconMapPin } from '@tabler/icons-react'
 
 import { Experience } from '../data/experiences'
 import { Project } from '../data/projects'
@@ -9,22 +9,9 @@ import { Project } from '../data/projects'
 export const ExperienceCard = ({ experience }: { experience: Experience }): ReactElement => {
     return (
         <div className="border-silver-700/50 hover:border-silver-700/70 flex w-full flex-col rounded-lg border px-4 py-2 shadow-xs transition duration-300 hover:scale-[1.01] hover:shadow-lg">
-            <div className="text-silver-700/90 flex w-full flex-wrap gap-x-1 font-semibold lg:space-x-1">
-                <div className="whitespace-nowrap">
-                    {experience.position}
-                    <span className="text-green-500/70"> @</span>
-                </div>
-                <div className="whitespace-nowrap">
-                    <a
-                        href={experience.companyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title={`Visit ${experience.company}`}
-                        className="underline-transition after:bg-silver-700/90"
-                    >
-                        {experience.company}
-                    </a>
-                </div>
+            <div className="text-silver-700/90 flex w-full flex-col flex-wrap">
+                <div className="font-semibold whitespace-nowrap">{experience.company}</div>
+                <div className="whitespace-nowrap">{experience.position}</div>
             </div>
             <div className="text-silver-700/70 flex w-full flex-col gap-x-2 text-sm">
                 <div className="flex space-x-1">
@@ -35,14 +22,8 @@ export const ExperienceCard = ({ experience }: { experience: Experience }): Reac
                 </div>
                 {experience.location && (
                     <div className="flex items-center space-x-1">
-                        <IconMap className="h-4 w-4" />
+                        <IconMapPin className="h-4 w-4" />
                         <span>{experience.location}</span>
-                    </div>
-                )}
-                {experience.workExperience && (
-                    <div className="flex items-center space-x-1">
-                        <IconBriefcase className="h-4 w-4" />
-                        <span className="font-semibold">{experience.workExperience}</span>
                     </div>
                 )}
                 {experience?.description && <div className="text-silver-700/70 mt-2 flex">{experience.description}</div>}
@@ -60,7 +41,7 @@ export const ExperienceCard = ({ experience }: { experience: Experience }): Reac
                                         href={project.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="underline-transition text-green-500/90 after:bg-green-500/90"
+                                        className="underline-transition text-green-700/90 after:bg-green-700/90"
                                         title={`Visit ${project.title}`}
                                     >
                                         <span className="flex items-center gap-1">

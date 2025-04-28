@@ -70,8 +70,6 @@
     --color-green-900: #d8e5df;
     --color-green: #496f5d;
 
-    --color-altuofianco: #067da0;
-
     @keyframes slideInSection {
         0% {
             opacity: 0;
