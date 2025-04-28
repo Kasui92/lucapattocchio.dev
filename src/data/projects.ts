@@ -18,6 +18,15 @@ export interface ProjectTag {
  */
 const projects: Array<Project> = [
     {
+        title: 'omarell',
+        description:
+            'Omarell is a customized fork of Omakub that offers additional personalizations for an even more refined Linux experience.',
+        image: '/projects/omarell.png',
+        url: 'https://lucapattocchio.dev/omarell',
+        viewSourceUrl: 'https://github.com/Kasui92/omarell',
+        technologies: ['Shell'],
+    },
+    {
         title: 'Slice & Dice',
         description:
             'A small directory of game systems for aspiring play by chat admin. This is a porting of the original project built with WordPress, now with Next.js & MDX.',
