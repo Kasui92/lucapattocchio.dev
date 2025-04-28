@@ -11,19 +11,10 @@ export const Hero = (): ReactElement => (
             <HeroProfilePic />
 
             <div className="mt-2">
-                <h1 className="text-3xl font-semibold leading-none text-silver-900/90">Luca Pattocchio</h1>
-                <h2 className="mt-2 items-center space-y-2 text-lg font-medium leading-none text-silver-700/50 lg:mt-0 lg:flex lg:space-x-2 lg:space-y-0">
+                <h1 className="text-silver-900/90 text-3xl leading-none font-semibold">Luca Pattocchio</h1>
+                <h2 className="text-silver-700/50 mt-2 items-center space-y-2 text-lg leading-none font-medium lg:mt-0 lg:flex lg:space-y-0 lg:space-x-2">
                     <div className="whitespace-nowrap">
-                        <span>Full Stack Developer @</span>
-                    </div>
-                    <div className="whitespace-nowrap">
-                        <a
-                            href={`https://altuofianco.it`}
-                            className="underline-transition font-bold text-altuofianco after:bg-altuofianco"
-                            title={`Go to Altuofianco website`}
-                        >
-                            Altuofianco
-                        </a>
+                        <span>Full Stack Developer</span>
                     </div>
                 </h2>
             </div>
