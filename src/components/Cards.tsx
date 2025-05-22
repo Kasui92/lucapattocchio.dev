@@ -1,10 +1,19 @@
 import { Fragment, ReactElement } from 'react'
 import { date2Period } from '../lib/utils'
 
-import { IconExternalLink, IconBrandGithub, IconCalendar, IconFolderCode, IconMapPin } from '@tabler/icons-react'
+import {
+    IconExternalLink,
+    IconBrandGithub,
+    IconCalendar,
+    IconFolderCode,
+    IconMapPin,
+    IconArrowRight,
+} from '@tabler/icons-react'
 
 import { Experience } from '../data/experiences'
 import { Project } from '../data/projects'
+import { NavLink } from 'react-router'
+import { Article } from '../data/articles'
 
 export const ExperienceCard = ({ experience }: { experience: Experience }): ReactElement => {
     return (
@@ -112,6 +121,36 @@ export const ProjectsCard = ({ project }: { project: Project }): ReactElement =>
                     )}
                 </div>
             </div>
+        </div>
+    )
+}
+
+export const BlogCard = ({ article }: { article: Article }): ReactElement => {
+    return (
+        <div className="border-silver-700/50 hover:border-silver-700/70 flex flex-col rounded-lg border p-4 text-left shadow-xs transition duration-300 hover:scale-[1.01] hover:shadow-lg">
+            <div className="text-silver-500 mb-2 flex items-center space-x-1 text-xs">
+                <span>
+                    {new Date(article.date).toLocaleDateString(undefined, {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                    })}
+                </span>
+            </div>
+            <NavLink
+                to={`/blog/${article.id}`}
+                className="h4 text-silver-900/90 text-lg font-semibold transition-colors duration-300 hover:text-green-700/90"
+            >
+                {article.title}
+            </NavLink>
+            <p className="text-silver-700/70 mt-1 text-sm">{article.description}</p>
+            <NavLink
+                to={`/blog/${article.id}`}
+                className="group mt-2 flex items-center text-sm font-semibold text-green-700/90 transition-colors duration-300 hover:text-green-900/70"
+            >
+                Read more
+                <IconArrowRight className="group-hover:animate-bounce-x ml-1 h-4 w-4" />
+            </NavLink>
         </div>
     )
 }

@@ -7,6 +7,8 @@ import { Header } from './components/Header'
 // Routes
 import { About } from './routes/About'
 import { Projects } from './routes/Projects'
+import { Blog } from './routes/Blog'
+import { Articles } from './routes/Articles'
 import { NotFound } from './routes/NotFound'
 
 /**
@@ -20,7 +22,7 @@ export const App = (): ReactElement => {
     const [transitionStage, setTransitionStage] = useState('animate-slide-in-section')
 
     useEffect(() => {
-        if (location !== displayLocation) setTransitionStage('animate-slide-out-section')
+        if (location?.pathname !== displayLocation?.pathname) setTransitionStage('animate-slide-out-section')
     }, [location, displayLocation])
 
     return (
@@ -39,6 +41,10 @@ export const App = (): ReactElement => {
                     <Routes location={displayLocation}>
                         <Route index element={<About />} />
                         <Route path="projects" element={<Projects />} />
+                        <Route path="blog">
+                            <Route index element={<Blog />} />
+                            <Route path=":articleId" element={<Articles />} />
+                        </Route>
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </main>

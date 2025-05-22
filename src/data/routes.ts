@@ -12,4 +12,8 @@ export const routes: Record<string, RoutesEntry> = {
         label: 'Projects',
         url: '/projects',
     },
+    blog: {
+        label: 'Blog',
+        url: '/blog',
+    },
 }
