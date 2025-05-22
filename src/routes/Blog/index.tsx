@@ -18,9 +18,18 @@ export const Blog = (): ReactElement => {
                     a completely insignificant way to the web chaos. <br />
                     After all, everyone has a blog nowadays, <span className="italic">so why not me?</span>
                 </p>
-                <div className="mt-6 grid w-full grid-cols-1 gap-4">
-                    {sortedArticles && sortedArticles.map((article, index) => <BlogCard key={index} article={article} />)}
-                </div>
+                {sortedArticles && sortedArticles.length > 0 ? (
+                    <div className="mt-6 grid w-full grid-cols-1 gap-4">
+                        {sortedArticles &&
+                            sortedArticles.map((article, index) => <BlogCard key={index} article={article} />)}
+                    </div>
+                ) : (
+                    <div className="mt-6 flex w-full justify-center">
+                        <p className="text-silver-700/70 text-md text-center leading-7 font-semibold">
+                            No articles available at the moment. Please check back later!
+                        </p>
+                    </div>
+                )}
             </section>
         </div>
     )
