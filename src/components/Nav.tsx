@@ -62,10 +62,12 @@ export const SocialNav = (): ReactElement => (
                     <li key={key}>
                         <a
                             href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="text-silver-700/90 transition-colors duration-300 hover:text-green-700/90"
                             title={`Go to ${label}`}
                         >
-                            <SocialIcon className="h-6 w-6 transform text-silver-700/90 transition-transform hover:rotate-12 hover:scale-110" />
+                            <SocialIcon className="text-silver-700/90 h-6 w-6 transform transition-transform hover:scale-110 hover:rotate-12" />
                         </a>
                     </li>
                 )
@@ -76,7 +78,7 @@ export const SocialNav = (): ReactElement => (
                     className="text-silver-700/90 transition-colors duration-300 hover:text-green-700/90"
                     title={`Send me an email! 📧`}
                 >
-                    <IconMail className="h-6 w-6 transform text-silver-700/90 transition-transform hover:rotate-12 hover:scale-110" />
+                    <IconMail className="text-silver-700/90 h-6 w-6 transform transition-transform hover:scale-110 hover:rotate-12" />
                 </a>
             </li>
         </ul>
