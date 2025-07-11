@@ -47,7 +47,7 @@ const projects: Array<Project> = [
         title: 'GDRCD',
         description: 'A PHP framework for creating "play by chat role-playing game" browser games.',
         image: '/projects/gdrcd.png',
-        url: 'https://lucapattocchio.altervista.org',
+        url: 'https://gdrcd.lucapattocchio.dev/',
         viewSourceUrl: 'https://github.com/GDRCD/GDRCD',
         technologies: ['PHP', 'MySQL', 'Javascript', 'CSS', 'Docker'],
     },
