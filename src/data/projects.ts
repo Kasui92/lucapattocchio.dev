@@ -4,7 +4,7 @@ export interface Project {
     title: string
     description: string
     image?: string
-    url: string
+    url?: string
     viewSourceUrl?: string
     technologies: Array<StackEntry['label']>
 }
@@ -18,11 +18,18 @@ export interface ProjectTag {
  */
 const projects: Array<Project> = [
     {
+        title: 'omakasui',
+        description: 'A curated collection of resources and tools for Linux enthusiasts.',
+        image: '/projects/omakasui.jpg',
+        url: 'https://omakasui.lucapattocchio.dev',
+        viewSourceUrl: 'https://github.com/Kasui92/omakasui.lucapattocchio.dev.git',
+        technologies: ['HTML', 'CSS', 'Javascript'],
+    },
+    {
         title: 'omarell',
         description:
             'Omarell is a customized fork of Omakub that offers additional personalizations for an even more refined Linux experience.',
         image: '/projects/omarell.png',
-        url: 'https://lucapattocchio.dev/omarell',
         viewSourceUrl: 'https://github.com/Kasui92/omarell',
         technologies: ['Shell'],
     },
