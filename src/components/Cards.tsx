@@ -93,18 +93,20 @@ export const ProjectsCard = ({ project }: { project: Project }): ReactElement =>
                     ))}
                 </div>
                 <div className="flex justify-start gap-2">
-                    <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline-transition text-green-700/90 after:bg-green-700/90"
-                        title={`Visit ${project.title}`}
-                    >
-                        <span className="flex items-center gap-1">
-                            <IconExternalLink className="h-4 w-4" />
-                            Visit
-                        </span>
-                    </a>
+                    {project.url && (
+                        <a
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline-transition text-green-700/90 after:bg-green-700/90"
+                            title={`Visit ${project.title}`}
+                        >
+                            <span className="flex items-center gap-1">
+                                <IconExternalLink className="h-4 w-4" />
+                                Visit
+                            </span>
+                        </a>
+                    )}
                     {project.viewSourceUrl && (
                         <a
                             href={project.viewSourceUrl}
