@@ -21,8 +21,8 @@ const projects: Array<Project> = [
         title: 'omakasui',
         description: 'A curated collection of resources and tools for Linux enthusiasts.',
         image: '/projects/omakasui.jpg',
-        url: 'https://omakasui.lucapattocchio.dev',
-        viewSourceUrl: 'https://github.com/Kasui92/omakasui.lucapattocchio.dev.git',
+        url: 'https://omakasui.org',
+        viewSourceUrl: 'https://github.com/Kasui92/omakasui.org.git',
         technologies: ['HTML', 'CSS', 'Javascript'],
     },
     {
