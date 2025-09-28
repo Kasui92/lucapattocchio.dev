@@ -23,15 +23,7 @@ const projects: Array<Project> = [
         image: '/projects/omakasui.jpg',
         url: 'https://omakasui.org',
         viewSourceUrl: 'https://github.com/Kasui92/omakasui.org.git',
-        technologies: ['HTML', 'CSS', 'Javascript'],
-    },
-    {
-        title: 'omarell',
-        description:
-            'Omarell is a customized fork of Omakub that offers additional personalizations for an even more refined Linux experience.',
-        image: '/projects/omarell.png',
-        viewSourceUrl: 'https://github.com/Kasui92/omarell',
-        technologies: ['Shell'],
+        technologies: ['Astro', 'TailwindCSS', 'Typescript', ' Shell'],
     },
     {
         title: 'Slice & Dice',
