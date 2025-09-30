@@ -19,13 +19,13 @@
 
 ## Running Locally
 
-To run the project locally, you need to have [Node.js](https://nodejs.org/en/), [Yarn](https://yarnpkg.com/) and [Vite](https://vite.dev/) installed on your machine
+To run the project locally, you need to have [Node.js](https://nodejs.org/en/), [pnpm](https://pnpm.io/) and [Vite](https://vite.dev/) installed on your machine
 
 ```bash
 git clone https://github.com/Kasui92/lucapattocchio.dev.git
 cd lucapattocchio.dev
-yarn install
-yarn dev
+pnpm i
+pnpm dev
 ```
 
 The above commands will start the application on `http://localhost:5173/`
