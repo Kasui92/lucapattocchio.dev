@@ -30,7 +30,7 @@ const projects: Array<Project> = [
         description:
             'A small directory of game systems for aspiring play by chat admin. This is a porting of the original project built with WordPress, now with Next.js & MDX.',
         image: '/projects/slicendice.png',
-        url: 'https://slicendice.vercel.app/',
+        url: 'https://slicendice.it/',
         viewSourceUrl: 'https://github.com/slice-dice/website',
         technologies: ['Next.js', 'MDX', 'TailwindCSS', 'Typescript'],
     },
