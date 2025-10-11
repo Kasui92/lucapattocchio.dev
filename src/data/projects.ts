@@ -25,7 +25,7 @@ const projects: Array<Project> = [
         technologies: ['Astro', 'TailwindCSS', 'Typescript'],
     },
     {
-        title: 'omakasui',
+        title: 'omakasui.org',
         description: 'A curated collection of resources and tools for Linux enthusiasts.',
         image: '/projects/omakasui.jpg',
         url: 'https://omakasui.org',
