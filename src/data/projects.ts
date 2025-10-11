@@ -26,7 +26,7 @@ const projects: Array<Project> = [
         technologies: ['Astro', 'TailwindCSS', 'Typescript', ' Shell'],
     },
     {
-        title: 'Slice & Dice',
+        title: 'slicendice.it',
         description:
             'A small directory of game systems for aspiring play by chat admin. This is a porting of the original project built with WordPress, now with Next.js & MDX.',
         image: '/projects/slicendice.png',
