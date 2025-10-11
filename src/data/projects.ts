@@ -18,6 +18,13 @@ export interface ProjectTag {
  */
 const projects: Array<Project> = [
     {
+        title: 'giornogaming.it',
+        description: 'GiornoGaming’s website, home of an Italian video game streamer and content creator.',
+        image: '/projects/giornogaming.jpg',
+        url: 'https://giornogaming.it',
+        technologies: ['Astro', 'TailwindCSS', 'Typescript'],
+    },
+    {
         title: 'omakasui',
         description: 'A curated collection of resources and tools for Linux enthusiasts.',
         image: '/projects/omakasui.jpg',
