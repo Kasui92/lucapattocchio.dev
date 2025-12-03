@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useState } from 'react'
+import { ReactElement, useState } from 'react'
 import { Route, Routes, useLocation } from 'react-router'
 
 import { Footer } from './components/Footer'
@@ -21,18 +21,17 @@ export const App = (): ReactElement => {
     const [displayLocation, setDisplayLocation] = useState(location)
     const [transitionStage, setTransitionStage] = useState('animate-slide-in-section')
 
-    useEffect(() => {
-        if (location?.pathname !== displayLocation?.pathname) setTransitionStage('animate-slide-out-section')
-    }, [location, displayLocation])
+    const isTransitioning = location?.pathname !== displayLocation?.pathname
+    const currentTransitionStage = isTransitioning ? 'animate-slide-out-section' : transitionStage
 
     return (
         <>
             <div className="relative z-10 mx-auto flex w-full max-w-2xl flex-col px-4 pt-12 xl:px-0">
                 <Header />
                 <main
-                    className={`mt-24 flex-auto space-y-10 ${transitionStage}`}
+                    className={`mt-24 flex-auto space-y-10 ${currentTransitionStage}`}
                     onAnimationEnd={() => {
-                        if (transitionStage === 'animate-slide-out-section') {
+                        if (currentTransitionStage === 'animate-slide-out-section') {
                             setTransitionStage('animate-slide-in-section')
                             setDisplayLocation(location)
                         }
