@@ -1,15 +1,20 @@
-import { cache, lazy, ReactElement, Suspense, useEffect, useMemo, useState } from 'react'
+import { createElement, lazy, ReactElement, Suspense, useMemo } from 'react'
 import { useParams, Link } from 'react-router'
 import { ErrorBoundary } from 'react-error-boundary'
 import { articles } from '../../data/articles'
 
-const loadMDXComponent = cache(async (slug: string) => {
-    try {
-        return await import(`../../../articles/${slug}.mdx`)
-    } catch (_err) {
-        throw new Error(`Failed to load article: ${slug}`)
+// Module-level cache for lazy components
+const mdxComponentCache = new Map<string, React.LazyExoticComponent<React.ComponentType>>()
+
+function getLazyMDXComponent(slug: string) {
+    if (!mdxComponentCache.has(slug)) {
+        mdxComponentCache.set(
+            slug,
+            lazy(() => import(`../../../articles/${slug}.mdx`)),
+        )
     }
-})
+    return mdxComponentCache.get(slug)!
+}
 
 interface ArticleNotFoundProps {
     error: Error
@@ -64,9 +69,12 @@ function ArticleError({ error, resetErrorBoundary, status = '500' }: ArticleNotF
     )
 }
 
-function MDXRenderer({ slug }: { slug: string }) {
-    const MDXComponent = useMemo(() => lazy(() => loadMDXComponent(slug)), [slug])
+function MDXContent({ slug }: { slug: string }) {
+    const LazyComponent = getLazyMDXComponent(slug)
+    return createElement(LazyComponent)
+}
 
+function MDXRenderer({ slug }: { slug: string }) {
     const article = useMemo(() => {
         return articles.find((article) => article.id === slug)
     }, [slug])
@@ -100,7 +108,7 @@ function MDXRenderer({ slug }: { slug: string }) {
                     <p className="text-silver-600/70 mt-0 mb-6 text-center text-base italic">{article.description}</p>
                 )}
                 <Suspense fallback={<div className="loading-ellipsis py-8 italic">Loading</div>}>
-                    <MDXComponent />
+                    <MDXContent slug={slug} />
                 </Suspense>
             </article>
         </ErrorBoundary>
@@ -109,35 +117,26 @@ function MDXRenderer({ slug }: { slug: string }) {
 
 export const Articles = (): ReactElement => {
     const { articleId } = useParams()
-    const [activeArticleId, setActiveArticleId] = useState<string | null>(null)
 
     const articleExists = useMemo(() => {
         if (!articleId) return false
         return articles.some((article) => article.id === articleId)
     }, [articleId])
 
-    useEffect(() => {
-        if (articleId && articleExists) {
-            setActiveArticleId(articleId)
-        }
-    }, [articleId, articleExists])
-
-    const currentArticleId = articleId || activeArticleId
-
     return (
         <div className="space-y-16">
             <section className="container flex flex-col items-center">
-                {articleId && !articleExists ? (
+                {!articleId ? (
+                    <ArticleError error={new Error('No article selected')} resetErrorBoundary={() => {}} status="404" />
+                ) : !articleExists ? (
                     <ArticleError
                         error={new Error(`The article "${articleId}" does not exist`)}
                         resetErrorBoundary={() => {}}
                         status="404"
                     />
-                ) : !articleId && !activeArticleId ? (
-                    <ArticleError error={new Error('No article selected')} resetErrorBoundary={() => {}} status="404" />
-                ) : currentArticleId ? (
-                    <MDXRenderer slug={currentArticleId} />
-                ) : null}
+                ) : (
+                    <MDXRenderer slug={articleId} />
+                )}
             </section>
         </div>
     )
