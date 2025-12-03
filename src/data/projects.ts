@@ -18,6 +18,30 @@ export interface ProjectTag {
  */
 const projects: Array<Project> = [
     {
+        title: 'lancher',
+        description: 'A minimal, local project-template manager written in Go.',
+        image: '/projects/lancher.png',
+        url: 'https://lancher.dev',
+        viewSourceUrl: 'https://github.com/Kasui92/lancher.git',
+        technologies: ['Go', 'Shell', 'Bash'],
+    },
+    {
+        title: 'lancher.dev',
+        description: 'Lancher’s website and documentation.',
+        image: '/projects/lancher.dev.jpg',
+        url: 'https://lancher.dev',
+        viewSourceUrl: 'https://github.com/Kasui92/lancher.dev.git',
+        technologies: ['Astro', 'TailwindCSS', 'Typescript'],
+    },
+    {
+        title: 'omakube',
+        description: 'A fork of Omakub, more flexible and refined.',
+        image: '/projects/omakube.png',
+        url: 'https://omakasui.org/manuals/omakube/',
+        viewSourceUrl: 'https://github.com/Kasui92/omakube.git',
+        technologies: ['Shell', 'Bash'],
+    },
+    {
         title: 'giornogaming.it',
         description: 'GiornoGaming’s website, home of an Italian video game streamer and content creator.',
         image: '/projects/giornogaming.jpg',
