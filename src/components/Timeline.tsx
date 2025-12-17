@@ -21,7 +21,7 @@ export const ExperienceTimeline = ({ experience, isLast }: { experience: Experie
                         <IconCalendar className="h-3.5 w-3.5" />
                         <span>
                             {date2Period(experience.startDate, true)} -{' '}
-                            {experience.endDate ? date2Period(experience.endDate, true) : 'Present'}
+                            {experience.endDate ? date2Period(experience.endDate, true) : <b>Present</b>}
                         </span>
                     </div>
                     {experience.location && (
