@@ -1,9 +1,9 @@
-import { IconBrandGithub, IconBrandGitlab, IconBrandLinkedin, IconBrandBluesky, TablerIcon } from '@tabler/icons-react'
+import { IconBrandGithub, IconBrandGitlab, IconBrandLinkedin, IconBrandBluesky, Icon } from '@tabler/icons-react'
 
 export interface SocialEntry {
     label: string
     url: string
-    icon: TablerIcon
+    icon: Icon
 }
 
 /**
