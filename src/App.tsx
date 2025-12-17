@@ -6,7 +6,7 @@ import { Header } from '@/components/Header'
 
 // Routes
 import { About } from '@/routes/About'
-import { Projects } from '@/routes/Projects'
+import { Works } from '@/routes/Works'
 import { Blog } from '@/routes/Blog'
 import { Articles } from '@/routes/Articles'
 import { NotFound } from '@/routes/NotFound'
@@ -29,7 +29,7 @@ export const App = (): ReactElement => {
             <div className="relative z-10 mx-auto flex w-full max-w-2xl flex-col px-4 pt-12 xl:px-0">
                 <Header />
                 <main
-                    className={`mt-24 flex-auto space-y-10 ${currentTransitionStage}`}
+                    className={`mt-12 flex-auto space-y-10 ${currentTransitionStage}`}
                     onAnimationEnd={() => {
                         if (currentTransitionStage === 'animate-slide-out-section') {
                             setTransitionStage('animate-slide-in-section')
@@ -39,7 +39,7 @@ export const App = (): ReactElement => {
                 >
                     <Routes location={displayLocation}>
                         <Route index element={<About />} />
-                        <Route path="projects" element={<Projects />} />
+                        <Route path="works" element={<Works />} />
                         <Route path="blog">
                             <Route index element={<Blog />} />
                             <Route path=":articleId" element={<Articles />} />
