@@ -1,4 +1,4 @@
-export function date2Period(date: string): string {
+export function date2Period(date: string, short = false): string {
     const [year, month] = date.split('-')
 
     const months = [
@@ -16,5 +16,8 @@ export function date2Period(date: string): string {
         'December',
     ]
 
-    return `${months[parseInt(month) - 1]} ${year}`
+    // Determine the month label based on the 'short' flag
+    const monthLabel = short ? months[parseInt(month) - 1].slice(0, 3) : months[parseInt(month) - 1]
+
+    return `${monthLabel} ${year}`
 }

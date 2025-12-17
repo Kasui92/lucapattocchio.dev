@@ -1,72 +1,10 @@
-import { Fragment, ReactElement } from 'react'
-import { date2Period } from '../lib/utils'
+import { ReactElement } from 'react'
 
-import {
-    IconExternalLink,
-    IconBrandGithub,
-    IconCalendar,
-    IconFolderCode,
-    IconMapPin,
-    IconArrowRight,
-} from '@tabler/icons-react'
+import { IconExternalLink, IconBrandGithub, IconArrowRight } from '@tabler/icons-react'
 
-import { Experience } from '../data/experiences'
-import { Project } from '../data/projects'
+import { Project } from '@/data/projects'
 import { NavLink } from 'react-router'
-import { Article } from '../data/articles'
-
-export const ExperienceCard = ({ experience }: { experience: Experience }): ReactElement => {
-    return (
-        <div className="border-silver-700/50 hover:border-silver-700/70 flex w-full flex-col rounded-lg border px-4 py-2 shadow-xs transition duration-300 hover:scale-[1.01] hover:shadow-lg">
-            <div className="text-silver-700/90 flex w-full flex-col flex-wrap">
-                <div className="font-semibold whitespace-nowrap">{experience.company}</div>
-                <div className="whitespace-nowrap">{experience.position}</div>
-            </div>
-            <div className="text-silver-700/70 flex w-full flex-col gap-x-2 text-sm">
-                <div className="flex space-x-1">
-                    <IconCalendar className="h-4 w-4" />
-                    <span>{date2Period(experience.startDate)}</span>
-                    <span>-</span>
-                    {experience.endDate ? <span>{date2Period(experience.endDate)}</span> : <span>Present</span>}
-                </div>
-                {experience.location && (
-                    <div className="flex items-center space-x-1">
-                        <IconMapPin className="h-4 w-4" />
-                        <span>{experience.location}</span>
-                    </div>
-                )}
-                {experience?.description && <div className="text-silver-700/70 mt-2 flex">{experience.description}</div>}
-                {experience?.projects && (
-                    <div className="mt-2 flex items-start space-x-1 md:items-center">
-                        <div className="flex items-center space-x-1">
-                            <IconFolderCode className="h-4 w-4 shrink-0" />
-                            <span className="font-semibold">Projects</span>:
-                        </div>
-                        <div className="flex flex-wrap gap-1">
-                            {experience.projects.map((project, index) => (
-                                <Fragment key={index}>
-                                    {index > 0 && <span className="hidden md:block">, </span>}
-                                    <a
-                                        href={project.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="underline-transition text-green-700/90 after:bg-green-700/90"
-                                        title={`Visit ${project.title}`}
-                                    >
-                                        <span className="flex items-center gap-1">
-                                            <IconExternalLink className="h-4 w-4" />
-                                            {project.title}
-                                        </span>
-                                    </a>
-                                </Fragment>
-                            ))}
-                        </div>
-                    </div>
-                )}
-            </div>
-        </div>
-    )
-}
+import { Article } from '@/data/articles'
 
 export const ProjectsCard = ({ project, priority = false }: { project: Project; priority?: boolean }): ReactElement => {
     return (
