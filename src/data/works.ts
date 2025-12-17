@@ -54,7 +54,7 @@ const works: Array<Work> = [
         title: 'GDRCD',
         description: 'A PHP framework for creating "play by chat role-playing game" browser games.',
         image: '/projects/gdrcd.png',
-        url: 'https://gdrcd.lucapattocchio.dev/',
+        url: 'https://github.com/GDRCD/GDRCD',
     },
 ]
 
