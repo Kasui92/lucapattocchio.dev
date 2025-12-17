@@ -12,7 +12,7 @@ export const HeaderNav = (): ReactElement => {
 
     return (
         <div className="mx-auto w-full max-w-2xl px-4 xl:px-0">
-            <div className="shadow-surface-glass bg-black-600/20 -mx-px rounded-2xl px-4 py-2 shadow-lg backdrop-blur-[12px]">
+            <div className="shadow-surface-glass bg-black-600/20 -mx-px rounded-2xl px-4 py-2 shadow-lg backdrop-blur-md">
                 <div className="flex items-center justify-between">
                     <div className="flex space-x-4">
                         <NavProfilePic />
