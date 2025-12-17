@@ -1,69 +1,37 @@
 import { ReactElement } from 'react'
 
-import { IconExternalLink, IconBrandGithub, IconArrowRight } from '@tabler/icons-react'
+import { IconArrowRight } from '@tabler/icons-react'
 
-import { Project } from '@/data/projects'
+import { Work } from '@/data/works'
 import { NavLink } from 'react-router'
 import { Article } from '@/data/articles'
 
-export const ProjectsCard = ({ project, priority = false }: { project: Project; priority?: boolean }): ReactElement => {
+export const ProjectsCard = ({ project, priority = false }: { project: Work; priority?: boolean }): ReactElement => {
     return (
-        <div className="group border-silver-700/50 hover:border-silver-700/70 flex h-full flex-col gap-4 rounded-lg border p-0 shadow-xs transition duration-300 hover:scale-[1.01] hover:shadow-lg md:flex-row md:p-4">
-            <div className="relative h-full w-full md:w-48">
+        <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col transition-transform duration-300 hover:scale-[1.02]"
+            title={project.title}
+        >
+            <div className="relative aspect-video w-full overflow-hidden rounded-lg">
                 <img
                     src={project.image}
                     alt={project.title}
-                    title={project.title}
-                    className="h-36 w-full rounded-t-lg object-cover md:h-full md:rounded-lg"
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     loading={priority ? 'eager' : 'lazy'}
                     fetchPriority={priority ? 'high' : 'low'}
                 />
             </div>
-            <div className="flex flex-1 flex-col gap-2 p-4 md:p-0">
-                <h4 className="text-silver-900/90 font-semibold">{project.title}</h4>
-                <p className="text-silver-700/70 text-sm">{project.description}</p>
-                <div className="flex flex-wrap gap-1">
-                    {project.technologies.map((technology) => (
-                        <span
-                            key={technology}
-                            className="bg-cerulean-500/20 text-cerulean-700/90 rounded-xl px-2 py-1 text-sm"
-                        >
-                            {technology}
-                        </span>
-                    ))}
-                </div>
-                <div className="flex justify-start gap-2">
-                    {project.url && (
-                        <a
-                            href={project.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="underline-transition text-green-700/90 after:bg-green-700/90"
-                            title={`Visit ${project.title}`}
-                        >
-                            <span className="flex items-center gap-1">
-                                <IconExternalLink className="h-4 w-4" />
-                                Visit
-                            </span>
-                        </a>
-                    )}
-                    {project.viewSourceUrl && (
-                        <a
-                            href={project.viewSourceUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="underline-transition text-green-700/90 after:bg-green-700/90"
-                            title={`View source code of ${project.title}`}
-                        >
-                            <span className="flex items-center gap-1">
-                                <IconBrandGithub className="h-4 w-4" />
-                                Source
-                            </span>
-                        </a>
-                    )}
-                </div>
+
+            <div className="mt-3 flex flex-col gap-1">
+                <h4 className="text-silver-900/90 text-center text-base font-semibold transition-colors group-hover:text-green-700/90">
+                    {project.title}
+                </h4>
+                <p className="text-silver-700/70 text-center text-sm">{project.description}</p>
             </div>
-        </div>
+        </a>
     )
 }
 

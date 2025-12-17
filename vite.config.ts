@@ -2,7 +2,7 @@ import { defineConfig, Plugin, type AliasOptions } from 'vite'
 import mdx from '@mdx-js/rollup'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import projects from './src/data/projects'
+import works from './src/data/works'
 
 //@ts-ignore
 import path from 'path'
@@ -18,7 +18,7 @@ function preloadProjectImages(count: number = 3): Plugin {
         name: 'preload-project-images',
         transformIndexHtml(html) {
             // Get the first N images from projects
-            const imagesToPreload = projects
+            const imagesToPreload = works
                 .slice(0, count)
                 .filter((p) => p.image)
                 .map((p) => p.image)

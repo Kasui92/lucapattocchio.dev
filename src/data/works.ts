@@ -1,60 +1,41 @@
-import { StackEntry } from './stack'
-
-export interface Project {
+export interface Work {
     title: string
     description: string
     image?: string
     url?: string
-    viewSourceUrl?: string
-    technologies: Array<StackEntry['label']>
 }
 
-export interface ProjectTag {
+export interface WorkTag {
     label: string
 }
 
 /**
- * Projects
+ * Works
  */
-const projects: Array<Project> = [
+const works: Array<Work> = [
     {
         title: 'lancher',
         description: 'A minimal, local project-template manager written in Go.',
         image: '/projects/lancher.png',
         url: 'https://lancher.dev',
-        viewSourceUrl: 'https://github.com/Kasui92/lancher.git',
-        technologies: ['Go', 'Shell', 'Bash'],
-    },
-    {
-        title: 'lancher.dev',
-        description: 'Lancher’s website and documentation.',
-        image: '/projects/lancher.dev.jpg',
-        url: 'https://lancher.dev',
-        viewSourceUrl: 'https://github.com/Kasui92/lancher.dev.git',
-        technologies: ['Astro', 'TailwindCSS', 'Typescript'],
     },
     {
         title: 'omakube',
         description: 'A fork of Omakub, more flexible and refined.',
         image: '/projects/omakube.png',
-        url: 'https://omakasui.org/manuals/omakube/',
-        viewSourceUrl: 'https://github.com/Kasui92/omakube.git',
-        technologies: ['Shell', 'Bash'],
+        url: 'https://omakube.omakasui.org',
     },
     {
         title: 'giornogaming.it',
         description: 'GiornoGaming’s website, home of an Italian video game streamer and content creator.',
         image: '/projects/giornogaming.jpg',
         url: 'https://giornogaming.it',
-        technologies: ['Astro', 'TailwindCSS', 'Typescript'],
     },
     {
         title: 'omakasui.org',
         description: 'A curated collection of resources and tools for Linux enthusiasts.',
         image: '/projects/omakasui.jpg',
         url: 'https://omakasui.org',
-        viewSourceUrl: 'https://github.com/Kasui92/omakasui.org.git',
-        technologies: ['Astro', 'TailwindCSS', 'Typescript', ' Shell'],
     },
     {
         title: 'slicendice.it',
@@ -62,25 +43,19 @@ const projects: Array<Project> = [
             'A small directory of game systems for aspiring play by chat admin. This is a porting of the original project built with WordPress, now with Next.js & MDX.',
         image: '/projects/slicendice.png',
         url: 'https://slicendice.it/',
-        viewSourceUrl: 'https://github.com/slice-dice/website',
-        technologies: ['Next.js', 'MDX', 'TailwindCSS', 'Typescript'],
     },
     {
         title: 'lucapattocchio.dev',
         description: 'My personal website.',
         image: '/projects/portfolio.png',
         url: 'https://lucapattocchio.dev/',
-        viewSourceUrl: 'https://github.com/Kasui92/lucapattocchio.dev',
-        technologies: ['React', 'Typescript', 'TailwindCSS'],
     },
     {
         title: 'GDRCD',
         description: 'A PHP framework for creating "play by chat role-playing game" browser games.',
         image: '/projects/gdrcd.png',
         url: 'https://gdrcd.lucapattocchio.dev/',
-        viewSourceUrl: 'https://github.com/GDRCD/GDRCD',
-        technologies: ['PHP', 'MySQL', 'Javascript', 'CSS', 'Docker'],
     },
 ]
 
-export default projects
+export default works

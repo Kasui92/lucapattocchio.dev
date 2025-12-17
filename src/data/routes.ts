@@ -9,8 +9,8 @@ export const routes: Record<string, RoutesEntry> = {
         url: '/',
     },
     projects: {
-        label: 'Projects',
-        url: '/projects',
+        label: 'Works',
+        url: '/works',
     },
     blog: {
         label: 'Blog',
