@@ -1,8 +1,14 @@
-import { defineConfig, Plugin } from 'vite'
+import { defineConfig, Plugin, type AliasOptions } from 'vite'
 import mdx from '@mdx-js/rollup'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import projects from './src/data/projects'
+
+//@ts-ignore
+import path from 'path'
+
+//@ts-ignore
+const root = path.resolve(__dirname, 'src')
 
 /**
  * Plugin to dynamically inject preload links for the first project images
@@ -41,5 +47,14 @@ export default defineConfig({
     ],
     server: {
         open: true,
+    },
+    build: {
+        // TODO: disable only for production
+        sourcemap: false,
+    },
+    resolve: {
+        alias: {
+            '@': root,
+        } as AliasOptions,
     },
 })
