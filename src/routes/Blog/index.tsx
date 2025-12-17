@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
-import { articles } from '../../data/articles'
-import { BlogCard } from '../../components/Cards'
+import { articles } from '@/data/articles'
+import { BlogCard } from '@/components/Cards'
 
 export const Blog = (): ReactElement => {
     // Sort articles by date in descending order

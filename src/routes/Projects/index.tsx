@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
-import projects from '../../data/projects'
-import { ProjectsCard } from '../../components/Cards'
+import projects from '@/data/projects'
+import { ProjectsCard } from '@/components/Cards'
 
 export const Projects = (): ReactElement => {
     return (

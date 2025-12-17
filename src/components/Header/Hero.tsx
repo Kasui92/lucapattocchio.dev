@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
-import { HeroProfilePic } from '../ProfilePic'
-import { NavInline, SocialNav } from '../Nav'
+import { HeroProfilePic } from '@/components/ProfilePic'
+import { NavInline, SocialNav } from '@/components/Nav'
 
 /**
  * Hero

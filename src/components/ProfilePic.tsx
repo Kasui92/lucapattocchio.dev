@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 
-import profilePic from '../assets/images/profile_pic.jpg'
+import profilePic from '@/assets/images/profile_pic.jpg'
 
 export const HeroProfilePic = (): ReactElement => (
     <div className="ring-silver-500/10 hover:ring-silver-500/20 transform rounded-full shadow-lg ring-[5px] transition-transform duration-300 hover:scale-105">

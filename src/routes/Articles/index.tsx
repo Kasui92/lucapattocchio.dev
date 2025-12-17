@@ -1,7 +1,7 @@
 import { createElement, lazy, ReactElement, Suspense, useMemo } from 'react'
 import { useParams, Link } from 'react-router'
 import { ErrorBoundary } from 'react-error-boundary'
-import { articles } from '../../data/articles'
+import { articles } from '@/data/articles'
 
 // Module-level cache for lazy components
 const mdxComponentCache = new Map<string, React.LazyExoticComponent<React.ComponentType>>()

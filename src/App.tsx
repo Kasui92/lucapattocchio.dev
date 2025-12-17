@@ -1,15 +1,15 @@
 import { ReactElement, useState } from 'react'
 import { Route, Routes, useLocation } from 'react-router'
 
-import { Footer } from './components/Footer'
-import { Header } from './components/Header'
+import { Footer } from '@/components/Footer'
+import { Header } from '@/components/Header'
 
 // Routes
-import { About } from './routes/About'
-import { Projects } from './routes/Projects'
-import { Blog } from './routes/Blog'
-import { Articles } from './routes/Articles'
-import { NotFound } from './routes/NotFound'
+import { About } from '@/routes/About'
+import { Projects } from '@/routes/Projects'
+import { Blog } from '@/routes/Blog'
+import { Articles } from '@/routes/Articles'
+import { NotFound } from '@/routes/NotFound'
 
 /**
  * Layout

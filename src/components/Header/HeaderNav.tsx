@@ -1,6 +1,6 @@
 import { ReactElement, useState } from 'react'
-import { NavProfilePic } from '../ProfilePic'
-import { NavInline, Nav } from '../Nav'
+import { NavProfilePic } from '@/components/ProfilePic'
+import { NavInline, Nav } from '@/components/Nav'
 
 import { IconMenu2 } from '@tabler/icons-react'
 
@@ -12,11 +12,11 @@ export const HeaderNav = (): ReactElement => {
 
     return (
         <div className="mx-auto w-full max-w-2xl px-4 xl:px-0">
-            <div className="shadow-surface-glass -mx-px rounded-2xl bg-black-600/20 px-4 py-2 shadow-lg backdrop-blur-[12px]">
+            <div className="shadow-surface-glass bg-black-600/20 -mx-px rounded-2xl px-4 py-2 shadow-lg backdrop-blur-[12px]">
                 <div className="flex items-center justify-between">
                     <div className="flex space-x-4">
                         <NavProfilePic />
-                        <div className="flex items-center font-semibold text-silver-900/90">Luca Pattocchio</div>
+                        <div className="text-silver-900/90 flex items-center font-semibold">Luca Pattocchio</div>
                     </div>
 
                     <div className="hidden md:flex">
@@ -29,7 +29,7 @@ export const HeaderNav = (): ReactElement => {
                             type="button"
                             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
                         >
-                            <IconMenu2 className="h-6 w-6 text-silver-900/90" />
+                            <IconMenu2 className="text-silver-900/90 h-6 w-6" />
                         </button>
                     </div>
                 </div>

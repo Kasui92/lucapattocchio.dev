@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
-import { ExperienceCard } from '../../components/Cards'
+import { ExperienceTimeline } from '@/components/Timeline'
 
-import { experiences } from '../../data/experiences'
+import { experiences } from '@/data/experiences'
 
 export const About = (): ReactElement => {
     return (
@@ -43,9 +43,9 @@ export const About = (): ReactElement => {
                 <h3 className="text-silver-900/90 w-full text-lg font-bold underline decoration-green-500/50 decoration-4 underline-offset-[6px]">
                     Experience
                 </h3>
-                <div className="mt-6 flex w-full flex-col items-center gap-6">
+                <div className="mt-6 w-full">
                     {experiences.map((experience, index) => (
-                        <ExperienceCard key={index} experience={experience} />
+                        <ExperienceTimeline key={index} experience={experience} isLast={index === experiences.length - 1} />
                     ))}
                 </div>
             </section>
