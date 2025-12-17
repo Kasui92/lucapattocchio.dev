@@ -15,6 +15,11 @@ import { Project } from '../data/projects'
 import { NavLink } from 'react-router'
 import { Article } from '../data/articles'
 
+interface ProjectsCardProps {
+    project: Project
+    priority?: boolean
+}
+
 export const ExperienceCard = ({ experience }: { experience: Experience }): ReactElement => {
     return (
         <div className="border-silver-700/50 hover:border-silver-700/70 flex w-full flex-col rounded-lg border px-4 py-2 shadow-xs transition duration-300 hover:scale-[1.01] hover:shadow-lg">
@@ -68,7 +73,7 @@ export const ExperienceCard = ({ experience }: { experience: Experience }): Reac
     )
 }
 
-export const ProjectsCard = ({ project }: { project: Project }): ReactElement => {
+export const ProjectsCard = ({ project, priority = false }: ProjectsCardProps): ReactElement => {
     return (
         <div className="group border-silver-700/50 hover:border-silver-700/70 flex h-full flex-col gap-4 rounded-lg border p-0 shadow-xs transition duration-300 hover:scale-[1.01] hover:shadow-lg md:flex-row md:p-4">
             <div className="relative h-full w-full md:w-48">
@@ -77,6 +82,8 @@ export const ProjectsCard = ({ project }: { project: Project }): ReactElement =>
                     alt={project.title}
                     title={project.title}
                     className="h-36 w-full rounded-t-lg object-cover md:h-full md:rounded-lg"
+                    loading={priority ? 'eager' : 'lazy'}
+                    fetchPriority={priority ? 'high' : 'low'}
                 />
             </div>
             <div className="flex flex-1 flex-col gap-2 p-4 md:p-0">
