@@ -5,7 +5,7 @@ import { MDXProvider } from '@mdx-js/react'
 
 import { App } from './App.tsx'
 
-import './assets/styles/globals.css'
+import './styles/globals.css'
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
