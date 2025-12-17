@@ -1,4 +1,4 @@
-import { ReactElement } from 'react'
+import { ReactElement, useState, useRef } from 'react'
 import clsx from 'clsx'
 
 import { useInView } from 'react-intersection-observer'
@@ -11,12 +11,21 @@ import { HeaderNav } from './HeaderNav'
  * @returns {JSX.Element}
  */
 export const Header = (): ReactElement => {
-    const { ref, inView } = useInView({
-        rootMargin: '-100px',
-    })
+    const [showPrimary, setShowPrimary] = useState(false)
+    const isFirstRender = useRef(true)
 
-    // invert inView to show the primary header
-    const showPrimary = !inView
+    const { ref } = useInView({
+        rootMargin: '-100px',
+        threshold: 0,
+        onChange: (inView) => {
+            // Ignore the first render to prevent flickering
+            if (isFirstRender.current) {
+                isFirstRender.current = false
+                return
+            }
+            setShowPrimary(!inView)
+        },
+    })
 
     return (
         <>
