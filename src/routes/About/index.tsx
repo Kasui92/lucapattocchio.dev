@@ -24,7 +24,7 @@ export const About = (): ReactElement => {
                         <p>
                             At twenty, I realized this passion could become something more. I consolidated what I had learned
                             and ventured into the working world, pursuing{' '}
-                            <span className={`text-cerulean font-semibold`}>web development</span> professionally—no longer
+                            <span className={`text-cerulean font-semibold`}>web development</span> professionally and no longer
                             just as a self-taught tinkerer. I believe collaboration is a powerful forge for crafting
                             innovative solutions and self-improvement, both in my skills and personal growth.{' '}
                             <i>I'm always ready for new adventures.</i>
@@ -32,7 +32,7 @@ export const About = (): ReactElement => {
                         <p>
                             I love getting lost on trails and going for <span className={`text-green`}>long walks</span>,
                             especially when surrounded by nature, with a backpack always at the ready. In my free time, I
-                            enjoy playing board games and role-playing games—
+                            enjoy playing board games and role-playing games{' '}
                             <span className={`italic line-through`}>but mostly, I end up accumulating side projects</span>.
                         </p>
                     </div>
