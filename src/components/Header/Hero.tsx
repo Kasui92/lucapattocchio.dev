@@ -22,7 +22,7 @@ export const Hero = (): ReactElement => (
 
         <div className="flex items-center space-x-2">
             <span className="text-md text-silver-700/90">
-                I turn gibberish into web apps, outsmart stubborn terminals, but can’t fix a washing machine—despite what my
+                I turn gibberish into web apps, outsmart stubborn terminals, but can’t fix a washing machine despite what my
                 grandma thinks.
             </span>
         </div>
