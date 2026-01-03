@@ -1,6 +1,6 @@
 <div align="center">
   <h1><a href="https://lucapattocchio.dev" target="_blank">lucapattocchio.dev</a></h1>
-  My personal website built with React & TailwindCSS
+  My personal website built with Astro & TailwindCSS
 </div>
 
 <div align="center">
@@ -11,15 +11,14 @@
 
 ## Built With
 
-- **Framework**: [React](https://react.dev/)
-- **Development**: [Vite](https://vite.dev/)
+- **Framework**: [Astro](https://react.dev/)
 - **Deployment**: [Netlify](https://www.netlify.com/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com)
 - **Icons**: [Tabler Icons](https://tabler.io/icons)
 
 ## Running Locally
 
-To run the project locally, you need to have [Node.js](https://nodejs.org/en/), [pnpm](https://pnpm.io/) and [Vite](https://vite.dev/) installed on your machine
+To run the project locally, you need to have [Node.js](https://nodejs.org/en/) and [pnpm](https://pnpm.io/)
 
 ```bash
 git clone https://github.com/Kasui92/lucapattocchio.dev.git
@@ -28,7 +27,7 @@ pnpm i
 pnpm dev
 ```
 
-The above commands will start the application on `http://localhost:5173/`
+The above commands will start the application on `http://localhost:4321/`
 
 ## License
 
