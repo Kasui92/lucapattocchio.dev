@@ -1,0 +1,77 @@
+---
+import Footer from "@/components/layout/Footer.astro";
+import Header from "@/components/layout/Header.astro";
+
+import "@/styles/global.css";
+
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Passionate Full-Stack Developer always ready to tackle new challenges with a keyboard, plenty of coffee, and a love for tabletop gaming."
+    />
+    <title>Luca Pattocchio - Full Stack Developer</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.svg" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:url" content="https://lucapattocchio.dev" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Luca Pattocchio - Full Stack Developer"
+    />
+    <meta
+      property="og:description"
+      content="Passionate Full-Stack Developer always ready to tackle new challenges with a keyboard, plenty of coffee, and a love for tabletop gaming."
+    />
+    <meta
+      property="og:image"
+      content="https://lucapattocchio.dev/og-image.png"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="lucapattocchio.dev" />
+    <meta property="twitter:url" content="https://lucapattocchio.dev" />
+    <meta
+      name="twitter:title"
+      content="Luca Pattocchio - Full Stack Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Passionate Full-Stack Developer always ready to tackle new challenges with a keyboard, plenty of coffee, and a love for tabletop gaming."
+    />
+    <meta
+      name="twitter:image"
+      content="https://lucapattocchio.dev/og-image.png"
+    />
+
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body class="overscroll-y-none bg-black p-0 font-sans text-white antialiased">
+    <div
+      class="relative z-10 mx-auto flex w-full max-w-2xl flex-col px-4 pt-12 xl:px-0"
+    >
+      <Header />
+      <main
+        role="main"
+        aria-label="Main content"
+        class="mt-12 flex-auto space-y-10"
+      >
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>
