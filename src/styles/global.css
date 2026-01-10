@@ -1,1 +1,146 @@
+/**
+ * TailwindCSS Conf
+ */
+
 @import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-*: initial;
+  --font-sans: Poppins, sans-serif;
+
+  --animate-*: initial;
+  --animate-slide-in-section: 0.5s slideInSection forwards;
+  --animate-slide-out-section: 0.5s slideOutSection forwards;
+  --animate-bounce: bounce 1s infinite;
+  --animate-bounce-x: bounce-x 1s infinite;
+
+  --color-black-100: #070607;
+  --color-black-200: #0e0c0e;
+  --color-black-300: #151315;
+  --color-black-400: #1c191c;
+  --color-black-500: #221e22;
+  --color-black-600: #524952;
+  --color-black-700: #817381;
+  --color-black-800: #aca1ac;
+  --color-black-900: #d5d0d5;
+  --color-black: #221e22;
+
+  --color-silver-100: #262727;
+  --color-silver-200: #4c4d4d;
+  --color-silver-300: #727474;
+  --color-silver-400: #989a9a;
+  --color-silver-500: #bfc0c0;
+  --color-silver-600: #cbcdcd;
+  --color-silver-700: #d8d9d9;
+  --color-silver-800: #e5e6e6;
+  --color-silver-900: #f2f2f2;
+  --color-silver: #bfc0c0;
+
+  --color-white-100: #333333;
+  --color-white-200: #666666;
+  --color-white-300: #999999;
+  --color-white-400: #cccccc;
+  --color-white-500: #ffffff;
+  --color-white-600: #ffffff;
+  --color-white-700: #ffffff;
+  --color-white-800: #ffffff;
+  --color-white-900: #ffffff;
+  --color-white: #ffffff;
+
+  --color-cerulean-100: #081820;
+  --color-cerulean-200: #10303f;
+  --color-cerulean-300: #18475f;
+  --color-cerulean-400: #215f7f;
+  --color-cerulean-500: #2978a0;
+  --color-cerulean-600: #399bcc;
+  --color-cerulean-700: #6bb4d9;
+  --color-cerulean-800: #9ccde5;
+  --color-cerulean-900: #cee6f2;
+  --color-cerulean: #2978a0;
+
+  --color-green-100: #0f1613;
+  --color-green-200: #1d2c25;
+  --color-green-300: #2c4338;
+  --color-green-400: #3a594a;
+  --color-green-500: #496f5d;
+  --color-green-600: #62977e;
+  --color-green-700: #89b29e;
+  --color-green-800: #b0cbbf;
+  --color-green-900: #d8e5df;
+  --color-green: #496f5d;
+
+  @keyframes slideInSection {
+    0% {
+      opacity: 0;
+      transform: translate(-20px, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes slideOutSection {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-20px, 0);
+    }
+  }
+
+  @keyframes ellipsis {
+    to {
+      width: 1.25em;
+    }
+  }
+
+  @keyframes bounce-x {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(0.25em);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility underline-transition {
+  @apply relative cursor-pointer after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full;
+}
+
+/**
+ * Custom Classes
+ */
+
+.loading-ellipsis:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  animation: ellipsis steps(4, end) 900ms infinite;
+  content: "\2026"; /* ascii code for the ellipsis character */
+  width: 0px;
+}
