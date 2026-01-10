@@ -6,12 +6,15 @@ import { fileURLToPath } from "url";
 import tailwindcss from "@tailwindcss/vite";
 import { remarkAlert } from "remark-github-blockquote-alert";
 
+import react from "@astrojs/react";
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://lucapattocchio.dev",
   base: "/",
+
   vite: {
     plugins: [tailwindcss()],
     resolve: {
@@ -28,6 +31,7 @@ export default defineConfig({
       },
     },
   },
+
   markdown: {
     remarkPlugins: [remarkAlert],
     rehypePlugins: [],
@@ -36,4 +40,6 @@ export default defineConfig({
       wrap: true,
     },
   },
+
+  integrations: [react()],
 });
