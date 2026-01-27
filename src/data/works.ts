@@ -14,6 +14,18 @@ export interface WorkTag {
  */
 const works: Array<Work> = [
     {
+        title: 'annamariaesimone.it',
+        description: 'A wedding website for Anna Maria & Simone.',
+        image: '/projects/annamariaesimone.jpg',
+        url: 'https://annamariaesimone.it',
+    },
+    {
+        title: 'icon-launcher',
+        description: 'Add a clickable icon to GNOME top bar to launch a custom command.',
+        image: '/projects/icon-launcher.png',
+        url: 'https://github.com/Kasui92/icon-launcher',
+    },
+    {
         title: 'lancher',
         description: 'A minimal, local project-template manager written in Go.',
         image: '/projects/lancher.png',
