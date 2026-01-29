@@ -1,3 +1,12 @@
 ---
+import { getCollection } from "astro:content";
+import HeaderIntersection from "@/components/layout/HeaderIntersection";
 
+const socialsCollection = await getCollection("socials");
+const socials = socialsCollection.map((item) => item.data);
+
+const navigationCollection = await getCollection("navigation");
+const navigation = navigationCollection.map((item) => item.data);
 ---
+
+<HeaderIntersection client:load socials={socials} navigation={navigation} />

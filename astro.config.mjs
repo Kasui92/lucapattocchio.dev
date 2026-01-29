@@ -8,6 +8,9 @@ import { remarkAlert } from "remark-github-blockquote-alert";
 
 import react from "@astrojs/react";
 
+import icon from "astro-icon";
+import svgr from "vite-plugin-svgr";
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://astro.build/config
@@ -16,7 +19,7 @@ export default defineConfig({
   base: "/",
 
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), svgr()],
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
@@ -41,5 +44,10 @@ export default defineConfig({
     },
   },
 
-  integrations: [react()],
+  integrations: [
+    icon({
+      iconDir: "./src/assets/icons",
+    }),
+    react(),
+  ],
 });
