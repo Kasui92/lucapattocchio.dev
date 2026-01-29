@@ -6,7 +6,7 @@
 ## Built With
 
 - **Frameworks**: [Astro](https://astro.build/) & [React](https://react.dev/)
-- **Deployment**: [GitHub Pages](https://docs.github.com/en/pages/quickstart)
+- **Deployment**: [Cloudflare Workers](https://www.cloudflare.com/developer-platform/products/workers/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com)
 - **Icons**: [Tabler Icons](https://tabler.io/icons)
 
