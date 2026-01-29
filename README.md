@@ -1,6 +1,6 @@
 <div align="center">
   <h1><a href="https://lucapattocchio.dev" target="_blank">lucapattocchio.dev</a></h1>
-  My personal website built with Astro & TailwindCSS
+  My personal website built with Astro, React & TailwindCSS
 </div>
 
 <div align="center">
@@ -11,7 +11,7 @@
 
 ## Built With
 
-- **Framework**: [Astro](https://react.dev/)
+- **Frameworks**: [Astro](https://astro.build/) & [React](https://react.dev/)
 - **Deployment**: [Netlify](https://www.netlify.com/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com)
 - **Icons**: [Tabler Icons](https://tabler.io/icons)
