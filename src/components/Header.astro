@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import HeaderIntersection from "@/components/layout/HeaderIntersection";
+import HeaderIntersection from "@/components/HeaderIntersection";
 
 const socialsCollection = await getCollection("socials");
 const socials = socialsCollection.map((item) => item.data);
