@@ -58,6 +58,7 @@ export const Hero = ({
                 rel="noopener noreferrer"
                 className="text-silver-700/90 transition-colors duration-300 hover:text-green-700/90"
                 title={`Go to ${label}`}
+                data-astro-prefetch
               >
                 <Icon
                   name={icon}

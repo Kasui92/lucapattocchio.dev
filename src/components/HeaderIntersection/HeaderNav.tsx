@@ -76,6 +76,7 @@ export const HeaderNav = ({
                           "transition-colors duration-300 hover:text-green-700/90",
                         )}
                         title={`Go to ${label} page`}
+                        data-astro-prefetch
                       >
                         {label}
                       </a>
@@ -122,6 +123,7 @@ export const HeaderNav = ({
                           "transition-colors duration-300 hover:text-green-700/90",
                         )}
                         title={`Go to ${label} page`}
+                        data-astro-prefetch
                       >
                         {label}
                       </a>
