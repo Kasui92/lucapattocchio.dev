@@ -5,10 +5,6 @@ import Footer from "@/components/layout/Footer.astro";
 import Header from "@/components/layout/Header.astro";
 
 import "@/styles/global.css";
-
-interface Props {
-  title?: string;
-}
 ---
 
 <!doctype html>
@@ -58,6 +54,14 @@ interface Props {
     />
 
     <meta name="generator" content={Astro.generator} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" as="image" href="/src/assets/images/profile_pic.jpg" />
 
     <ClientRouter />
   </head>
