@@ -1,0 +1,17 @@
+[
+  {
+    "id": "about",
+    "label": "About",
+    "url": "/"
+  },
+  {
+    "id": "works",
+    "label": "Works",
+    "url": "/works"
+  },
+  {
+    "id": "blog",
+    "label": "Blog",
+    "url": "/blog"
+  }
+]
