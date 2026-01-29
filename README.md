@@ -3,16 +3,10 @@
   My personal website built with Astro, React & TailwindCSS
 </div>
 
-<div align="center">
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/452ad6fc-5bc7-4cee-9b17-35bef96423fb/deploy-status)](https://app.netlify.com/sites/lucapattocchio/deploys)
-
-</div>
-
 ## Built With
 
 - **Frameworks**: [Astro](https://astro.build/) & [React](https://react.dev/)
-- **Deployment**: [Netlify](https://www.netlify.com/)
+- **Deployment**: [GitHub Pages](https://docs.github.com/en/pages/quickstart)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com)
 - **Icons**: [Tabler Icons](https://tabler.io/icons)
 
