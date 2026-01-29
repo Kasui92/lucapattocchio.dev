@@ -1,4 +1,6 @@
 ---
+import { ClientRouter } from "astro:transitions";
+
 import Footer from "@/components/layout/Footer.astro";
 import Header from "@/components/layout/Header.astro";
 
@@ -56,6 +58,8 @@ interface Props {
     />
 
     <meta name="generator" content={Astro.generator} />
+
+    <ClientRouter />
   </head>
   <body class="overscroll-y-none bg-black p-0 font-sans text-white antialiased">
     <div
