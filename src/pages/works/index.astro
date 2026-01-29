@@ -1,21 +1,13 @@
 ---
 import { getCollection } from "astro:content";
-<<<<<<< HEAD
 import Layout from "@/components/layouts/Layout.astro";
-=======
-import Layout from "@/layouts/Layout.astro";
->>>>>>> 6b18d34 (Implement Works page)
 import ProjectsCard from "@/components/ProjectCard.astro";
 
 const worksCollection = await getCollection("works");
 const works = worksCollection.map((item) => item.data);
 ---
 
-<<<<<<< HEAD
 <Layout page="works">
-=======
-<Layout>
->>>>>>> 6b18d34 (Implement Works page)
   <div class="space-y-16">
     <section class="container flex flex-col items-center">
       <h3
