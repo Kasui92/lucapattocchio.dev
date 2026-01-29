@@ -68,7 +68,7 @@ export const Hero = ({
           ))}
           <li>
             <a
-              href={`mailto:me@lucapattocchio.dev`}
+              href={`mailto:info@lucapattocchio.dev`}
               className="text-silver-700/90 transition-colors duration-300 hover:text-green-700/90"
               title={`Send me an email! 📧`}
             >
