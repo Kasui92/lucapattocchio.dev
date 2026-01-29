@@ -2,17 +2,18 @@ import type { Social } from "@/types/socials";
 import type { Navigation } from "@/types/navigation";
 
 import { type ReactElement, useState, useRef } from "react";
-import clsx from "clsx";
-
+import { tw } from "@/libs/merge";
 import { useInView } from "react-intersection-observer";
 
 import { Hero } from "./Hero";
 import { HeaderNav } from "./HeaderNav";
 
 export default function Header({
+  page,
   socials,
   navigation,
 }: {
+  page: string;
   socials: Social[];
   navigation: Navigation[];
 }): ReactElement {
@@ -35,7 +36,7 @@ export default function Header({
   return (
     <>
       <header
-        className={clsx(
+        className={tw(
           "fixed top-6 left-0 z-30 w-full transition duration-75 will-change-transform",
           {
             "-translate-y-2 scale-95 opacity-0": !showPrimary,
@@ -43,16 +44,16 @@ export default function Header({
           },
         )}
       >
-        <HeaderNav navigation={navigation} />
+        <HeaderNav page={page} navigation={navigation} />
       </header>
       <div ref={ref}>
         <div
-          className={clsx("transition duration-150 will-change-transform", {
+          className={tw("transition duration-150 will-change-transform", {
             "-translate-y-2 scale-[0.98] opacity-0": showPrimary,
             "opacity-100 delay-100": !showPrimary,
           })}
         >
-          <Hero socials={socials} navigation={navigation} />
+          <Hero page={page} socials={socials} navigation={navigation} />
         </div>
       </div>
     </>

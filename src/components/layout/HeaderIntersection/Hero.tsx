@@ -5,11 +5,14 @@ import type { Navigation } from "@/types/navigation";
 import { Icon } from "@/components/ui/Icon";
 
 import profilePic from "@/assets/images/profile_pic.jpg";
+import { tw } from "@/libs/merge";
 
 export const Hero = ({
+  page,
   socials,
   navigation,
 }: {
+  page: string;
   socials: Social[];
   navigation: Navigation[];
 }): ReactElement => (
@@ -80,17 +83,26 @@ export const Hero = ({
       {/* Main Navigation */}
       <nav>
         <ul className="flex items-center space-x-4">
-          {navigation.map(({ id, label, url }) => (
-            <li key={id}>
-              <a
-                href={url}
-                className="text-silver-700/90 transition-colors duration-300 hover:text-green-700/90"
-                title={`Go to ${label} page`}
-              >
-                {label}
-              </a>
-            </li>
-          ))}
+          {navigation.map(({ id, label, url }) => {
+            const isActive = page === label.toLowerCase();
+
+            return (
+              <li key={id}>
+                <a
+                  href={url}
+                  className={tw(
+                    isActive
+                      ? "text-green-700/90 underline decoration-2 underline-offset-[6px]"
+                      : "text-silver-700/90",
+                    "transition-colors duration-300 hover:text-green-700/90",
+                  )}
+                  title={`Go to ${label} page`}
+                >
+                  {label}
+                </a>
+              </li>
+            );
+          })}
           <li>
             <a
               href="/CV-LucaPattocchio.pdf"

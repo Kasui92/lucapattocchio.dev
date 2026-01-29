@@ -5,6 +5,12 @@ import Footer from "@/components/layout/Footer.astro";
 import Header from "@/components/layout/Header.astro";
 
 import "@/styles/global.css";
+
+interface Props {
+  page: string;
+}
+
+const { page } = Astro.props;
 ---
 
 <!doctype html>
@@ -69,7 +75,7 @@ import "@/styles/global.css";
     <div
       class="relative z-10 mx-auto flex w-full max-w-2xl flex-col px-4 pt-12 xl:px-0"
     >
-      <Header />
+      <Header page={page} />
       <main
         role="main"
         aria-label="Main content"

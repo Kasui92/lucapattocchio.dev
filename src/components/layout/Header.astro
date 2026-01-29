@@ -7,6 +7,13 @@ const socials = socialsCollection.map((item) => item.data);
 
 const navigationCollection = await getCollection("navigation");
 const navigation = navigationCollection.map((item) => item.data);
+
+const { page } = Astro.props;
 ---
 
-<HeaderIntersection client:load socials={socials} navigation={navigation} />
+<HeaderIntersection
+  client:load
+  page={page}
+  socials={socials}
+  navigation={navigation}
+/>
