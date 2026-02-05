@@ -19,9 +19,22 @@ const { experience, isLast } = Astro.props;
   </div>
 
   <div class="flex-1 pb-8">
-    <div class="text-silver-900/90 text-base font-semibold">
-      {experience.company}
-    </div>
+    {
+      experience.companyUrl ? (
+        <a
+          href={experience.companyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline-transition text-base font-semibold text-green-700/90 transition-colors after:bg-green-700/90"
+        >
+          {experience.company}
+        </a>
+      ) : (
+        <div class="text-silver-900/90 text-base font-semibold">
+          {experience.company}
+        </div>
+      )
+    }
     <div class="text-silver-700/80 mt-1 text-sm">{experience.position}</div>
     <div
       class="text-silver-700/60 mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs"
