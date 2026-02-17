@@ -1,5 +1,11 @@
 [
   {
+    "title": "jaad",
+    "description": "Just Another Astro Docs",
+    "image": "/projects/jaad.png",
+    "url": "https://jaad.lancher.dev"
+  },
+  {
     "title": "annamariaesimone.it",
     "description": "A wedding website for Anna Maria & Simone.",
     "image": "/projects/annamariaesimone.jpg",
