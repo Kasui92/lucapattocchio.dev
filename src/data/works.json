@@ -12,10 +12,10 @@
     "url": "https://annamariaesimone.it"
   },
   {
-    "title": "icon-launcher",
-    "description": "Add a clickable icon to GNOME top bar to launch a custom command.",
-    "image": "/projects/icon-launcher.png",
-    "url": "https://github.com/Kasui92/icon-launcher"
+    "title": "giornogaming.it",
+    "description": "GiornoGaming’s website, home of an Italian video game streamer and content creator.",
+    "image": "/projects/giornogaming.jpg",
+    "url": "https://giornogaming.it"
   },
   {
     "title": "lancher",
@@ -30,10 +30,16 @@
     "url": "https://omabuntu.omakasui.org"
   },
   {
-    "title": "giornogaming.it",
-    "description": "GiornoGaming’s website, home of an Italian video game streamer and content creator.",
-    "image": "/projects/giornogaming.jpg",
-    "url": "https://giornogaming.it"
+    "title": "omadeb",
+    "description": "A Modern, Elegant, Development-Focused Setup for Debian and Gnome",
+    "image": "/projects/omadeb.png",
+    "url": "https://omadeb.omakasui.org"
+  },
+  {
+    "title": "icon-launcher",
+    "description": "Add a clickable icon to GNOME top bar to launch a custom command.",
+    "image": "/projects/icon-launcher.png",
+    "url": "https://github.com/Kasui92/icon-launcher"
   },
   {
     "title": "omakasui.org",
