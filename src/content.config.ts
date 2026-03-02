@@ -22,7 +22,7 @@ const navigation = defineCollection({
 
 const experiences = defineCollection({
   loader: file("src/data/experiences.json", {
-    parser: (data) => {
+    parser: (data: string) => {
       const arrayData = JSON.parse(data) as any[];
       return arrayData?.map((item, index) => {
         return {
@@ -52,7 +52,7 @@ const experiences = defineCollection({
 
 const works = defineCollection({
   loader: file("src/data/works.json", {
-    parser: (data) => {
+    parser: (data: string) => {
       const arrayData = JSON.parse(data) as any[];
       return arrayData?.map((item, index) => {
         return {
