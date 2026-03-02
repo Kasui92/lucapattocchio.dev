@@ -14,21 +14,21 @@
     "@tailwindcss/vite": "^4.1.18",
     "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
-    "astro": "^5.17.0",
+    "astro": "^5.18.0",
     "astro-icon": "^1.1.5",
     "clsx": "^2.1.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-intersection-observer": "^10.0.2",
     "remark-github-blockquote-alert": "^2.0.1",
-    "tailwind-merge": "^3.3.1",
-    "tailwindcss": "^4.1.18"
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss": "^4.2.1"
   },
   "devDependencies": {
     "prettier": "3.8.1",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.7.2",
     "vite-plugin-svgr": "^4.5.0",
-    "wrangler": "^4.61.1"
+    "wrangler": "^4.69.0"
   }
 }
