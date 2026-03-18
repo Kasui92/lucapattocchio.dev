@@ -53,5 +53,7 @@ export default defineConfig({
     react(),
   ],
 
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    prerenderEnvironment: "node",
+  }),
 });
