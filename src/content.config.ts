@@ -18,6 +18,7 @@ const navigation = defineCollection({
     id: z.string(),
     label: z.string(),
     url: z.string(),
+    order: z.number(),
   }),
 });
 

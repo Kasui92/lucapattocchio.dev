@@ -2,16 +2,19 @@
   {
     "id": "about",
     "label": "About",
-    "url": "/"
+    "url": "/",
+    "order": 1
   },
   {
     "id": "works",
     "label": "Works",
-    "url": "/works"
+    "url": "/works",
+    "order": 2
   },
   {
     "id": "blog",
     "label": "Blog",
-    "url": "/blog"
+    "url": "/blog",
+    "order": 3
   }
 ]
