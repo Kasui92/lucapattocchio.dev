@@ -2,7 +2,7 @@ import { type ReactElement } from "react";
 import type { Social } from "@/types/socials";
 import type { Navigation } from "@/types/navigation";
 
-import { Icon } from "@/components/ui/Icon";
+import { Icon } from "@/components/Icon";
 
 import profilePic from "@/assets/images/profile_pic.jpg";
 import { tw } from "@/libs/merge";
