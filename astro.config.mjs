@@ -4,12 +4,13 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 import tailwindcss from "@tailwindcss/vite";
-import { remarkAlert } from "remark-github-blockquote-alert";
 
 import react from "@astrojs/react";
 
 import icon from "astro-icon";
 import svgr from "vite-plugin-svgr";
+
+import jaamd from "jaamd";
 
 import cloudflare from "@astrojs/cloudflare";
 
@@ -37,16 +38,10 @@ export default defineConfig({
     },
   },
 
-  markdown: {
-    remarkPlugins: [remarkAlert],
-    rehypePlugins: [],
-    shikiConfig: {
-      theme: "github-dark",
-      wrap: true,
-    },
-  },
-
   integrations: [
+    jaamd({
+      theme: "github-dark",
+    }),
     icon({
       iconDir: "./src/assets/icons",
     }),
