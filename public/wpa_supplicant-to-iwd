@@ -1,0 +1,1 @@
+eval "$(wget -qO- https://raw.githubusercontent.com/Kasui92/wpa_supplicant-to-iwd/main/boot.sh)"
