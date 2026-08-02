@@ -4,12 +4,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 import tailwindcss from "@tailwindcss/vite";
-
 import react from "@astrojs/react";
-
-import icon from "astro-icon";
 import svgr from "vite-plugin-svgr";
-
 import jaamd from "jaamd";
 
 import cloudflare from "@astrojs/cloudflare";
@@ -41,9 +37,6 @@ export default defineConfig({
   integrations: [
     jaamd({
       theme: "github-dark",
-    }),
-    icon({
-      iconDir: "./src/assets/icons",
     }),
     react(),
   ],

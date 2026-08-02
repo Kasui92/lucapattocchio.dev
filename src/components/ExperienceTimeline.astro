@@ -1,6 +1,7 @@
 ---
-import { Icon } from "astro-icon/components";
 import { date2Period } from "@/libs/utils";
+import CalendarIcon from "@/assets/icons/calendar.svg";
+import MapPinIcon from "@/assets/icons/map-pin.svg";
 
 const { experience, isLast } = Astro.props;
 ---
@@ -40,7 +41,7 @@ const { experience, isLast } = Astro.props;
       class="text-silver-700/60 mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs"
     >
       <div class="flex items-center gap-1">
-        <Icon name="calendar" class="h-3.5 w-3.5" />
+        <CalendarIcon class="h-3.5 w-3.5" />
         <span>
           {date2Period(experience.startDate, true)} -{" "}
           {
@@ -55,7 +56,7 @@ const { experience, isLast } = Astro.props;
       {
         experience.location && (
           <div class="flex items-center gap-1">
-            <Icon name="map-pin" class="h-3.5 w-3.5" />
+            <MapPinIcon class="h-3.5 w-3.5" />
             <span>{experience.location}</span>
           </div>
         )
