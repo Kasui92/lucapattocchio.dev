@@ -16,7 +16,6 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "astro": "^7.1.6",
-    "astro-icon": "^1.1.5",
     "clsx": "^2.1.1",
     "jaamd": "^0.5.0",
     "react": "^19.2.8",
@@ -31,12 +30,5 @@
     "prettier-plugin-tailwindcss": "0.8.1",
     "vite-plugin-svgr": "^5.2.0",
     "wrangler": "^4.118.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "undici": "^7.13.0",
-      "@iconify/tools": "5.0.5",
-      "@iconify/utils": "3.1.0"
-    }
   }
 }
