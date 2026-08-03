@@ -1,7 +1,7 @@
 import type { Social } from "@/types/socials";
 import type { Navigation } from "@/types/navigation";
 
-import { type ReactElement, useState, useRef } from "react";
+import type { ReactElement } from "react";
 import { tw } from "@/libs/merge";
 import { useInView } from "react-intersection-observer";
 
@@ -17,21 +17,13 @@ export default function Header({
   socials: Social[];
   navigation: Navigation[];
 }): ReactElement {
-  const [showPrimary, setShowPrimary] = useState(false);
-  const isFirstRender = useRef(true);
-
-  const { ref } = useInView({
+  const { ref, inView } = useInView({
     rootMargin: "-100px",
     threshold: 0,
-    onChange: (inView) => {
-      // Ignore the first render to prevent flickering
-      if (isFirstRender.current) {
-        isFirstRender.current = false;
-        return;
-      }
-      setShowPrimary(!inView);
-    },
+    initialInView: true,
   });
+
+  const showPrimary = !inView;
 
   return (
     <>
