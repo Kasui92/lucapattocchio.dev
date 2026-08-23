@@ -22,5 +22,11 @@
     "label": "Bluesky",
     "url": "https://bsky.app/profile/lucapattocchio.dev",
     "icon": "bluesky"
-  }
+  },
+  {
+    "id": "x",
+    "label": "X",
+    "url": "https://x.com/kasui92",
+    "icon": "x"
+  },
 ]
