@@ -6,7 +6,7 @@ import { fileURLToPath } from "url";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import svgr from "vite-plugin-svgr";
-import jaamd from "jaamd";
+import jaamd from "@lancher-dev/jaamd";
 
 import cloudflare from "@astrojs/cloudflare";
 
