@@ -4,7 +4,7 @@ import type { Navigation } from "@/types/navigation";
 
 import { Icon } from "@/components/Icon";
 
-import profilePic from "@/assets/images/profile_pic.jpg";
+import profileImage from "@/assets/images/profile.jpg";
 import { tw } from "@/libs/merge";
 
 export const Hero = ({
@@ -21,7 +21,7 @@ export const Hero = ({
       <div className="ring-silver-500/10 hover:ring-silver-500/20 transform rounded-full shadow-lg ring-[5px] transition-transform duration-300 hover:scale-105">
         <img
           className="h-16 w-16 rounded-full object-cover"
-          src={profilePic.src}
+          src={profileImage.src}
           alt="Logo"
           fetchPriority="high"
         />

@@ -4,7 +4,7 @@ import type { Navigation } from "@/types/navigation";
 import { tw } from "@/libs/merge";
 import { Icon } from "@/components/Icon";
 
-import profilePic from "@/assets/images/profile_pic.jpg";
+import profileImage from "@/assets/images/profile.jpg";
 
 const DownloadResume = (): ReactElement => (
   <a
@@ -47,7 +47,7 @@ export const HeaderNav = ({
               >
                 <img
                   className="h-10 w-10 rounded-full object-cover"
-                  src={profilePic.src}
+                  src={profileImage.src}
                   alt="Logo"
                   fetchPriority="high"
                 />
