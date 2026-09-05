@@ -23,6 +23,10 @@ export default defineConfig({
       alias: {
         "@": path.resolve(__dirname, "./src"),
       },
+      dedupe: ["react", "react-dom"],
+    },
+    optimizeDeps: {
+      include: ["react", "react-dom", "react-intersection-observer"],
     },
     build: {
       sourcemap: false,
