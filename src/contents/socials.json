@@ -16,17 +16,5 @@
     "label": "Linkedin",
     "url": "https://www.linkedin.com/in/lucapattocchio/",
     "icon": "linkedin"
-  },
-  {
-    "id": "bluesky",
-    "label": "Bluesky",
-    "url": "https://bsky.app/profile/lucapattocchio.dev",
-    "icon": "bluesky"
-  },
-  {
-    "id": "x",
-    "label": "X",
-    "url": "https://x.com/kasui92",
-    "icon": "x"
   }
 ]
