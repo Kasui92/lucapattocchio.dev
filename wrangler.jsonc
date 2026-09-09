@@ -2,7 +2,7 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "compatibility_date": "2026-09-08",
   "compatibility_flags": ["global_fetch_strictly_public"],
-  "name": "lucapattocchio.dev",
+  "name": "lucapattocchio-dev",
   "main": "@astrojs/cloudflare/entrypoints/server",
   "assets": {
     "directory": "./dist",
