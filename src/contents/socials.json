@@ -12,6 +12,12 @@
     "icon": "gitlab"
   },
   {
+    "id": "codeberg",
+    "label": "Codeberg",
+    "url": "https://codeberg.org/Kasui92",
+    "icon": "codeberg"
+  },
+  {
     "id": "linkedin",
     "label": "Linkedin",
     "url": "https://www.linkedin.com/in/lucapattocchio/",
