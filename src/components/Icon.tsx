@@ -1,5 +1,6 @@
 import { type ComponentType, type SVGProps } from "react";
 
+import CodebergIcon from "@/assets/icons/codeberg.svg?react";
 import GitHubIcon from "@/assets/icons/github.svg?react";
 import GitLabIcon from "@/assets/icons/gitlab.svg?react";
 import LinkedInIcon from "@/assets/icons/linkedin.svg?react";
@@ -14,6 +15,7 @@ interface IconProps {
 
 export function Icon({ name, className = "" }: IconProps) {
   const icons: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
+    codeberg: CodebergIcon,
     github: GitHubIcon,
     gitlab: GitLabIcon,
     linkedin: LinkedInIcon,
