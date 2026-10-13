@@ -8,32 +8,43 @@ import "@/assets/styles/global.css";
 
 interface Props {
   page: string;
+  title?: string;
+  description?: string;
+  type?: "website" | "article";
+  locale?: "en" | "it";
 }
 
-const { page } = Astro.props;
+const {
+  page,
+  title = "Luca Pattocchio (Kasui92)",
+  description = "Passionate Full-Stack Developer always ready to tackle new challenges with a keyboard and plenty of coffee.",
+  type = "website",
+  locale = "en",
+} = Astro.props;
+
+const canonicalUrl = new URL(
+  Astro.url.pathname,
+  Astro.site ?? Astro.url.origin,
+);
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang={locale} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta
-      name="description"
-      content="Passionate Full-Stack Developer always ready to tackle new challenges with a keyboard and plenty of coffee."
-    />
-    <title>Luca Pattocchio (Kasui92)</title>
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/jpeg" href="/profile-square.jpg" />
     <link rel="apple-touch-icon" href="/profile-square.jpg" />
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:url" content="https://lucapattocchio.dev" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Luca Pattocchio (Kasui92)" />
-    <meta
-      property="og:description"
-      content="Passionate Full-Stack Developer always ready to tackle new challenges with a keyboard and plenty of coffee."
-    />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content={type} />
+    <meta property="og:locale" content={locale === "it" ? "it_IT" : "en_GB"} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <meta
       property="og:image"
       content="https://lucapattocchio.dev/og-image.png"
@@ -42,12 +53,9 @@ const { page } = Astro.props;
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content="lucapattocchio.dev" />
-    <meta property="twitter:url" content="https://lucapattocchio.dev" />
-    <meta name="twitter:title" content="Luca Pattocchio (Kasui92)" />
-    <meta
-      name="twitter:description"
-      content="Passionate Full-Stack Developer always ready to tackle new challenges with a keyboard and plenty of coffee."
-    />
+    <meta property="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <meta
       name="twitter:image"
       content="https://lucapattocchio.dev/og-image.png"

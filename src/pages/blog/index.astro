@@ -1,8 +1,20 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import BlogPostItem from "@/components/BlogPostItem.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+
+const postsByYear = Map.groupBy(posts, (post) => post.data.date.getFullYear());
 ---
 
-<Layout page="blog">
+<Layout
+  page="blog"
+  title="Blog | Luca Pattocchio"
+  description="Thoughts, notes and experiments about software development and the web."
+>
   <div class="space-y-16">
     <section class="container flex flex-col items-center">
       <h3
@@ -20,13 +32,33 @@ import Layout from "@/layouts/Layout.astro";
           >so why not me?</span
         >
       </p>
-      <div class="mt-6 flex w-full justify-center">
-        <p
-          class="text-silver-700/70 text-md text-center leading-7 font-semibold"
-        >
-          No articles available at the moment. Please check back later!
-        </p>
-      </div>
+      {
+        posts.length > 0 ? (
+          <div class="mt-8 w-full space-y-8">
+            {[...postsByYear].map(([year, yearPosts]) => (
+              <section aria-labelledby={`year-${year}`}>
+                <h4
+                  id={`year-${year}`}
+                  class="text-silver-700/45 text-sm font-semibold tracking-widest"
+                >
+                  {year}
+                </h4>
+                <div class="mt-1">
+                  {yearPosts.map((post) => (
+                    <BlogPostItem post={post} />
+                  ))}
+                </div>
+              </section>
+            ))}
+          </div>
+        ) : (
+          <div class="mt-6 flex w-full justify-center">
+            <p class="text-silver-700/70 text-md text-center leading-7 font-semibold">
+              No articles available at the moment. Please check back later!
+            </p>
+          </div>
+        )
+      }
     </section>
   </div>
 </Layout>

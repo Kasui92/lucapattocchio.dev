@@ -1,6 +1,6 @@
 import { defineCollection } from "astro:content";
 import { z } from "astro/zod";
-import { file } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 
 const socials = defineCollection({
   loader: file("src/contents/socials.json"),
@@ -72,9 +72,21 @@ const works = defineCollection({
   }),
 });
 
+const blog = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./blog" }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    description: z.string().optional(),
+    locale: z.enum(["en", "it"]),
+    tags: z.array(z.string()).default([]),
+  }),
+});
+
 export const collections = {
   socials,
   navigation,
   experiences,
   works,
+  blog,
 };

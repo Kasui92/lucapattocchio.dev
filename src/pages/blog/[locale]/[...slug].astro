@@ -1,0 +1,158 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getCollection, render } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+
+  return posts.map((post) => ({
+    params: {
+      locale: post.data.locale,
+      slug: post.id.replace(/^(en|it)\//, "").replace(/\.md$/, ""),
+    },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const { title, description, date, locale, tags, readingTime } = post.data;
+const dateLocale = locale === "it" ? "it-IT" : "en-GB";
+const formattedDate = new Intl.DateTimeFormat(dateLocale, {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+}).format(date);
+const readingLabel =
+  locale === "it" ? `${readingTime} min di lettura` : `${readingTime} min read`;
+const backLabel = locale === "it" ? "Torna al blog" : "Back to the blog";
+---
+
+<Layout
+  page="blog"
+  title={`${title} | Luca Pattocchio`}
+  description={description ?? title}
+  type="article"
+  locale={locale}
+>
+  <article>
+    <a
+      href="/blog"
+      class="inline-flex items-center gap-2 text-sm text-green-700/80 transition-colors hover:text-green-700"
+      data-astro-prefetch
+    >
+      <span aria-hidden="true">←</span>
+      {backLabel}
+    </a>
+
+    <header class="mt-8">
+      <div class="text-silver-700/55 flex flex-wrap items-center gap-2 text-xs">
+        <time datetime={date.toISOString()}>{formattedDate}</time>
+        <span aria-hidden="true">·</span>
+        <span>{readingLabel}</span>
+        <span aria-hidden="true">·</span>
+        <span
+          class="rounded-full border border-green-500/25 bg-green-500/10 px-2 py-0.5 font-semibold text-green-700/80 uppercase"
+        >
+          {locale}
+        </span>
+      </div>
+
+      <h1 class="text-silver-900/95 mt-4 text-3xl leading-tight font-bold">
+        {title}
+      </h1>
+      {
+        description && (
+          <p class="text-silver-700/65 mt-4 text-base leading-7">
+            {description}
+          </p>
+        )
+      }
+      {
+        tags.length > 0 && (
+          <div class="mt-5 flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <span class="bg-silver-700/10 text-silver-700/60 rounded-full px-2.5 py-1 text-xs">
+                #{tag}
+              </span>
+            ))}
+          </div>
+        )
+      }
+    </header>
+
+    <div class="border-silver-700/15 mt-8 border-t pt-8">
+      <div class="blog-content text-silver-700/80 text-base leading-8">
+        <Content />
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  :global(.blog-content > * + *) {
+    margin-top: 1.25rem;
+  }
+
+  :global(.blog-content h2),
+  :global(.blog-content h3) {
+    color: rgb(242 242 242 / 0.9);
+    font-weight: 700;
+    line-height: 1.35;
+    margin-top: 2.5rem;
+  }
+
+  :global(.blog-content h2) {
+    font-size: 1.25rem;
+  }
+
+  :global(.blog-content h3) {
+    font-size: 1.1rem;
+  }
+
+  :global(.blog-content a) {
+    color: rgb(137 178 158 / 0.9);
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+  }
+
+  :global(.blog-content ul),
+  :global(.blog-content ol) {
+    padding-left: 1.5rem;
+  }
+
+  :global(.blog-content ul) {
+    list-style: disc;
+  }
+
+  :global(.blog-content ol) {
+    list-style: decimal;
+  }
+
+  :global(.blog-content blockquote) {
+    border-left: 3px solid rgb(73 111 93 / 0.7);
+    color: rgb(216 217 217 / 0.65);
+    padding-left: 1rem;
+  }
+
+  :global(.blog-content :not(pre) > code) {
+    background: rgb(216 217 217 / 0.08);
+    border-radius: 0.25rem;
+    padding: 0.15rem 0.35rem;
+  }
+
+  :global(.blog-content pre) {
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    padding: 1rem;
+  }
+
+  :global(.blog-content img) {
+    border-radius: 0.5rem;
+  }
+</style>
