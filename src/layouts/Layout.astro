@@ -14,7 +14,7 @@ const { page } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -62,6 +62,30 @@ const { page } = Astro.props;
       rel="stylesheet"
     />
     <link rel="preload" as="image" href="/src/assets/images/profile.jpg" />
+
+    <script is:inline>
+      {
+        const query = matchMedia("(prefers-color-scheme: light)");
+        let storage = null;
+        try {
+          storage = localStorage;
+        } catch {}
+
+        const getStored = () => {
+          const theme = storage?.getItem("theme");
+          return theme === "light" || theme === "dark" ? theme : null;
+        };
+        const apply = (doc) => {
+          const theme = getStored() ?? (query.matches ? "light" : "dark");
+          doc.documentElement.dataset.theme = theme;
+          doc.documentElement.classList.toggle("dark", theme === "dark");
+        };
+
+        apply(document);
+        document.addEventListener("astro:before-swap", (e) => apply(e.newDocument));
+        query.addEventListener("change", () => getStored() || apply(document));
+      }
+    </script>
 
     <ClientRouter />
   </head>

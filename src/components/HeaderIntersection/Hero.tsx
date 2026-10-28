@@ -3,6 +3,7 @@ import type { Social } from "@/types/socials";
 import type { Navigation } from "@/types/navigation";
 
 import { Icon } from "@/components/Icon";
+import { ThemeToggle } from "./ThemeToggle";
 
 import profileImage from "@/assets/images/profile.jpg";
 import { tw } from "@/libs/merge";
@@ -120,6 +121,9 @@ export const Hero = ({
                 className="h-3.5 w-3.5 opacity-70 transition-transform group-hover:animate-bounce"
               />
             </a>
+          </li>
+          <li>
+            <ThemeToggle />
           </li>
         </ul>
       </nav>

@@ -5,8 +5,10 @@
 @import "tailwindcss";
 @import "./themes/rose-pine.css";
 @import "./themes/rose-pine-dawn.css";
+@import "@lancher-dev/jaamd/themes/rose-pine.css";
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant light (&:where([data-theme='light'], [data-theme='light'] *));
 
 @theme {
   --font-*: initial;

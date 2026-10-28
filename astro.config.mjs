@@ -37,7 +37,7 @@ export default defineConfig({
 
   integrations: [
     jaamd({
-      theme: "rose-pine",
+      theme: { light: "rose-pine-dawn", dark: "rose-pine" },
     }),
     react(),
   ],

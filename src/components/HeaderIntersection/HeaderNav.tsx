@@ -3,6 +3,7 @@ import type { Navigation } from "@/types/navigation";
 
 import { tw } from "@/libs/merge";
 import { Icon } from "@/components/Icon";
+import { ThemeToggle } from "./ThemeToggle";
 
 import profileImage from "@/assets/images/profile.jpg";
 
@@ -86,11 +87,15 @@ export const HeaderNav = ({
                 <li>
                   <DownloadResume />
                 </li>
+                <li>
+                  <ThemeToggle />
+                </li>
               </ul>
             </nav>
           </div>
 
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center gap-x-3 md:hidden">
+            <ThemeToggle />
             <button
               className="rounded-full p-1"
               type="button"
