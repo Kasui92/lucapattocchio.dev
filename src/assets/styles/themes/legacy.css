@@ -1,0 +1,23 @@
+/**
+ * Legacy Palette
+ */
+
+:root {
+    color-scheme: dark;
+
+    --background: #221e22; /* black */
+    --surface: #52495255; /* black-600 */
+    --foreground: #f2f2f2e6; /* silver-900/90 */
+    --muted-foreground: #d8d9d9cc; /* silver-700/80 */
+    --subtle-foreground: #d8d9d999; /* silver-700/60 */
+    --primary: #89b29ee6; /* green-700/90 */
+    --secondary: #399bcc; /* cerulean-600 */
+    --border-subtle: #d8d9d933; /* silver-700/20 */
+    --border: #bfc0c01a; /* silver-500/10 */
+    --border-strong: #bfc0c033; /* silver-500/20 */
+
+    --yellow: #ffdf20b3; /* tailwind yellow-300/70 */
+    --green: #496f5d; /* green */
+    --blue: #2978a0; /* cerulean */
+    --purple: #ad46ffb3; /* tailwind purple-500/70 */
+}
