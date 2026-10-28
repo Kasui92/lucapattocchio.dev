@@ -28,10 +28,11 @@ export default function Header({
   return (
     <>
       <header
+        inert={!showPrimary}
         className={tw(
           "fixed top-6 left-0 z-30 w-full transition duration-75 will-change-transform",
           {
-            "-translate-y-2 scale-95 opacity-0": !showPrimary,
+            "pointer-events-none -translate-y-2 scale-95 opacity-0": !showPrimary,
             "opacity-100": showPrimary,
           },
         )}
