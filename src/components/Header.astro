@@ -8,7 +8,7 @@ const socials = socialsCollection.map((item) => item.data);
 const navigationCollection = await getCollection("navigation");
 const navigation = navigationCollection
   .map((item) => item.data)
-  .sort((a, b) => a.order - b.order);
+  .toSorted((a, b) => a.order - b.order);
 
 const { page } = Astro.props;
 ---

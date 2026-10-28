@@ -1,6 +1,5 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-import path from "path";
 import { fileURLToPath } from "url";
 
 import tailwindcss from "@tailwindcss/vite";
@@ -9,8 +8,6 @@ import svgr from "vite-plugin-svgr";
 import jaamd from "@lancher-dev/jaamd";
 
 import cloudflare from "@astrojs/cloudflare";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,7 +18,7 @@ export default defineConfig({
     plugins: [tailwindcss(), svgr()],
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, "./src"),
+        "@": fileURLToPath(new URL("./src", import.meta.url)),
       },
       dedupe: ["react", "react-dom"],
     },
