@@ -97,7 +97,7 @@ export const HeaderNav = ({
           <div className="flex items-center gap-x-3 md:hidden">
             <ThemeToggle />
             <button
-              className="rounded-full p-1"
+              className="cursor-pointer rounded-full p-1"
               type="button"
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
             >
