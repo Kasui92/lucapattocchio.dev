@@ -20,13 +20,9 @@ const { project, priority = false } = Astro.props;
   </div>
 
   <div class="mt-3 flex flex-col gap-1">
-    <h4
-      class="text-silver-900/90 text-center text-base font-semibold transition-colors group-hover:text-green-700/90"
-    >
+    <h4 class="text-silver-900/90 text-center text-base font-semibold transition-colors group-hover:text-green-700/90">
       {project.title}
     </h4>
-    <p class="text-silver-700/70 text-center text-sm">
-      {project.description}
-    </p>
+    <p class="text-silver-700/70 text-center text-sm">{project.description}</p>
   </div>
 </a>
