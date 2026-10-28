@@ -3,6 +3,8 @@
  */
 
 @import "tailwindcss";
+@import "./themes/rose-pine.css";
+@import "./themes/rose-pine-dawn.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -16,60 +18,7 @@
   --animate-bounce: bounce 1s infinite;
   --animate-bounce-x: bounce-x 1s infinite;
 
-  --color-black-100: #070607;
-  --color-black-200: #0e0c0e;
-  --color-black-300: #151315;
-  --color-black-400: #1c191c;
-  --color-black-500: #221e22;
-  --color-black-600: #524952;
-  --color-black-700: #817381;
-  --color-black-800: #aca1ac;
-  --color-black-900: #d5d0d5;
-  --color-black: #221e22;
-
-  --color-silver-100: #262727;
-  --color-silver-200: #4c4d4d;
-  --color-silver-300: #727474;
-  --color-silver-400: #989a9a;
-  --color-silver-500: #bfc0c0;
-  --color-silver-600: #cbcdcd;
-  --color-silver-700: #d8d9d9;
-  --color-silver-800: #e5e6e6;
-  --color-silver-900: #f2f2f2;
-  --color-silver: #bfc0c0;
-
-  --color-white-100: #333333;
-  --color-white-200: #666666;
-  --color-white-300: #999999;
-  --color-white-400: #cccccc;
-  --color-white-500: #ffffff;
-  --color-white-600: #ffffff;
-  --color-white-700: #ffffff;
-  --color-white-800: #ffffff;
-  --color-white-900: #ffffff;
-  --color-white: #ffffff;
-
-  --color-cerulean-100: #081820;
-  --color-cerulean-200: #10303f;
-  --color-cerulean-300: #18475f;
-  --color-cerulean-400: #215f7f;
-  --color-cerulean-500: #2978a0;
-  --color-cerulean-600: #399bcc;
-  --color-cerulean-700: #6bb4d9;
-  --color-cerulean-800: #9ccde5;
-  --color-cerulean-900: #cee6f2;
-  --color-cerulean: #2978a0;
-
-  --color-green-100: #0f1613;
-  --color-green-200: #1d2c25;
-  --color-green-300: #2c4338;
-  --color-green-400: #3a594a;
-  --color-green-500: #496f5d;
-  --color-green-600: #62977e;
-  --color-green-700: #89b29e;
-  --color-green-800: #b0cbbf;
-  --color-green-900: #d8e5df;
-  --color-green: #496f5d;
+  --color-*: initial;
 
   @keyframes slideInSection {
     0% {
@@ -110,6 +59,25 @@
   }
 }
 
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle-foreground: var(--subtle-foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-border-subtle: var(--border-subtle);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-red: var(--red);
+  --color-yellow: var(--yellow);
+  --color-green: var(--green);
+  --color-blue: var(--blue);
+  --color-purple: var(--purple);
+  --color-pink: var(--pink);
+}
+
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
@@ -124,7 +92,7 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+    border-color: var(--color-border);
   }
 }
 

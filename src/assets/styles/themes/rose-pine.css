@@ -1,0 +1,25 @@
+/**
+ * Rosé Pine
+ */
+
+:root {
+    color-scheme: dark;
+
+    --background: #191724; /* base */
+    --surface: #1f1d2e; /* surface */
+    --foreground: #e0def4; /* text */
+    --muted-foreground: #908caa; /* subtle */
+    --subtle-foreground: #6e6a86; /* muted */
+    --primary: #ebbcba; /* rose */
+    --secondary: #9ccfd8; /* foam */
+    --border-subtle: #26233a; /* overlay */
+    --border: #403d52; /* highlight-med */
+    --border-strong: #524f67; /* highlight-high */
+
+    --red: #eb6f92; /* love */
+    --yellow: #f6c177; /* gold */
+    --green: #31748f; /* pine */
+    --blue: #9ccfd8; /* foam */
+    --purple: #c4a7e7; /* iris */
+    --pink: #ebbcba; /* rose */
+}

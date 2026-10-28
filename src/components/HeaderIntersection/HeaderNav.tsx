@@ -11,10 +11,10 @@ const DownloadResume = (): ReactElement => (
     href="/CV-LucaPattocchio.pdf"
     target="_blank"
     rel="noopener noreferrer"
-    className="group text-cerulean-600 hover:text-cerulean-800 flex items-center gap-x-1 transition duration-300"
+    className="group text-secondary hover:text-secondary/80 flex items-center gap-x-1 transition duration-300"
     title="Download Resume"
   >
-    <span className="group-hover:border-cerulean-800 border-b border-dashed border-transparent font-medium transition-all">
+    <span className="group-hover:border-secondary border-b border-dashed border-transparent font-medium transition-all">
       Resume
     </span>
     <Icon
@@ -35,7 +35,7 @@ export const HeaderNav = ({
 
   return (
     <div className="mx-auto w-full max-w-2xl px-4 xl:px-0">
-      <div className="shadow-surface-glass bg-black-600/20 -mx-px rounded-2xl px-4 py-2 shadow-lg backdrop-blur-md">
+      <div className="shadow-surface-glass bg-surface/60 -mx-px rounded-2xl px-4 py-2 shadow-lg backdrop-blur-md">
         <div className="flex items-center justify-between">
           {/* Brand */}
           <div className="flex space-x-4">
@@ -53,7 +53,7 @@ export const HeaderNav = ({
                 />
               </a>
             </div>
-            <div className="text-silver-900/90 flex items-center font-semibold">
+            <div className="text-foreground flex items-center font-semibold">
               Luca Pattocchio
             </div>
           </div>
@@ -71,9 +71,9 @@ export const HeaderNav = ({
                         href={url}
                         className={tw(
                           isActive
-                            ? "text-green-700/90 underline decoration-2 underline-offset-[6px]"
-                            : "text-silver-700/90",
-                          "transition-colors duration-300 hover:text-green-700/90",
+                            ? "text-primary underline decoration-2 underline-offset-[6px]"
+                            : "text-muted-foreground",
+                          "transition-colors duration-300 hover:text-primary",
                         )}
                         title={`Go to ${label} page`}
                         data-astro-prefetch
@@ -96,7 +96,7 @@ export const HeaderNav = ({
               type="button"
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
             >
-              <Icon name="menu-2" className="text-silver-900/90 h-6 w-6" />
+              <Icon name="menu-2" className="text-foreground h-6 w-6" />
             </button>
           </div>
         </div>
@@ -118,9 +118,9 @@ export const HeaderNav = ({
                         href={url}
                         className={tw(
                           isActive
-                            ? "text-green-700/90 underline decoration-2 underline-offset-[6px]"
-                            : "text-silver-700/90",
-                          "transition-colors duration-300 hover:text-green-700/90",
+                            ? "text-primary underline decoration-2 underline-offset-[6px]"
+                            : "text-muted-foreground",
+                          "transition-colors duration-300 hover:text-primary",
                         )}
                         title={`Go to ${label} page`}
                         data-astro-prefetch

@@ -1,0 +1,25 @@
+/**
+ * Rosé Pine Dawn
+ */
+
+:root[data-theme='light'] {
+    color-scheme: light;
+
+    --background: #faf4ed; /* base */
+    --surface: #fffaf3; /* surface */
+    --foreground: #575279; /* text */
+    --muted-foreground: #797593; /* subtle */
+    --subtle-foreground: #9893a5; /* muted */
+    --primary: #d7827e; /* rose */
+    --secondary: #56949f; /* foam */
+    --border-subtle: #f2e9e1; /* overlay */
+    --border: #dfdad9; /* highlight-med */
+    --border-strong: #cecacd; /* highlight-high */
+
+    --red: #b4637a; /* love */
+    --yellow: #ea9d34; /* gold */
+    --green: #286983; /* pine */
+    --blue: #56949f; /* foam */
+    --purple: #907aa9; /* iris */
+    --pink: #d7827e; /* rose */
+}

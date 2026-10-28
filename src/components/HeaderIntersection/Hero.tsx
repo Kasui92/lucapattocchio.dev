@@ -18,7 +18,7 @@ export const Hero = ({
 }): ReactElement => (
   <div className="mt-8 space-y-6">
     <div className="flex items-center space-x-6">
-      <div className="ring-silver-500/10 hover:ring-silver-500/20 transform rounded-full shadow-lg ring-[5px] transition-transform duration-300 hover:scale-105">
+      <div className="ring-border hover:ring-border-strong transform rounded-full shadow-lg ring-[5px] transition-transform duration-300 hover:scale-105">
         <img
           className="h-16 w-16 rounded-full object-cover"
           src={profileImage.src}
@@ -28,10 +28,10 @@ export const Hero = ({
       </div>
 
       <div className="mt-2">
-        <h1 className="text-silver-900/90 text-3xl leading-none font-semibold">
+        <h1 className="text-foreground text-3xl leading-none font-semibold">
           Luca Pattocchio
         </h1>
-        <h2 className="text-silver-700/50 mt-2 items-center space-y-2 text-lg leading-none font-medium lg:mt-0 lg:flex lg:space-y-0 lg:space-x-2">
+        <h2 className="text-subtle-foreground mt-2 items-center space-y-2 text-lg leading-none font-medium lg:mt-0 lg:flex lg:space-y-0 lg:space-x-2">
           <div className="whitespace-nowrap">
             <span>Full Stack Developer</span>
           </div>
@@ -40,7 +40,7 @@ export const Hero = ({
     </div>
 
     <div className="flex items-center space-x-2">
-      <span className="text-md text-silver-700/90">
+      <span className="text-md text-muted-foreground">
         I turn gibberish into web apps, outsmart stubborn terminals, but can’t
         fix a washing machine despite what my grandma thinks.
       </span>
@@ -56,13 +56,13 @@ export const Hero = ({
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-silver-700/90 transition-colors duration-300 hover:text-green-700/90"
+                className="text-muted-foreground transition-colors duration-300 hover:text-primary"
                 title={`Go to ${label}`}
                 data-astro-prefetch
               >
                 <Icon
                   name={icon}
-                  className="text-silver-700/90 h-6 w-6 transform transition-transform hover:scale-110 hover:rotate-12"
+                  className="text-muted-foreground h-6 w-6 transform transition-transform hover:scale-110 hover:rotate-12"
                 />
               </a>
             </li>
@@ -70,12 +70,12 @@ export const Hero = ({
           <li>
             <a
               href={`mailto:info@lucapattocchio.dev`}
-              className="text-silver-700/90 transition-colors duration-300 hover:text-green-700/90"
+              className="text-muted-foreground transition-colors duration-300 hover:text-primary"
               title={`Send me an email! 📧`}
             >
               <Icon
                 name="mail"
-                className="text-silver-700/90 h-6 w-6 transform transition-transform hover:scale-110 hover:rotate-12"
+                className="text-muted-foreground h-6 w-6 transform transition-transform hover:scale-110 hover:rotate-12"
               />
             </a>
           </li>
@@ -93,9 +93,9 @@ export const Hero = ({
                   href={url}
                   className={tw(
                     isActive
-                      ? "text-green-700/90 underline decoration-2 underline-offset-[6px]"
-                      : "text-silver-700/90",
-                    "transition-colors duration-300 hover:text-green-700/90",
+                      ? "text-primary underline decoration-2 underline-offset-[6px]"
+                      : "text-muted-foreground",
+                    "transition-colors duration-300 hover:text-primary",
                   )}
                   title={`Go to ${label} page`}
                 >
@@ -109,10 +109,10 @@ export const Hero = ({
               href="/CV-LucaPattocchio.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="group text-cerulean-600 hover:text-cerulean-800 flex items-center gap-x-1 transition duration-300"
+              className="group text-secondary hover:text-secondary/80 flex items-center gap-x-1 transition duration-300"
               title="Download Resume"
             >
-              <span className="group-hover:border-cerulean-800 border-b border-dashed border-transparent font-medium transition-all">
+              <span className="group-hover:border-secondary border-b border-dashed border-transparent font-medium transition-all">
                 Resume
               </span>
               <Icon
