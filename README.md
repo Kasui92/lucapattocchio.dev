@@ -27,3 +27,5 @@ The above commands will start the application on `http://localhost:4321/`
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.<br/>
 Remove all my personal data and use it as you wish.
+
+The icons in `src/assets/icons` are from [Tabler Icons](https://tabler.io/icons), copyright © Paweł Kuna (Tabler), and are licensed under the [MIT License](https://github.com/tabler/tabler-icons/blob/main/LICENSE).
