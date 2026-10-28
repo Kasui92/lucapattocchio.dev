@@ -12,16 +12,16 @@
     "generate-types": "wrangler types"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^14.3.4",
-    "@astrojs/react": "^7.0.1",
-    "@lancher-dev/jaamd": "^0.9.2",
+    "@astrojs/cloudflare": "^14.4.2",
+    "@astrojs/react": "^7.1.1",
+    "@lancher-dev/jaamd": "^0.10.0",
     "@tailwindcss/vite": "^4.3.3",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "astro": "^7.3.8",
+    "astro": "^7.4.2",
     "clsx": "^2.1.1",
-    "react": "^19.3.0",
-    "react-dom": "^19.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "react-intersection-observer": "^11.0.1",
     "tailwind-merge": "^3.7.0",
     "tailwindcss": "^4.3.3"
@@ -29,9 +29,9 @@
   "devDependencies": {
     "@types/node": "^26.4.1",
     "prettier": "3.9.10",
-    "prettier-plugin-astro": "1.1.1",
+    "prettier-plugin-astro": "1.1.2",
     "prettier-plugin-tailwindcss": "0.8.1",
     "vite-plugin-svgr": "^5.2.0",
-    "wrangler": "^4.130.0"
+    "wrangler": "^4.154.0"
   }
 }
