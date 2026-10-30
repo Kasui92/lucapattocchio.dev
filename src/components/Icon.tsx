@@ -4,6 +4,7 @@ import CodebergIcon from "@/assets/icons/codeberg.svg?react";
 import GitHubIcon from "@/assets/icons/github.svg?react";
 import GitLabIcon from "@/assets/icons/gitlab.svg?react";
 import LinkedInIcon from "@/assets/icons/linkedin.svg?react";
+import YoutubeIcon from "@/assets/icons/youtube.svg?react";
 import MailIcon from "@/assets/icons/mail.svg?react";
 import DownloadIcon from "@/assets/icons/download.svg?react";
 import Menu2Icon from "@/assets/icons/menu-2.svg?react";
@@ -21,6 +22,7 @@ export function Icon({ name, className = "" }: IconProps) {
     github: GitHubIcon,
     gitlab: GitLabIcon,
     linkedin: LinkedInIcon,
+    youtube: YoutubeIcon,
     mail: MailIcon,
     download: DownloadIcon,
     "menu-2": Menu2Icon,

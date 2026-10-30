@@ -22,5 +22,11 @@
     "label": "Linkedin",
     "url": "https://www.linkedin.com/in/lucapattocchio/",
     "icon": "linkedin"
+  },
+  {
+    "id": "youtube",
+    "label": "Youtube",
+    "url": "https://www.youtube.com/@kasui92",
+    "icon": "youtube"
   }
 ]
