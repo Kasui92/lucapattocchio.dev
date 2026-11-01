@@ -9,7 +9,8 @@
         "preview": "astro preview",
         "lint": "oxlint",
         "lint:fix": "oxlint --fix",
-        "format": "prettier --write .",
+        "fmt": "oxfmt",
+        "fmt:check": "oxfmt --check"
         "generate-types": "wrangler types"
     },
     "dependencies": {
