@@ -10,7 +10,7 @@
         "lint": "oxlint",
         "lint:fix": "oxlint --fix",
         "fmt": "oxfmt",
-        "fmt:check": "oxfmt --check"
+        "fmt:check": "oxfmt --check",
         "generate-types": "wrangler types"
     },
     "dependencies": {
