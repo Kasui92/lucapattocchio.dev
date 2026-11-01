@@ -64,12 +64,13 @@ const works = defineCollection({
             })
         },
     }),
-    schema: z.object({
-        title: z.string(),
-        description: z.string(),
-        image: z.string(),
-        url: z.string().url(),
-    }),
+    schema: ({ image }) =>
+        z.object({
+            title: z.string(),
+            description: z.string(),
+            image: image(),
+            url: z.string().url(),
+        }),
 })
 
 export const collections = {
