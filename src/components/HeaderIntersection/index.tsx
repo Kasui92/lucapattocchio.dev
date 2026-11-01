@@ -10,10 +10,12 @@ export default function Header({
     page,
     socials,
     navigation,
+    avatar,
 }: {
     page: string
     socials: Social[]
     navigation: Navigation[]
+    avatar: string
 }): ReactElement {
     const { ref, inView } = useInView({
         rootMargin: '-100px',
@@ -32,7 +34,7 @@ export default function Header({
                     'opacity-100': showPrimary,
                 })}
             >
-                <HeaderNav page={page} navigation={navigation} />
+                <HeaderNav page={page} navigation={navigation} avatar={avatar} />
             </header>
             <div ref={ref}>
                 <div
@@ -41,7 +43,7 @@ export default function Header({
                         'opacity-100 delay-100': !showPrimary,
                     })}
                 >
-                    <Hero page={page} socials={socials} navigation={navigation} />
+                    <Hero page={page} socials={socials} navigation={navigation} avatar={avatar} />
                 </div>
             </div>
         </>

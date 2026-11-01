@@ -1,7 +1,6 @@
 import type { Navigation } from '@/types/navigation'
 import type { Social } from '@/types/socials'
 import { type ReactElement } from 'react'
-import profileImage from '@/assets/images/profile.jpg'
 import { Icon } from '@/components/Icon'
 import { tw } from '@/libs/merge'
 import { ThemeToggle } from './ThemeToggle'
@@ -10,20 +9,17 @@ export const Hero = ({
     page,
     socials,
     navigation,
+    avatar,
 }: {
     page: string
     socials: Social[]
     navigation: Navigation[]
+    avatar: string
 }): ReactElement => (
     <div className="mt-8 space-y-6">
         <div className="flex items-center space-x-6">
             <div className="ring-border hover:ring-border-strong transform rounded-full shadow-lg ring-[5px] transition-transform duration-300 hover:scale-105">
-                <img
-                    className="h-16 w-16 rounded-full object-cover"
-                    src={profileImage.src}
-                    alt="Logo"
-                    fetchPriority="high"
-                />
+                <img className="h-16 w-16 rounded-full object-cover" src={avatar} alt="Logo" fetchPriority="high" />
             </div>
 
             <div className="mt-2">

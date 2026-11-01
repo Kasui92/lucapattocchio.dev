@@ -1,6 +1,5 @@
 import type { Navigation } from '@/types/navigation'
 import { type ReactElement, useState } from 'react'
-import profileImage from '@/assets/images/profile.jpg'
 import { Icon } from '@/components/Icon'
 import { tw } from '@/libs/merge'
 import { ThemeToggle } from './ThemeToggle'
@@ -20,7 +19,15 @@ const DownloadResume = (): ReactElement => (
     </a>
 )
 
-export const HeaderNav = ({ page, navigation }: { page: string; navigation: Navigation[] }): ReactElement => {
+export const HeaderNav = ({
+    page,
+    navigation,
+    avatar,
+}: {
+    page: string
+    navigation: Navigation[]
+    avatar: string
+}): ReactElement => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
 
     return (
@@ -37,7 +44,7 @@ export const HeaderNav = ({ page, navigation }: { page: string; navigation: Navi
                             >
                                 <img
                                     className="h-10 w-10 rounded-full object-cover"
-                                    src={profileImage.src}
+                                    src={avatar}
                                     alt="Logo"
                                     fetchPriority="high"
                                 />
