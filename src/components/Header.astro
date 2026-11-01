@@ -1,21 +1,14 @@
 ---
-import { getCollection } from "astro:content";
-import HeaderIntersection from "@/components/HeaderIntersection";
+import { getCollection } from 'astro:content'
+import HeaderIntersection from '@/components/HeaderIntersection'
 
-const socialsCollection = await getCollection("socials");
-const socials = socialsCollection.map((item) => item.data);
+const socialsCollection = await getCollection('socials')
+const socials = socialsCollection.map((item) => item.data)
 
-const navigationCollection = await getCollection("navigation");
-const navigation = navigationCollection
-  .map((item) => item.data)
-  .toSorted((a, b) => a.order - b.order);
+const navigationCollection = await getCollection('navigation')
+const navigation = navigationCollection.map((item) => item.data).toSorted((a, b) => a.order - b.order)
 
-const { page } = Astro.props;
+const { page } = Astro.props
 ---
 
-<HeaderIntersection
-  client:load
-  page={page}
-  socials={socials}
-  navigation={navigation}
-/>
+<HeaderIntersection client:load page={page} socials={socials} navigation={navigation} />

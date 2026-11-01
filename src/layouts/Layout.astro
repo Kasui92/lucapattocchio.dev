@@ -1,105 +1,90 @@
 ---
-import { ClientRouter } from "astro:transitions";
-
-import Footer from "@/components/Footer.astro";
-import Header from "@/components/Header.astro";
-
-import "@/assets/styles/global.css";
+import { ClientRouter } from 'astro:transitions'
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
+import '@/assets/styles/global.css'
 
 interface Props {
-  page: string;
+    page: string
 }
 
-const { page } = Astro.props;
+const { page } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth dark" data-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta
-      name="description"
-      content="Passionate Full-Stack Developer always ready to tackle new challenges with a keyboard and plenty of coffee."
-    />
-    <title>Luca Pattocchio (Kasui92)</title>
-    <link rel="icon" type="image/jpeg" href="/profile-square.jpg" />
-    <link rel="apple-touch-icon" href="/profile-square.jpg" />
+<html lang="en" class="dark scroll-smooth" data-theme="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta
+            name="description"
+            content="Passionate Full-Stack Developer always ready to tackle new challenges with a keyboard and plenty of coffee."
+        />
+        <title>Luca Pattocchio (Kasui92)</title>
+        <link rel="icon" type="image/jpeg" href="/profile-square.jpg" />
+        <link rel="apple-touch-icon" href="/profile-square.jpg" />
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:url" content="https://lucapattocchio.dev" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Luca Pattocchio (Kasui92)" />
-    <meta
-      property="og:description"
-      content="Passionate Full-Stack Developer always ready to tackle new challenges with a keyboard and plenty of coffee."
-    />
-    <meta
-      property="og:image"
-      content="https://lucapattocchio.dev/og-image.png"
-    />
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:url" content="https://lucapattocchio.dev" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Luca Pattocchio (Kasui92)" />
+        <meta
+            property="og:description"
+            content="Passionate Full-Stack Developer always ready to tackle new challenges with a keyboard and plenty of coffee."
+        />
+        <meta property="og:image" content="https://lucapattocchio.dev/og-image.png" />
 
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content="lucapattocchio.dev" />
-    <meta property="twitter:url" content="https://lucapattocchio.dev" />
-    <meta name="twitter:title" content="Luca Pattocchio (Kasui92)" />
-    <meta
-      name="twitter:description"
-      content="Passionate Full-Stack Developer always ready to tackle new challenges with a keyboard and plenty of coffee."
-    />
-    <meta
-      name="twitter:image"
-      content="https://lucapattocchio.dev/og-image.png"
-    />
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="lucapattocchio.dev" />
+        <meta property="twitter:url" content="https://lucapattocchio.dev" />
+        <meta name="twitter:title" content="Luca Pattocchio (Kasui92)" />
+        <meta
+            name="twitter:description"
+            content="Passionate Full-Stack Developer always ready to tackle new challenges with a keyboard and plenty of coffee."
+        />
+        <meta name="twitter:image" content="https://lucapattocchio.dev/og-image.png" />
 
-    <meta name="generator" content={Astro.generator} />
+        <meta name="generator" content={Astro.generator} />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preload" as="image" href="/src/assets/images/profile.jpg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="preload" as="image" href="/src/assets/images/profile.jpg" />
 
-    <script is:inline>
-      {
-        const query = matchMedia("(prefers-color-scheme: light)");
-        let storage = null;
-        try {
-          storage = localStorage;
-        } catch {}
+        <script is:inline>
+            {
+                const query = matchMedia('(prefers-color-scheme: light)')
+                let storage = null
+                try {
+                    storage = localStorage
+                } catch {}
 
-        const getStored = () => {
-          const theme = storage?.getItem("theme");
-          return theme === "light" || theme === "dark" ? theme : null;
-        };
-        const apply = (doc) => {
-          const theme = getStored() ?? (query.matches ? "light" : "dark");
-          doc.documentElement.dataset.theme = theme;
-          doc.documentElement.classList.toggle("dark", theme === "dark");
-        };
+                const getStored = () => {
+                    const theme = storage?.getItem('theme')
+                    return theme === 'light' || theme === 'dark' ? theme : null
+                }
+                const apply = (doc) => {
+                    const theme = getStored() ?? (query.matches ? 'light' : 'dark')
+                    doc.documentElement.dataset.theme = theme
+                    doc.documentElement.classList.toggle('dark', theme === 'dark')
+                }
 
-        apply(document);
-        document.addEventListener("astro:before-swap", (e) => apply(e.newDocument));
-        query.addEventListener("change", () => getStored() || apply(document));
-      }
-    </script>
+                apply(document)
+                document.addEventListener('astro:before-swap', (e) => apply(e.newDocument))
+                query.addEventListener('change', () => getStored() || apply(document))
+            }
+        </script>
 
-    <ClientRouter />
-  </head>
-  <body class="overscroll-y-none bg-background p-0 font-sans text-foreground antialiased">
-    <div class="relative z-10 mx-auto flex w-full max-w-2xl flex-col px-4 pt-12 xl:px-0">
-      <Header page={page} />
-      <main
-        role="main"
-        aria-label="Main content"
-        class="mt-12 flex-auto space-y-10"
-      >
-        <slot />
-      </main>
-      <Footer />
-    </div>
-  </body>
+        <ClientRouter />
+    </head>
+    <body class="bg-background text-foreground overscroll-y-none p-0 font-sans antialiased">
+        <div class="relative z-10 mx-auto flex w-full max-w-2xl flex-col px-4 pt-12 xl:px-0">
+            <Header page={page} />
+            <main role="main" aria-label="Main content" class="mt-12 flex-auto space-y-10">
+                <slot />
+            </main>
+            <Footer />
+        </div>
+    </body>
 </html>

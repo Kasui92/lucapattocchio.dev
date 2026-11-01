@@ -1,132 +1,128 @@
-import { type ReactElement } from "react";
-import type { Social } from "@/types/socials";
-import type { Navigation } from "@/types/navigation";
-
-import { Icon } from "@/components/Icon";
-import { ThemeToggle } from "./ThemeToggle";
-
-import profileImage from "@/assets/images/profile.jpg";
-import { tw } from "@/libs/merge";
+import type { Navigation } from '@/types/navigation'
+import type { Social } from '@/types/socials'
+import { type ReactElement } from 'react'
+import profileImage from '@/assets/images/profile.jpg'
+import { Icon } from '@/components/Icon'
+import { tw } from '@/libs/merge'
+import { ThemeToggle } from './ThemeToggle'
 
 export const Hero = ({
-  page,
-  socials,
-  navigation,
+    page,
+    socials,
+    navigation,
 }: {
-  page: string;
-  socials: Social[];
-  navigation: Navigation[];
+    page: string
+    socials: Social[]
+    navigation: Navigation[]
 }): ReactElement => (
-  <div className="mt-8 space-y-6">
-    <div className="flex items-center space-x-6">
-      <div className="ring-border hover:ring-border-strong transform rounded-full shadow-lg ring-[5px] transition-transform duration-300 hover:scale-105">
-        <img
-          className="h-16 w-16 rounded-full object-cover"
-          src={profileImage.src}
-          alt="Logo"
-          fetchPriority="high"
-        />
-      </div>
-
-      <div className="mt-2">
-        <h1 className="text-foreground text-3xl leading-none font-semibold">
-          Luca Pattocchio
-        </h1>
-        <h2 className="text-subtle-foreground mt-2 items-center space-y-2 text-lg leading-none font-medium lg:mt-0 lg:flex lg:space-y-0 lg:space-x-2">
-          <div className="whitespace-nowrap">
-            <span>Full Stack Developer</span>
-          </div>
-        </h2>
-      </div>
-    </div>
-
-    <div className="flex items-center space-x-2">
-      <span className="text-md text-muted-foreground">
-        I turn gibberish into web apps, outsmart stubborn terminals, but can’t
-        fix a washing machine despite what my grandma thinks.
-      </span>
-    </div>
-
-    <div className="flex flex-col items-center justify-between gap-4 lg:flex-row lg:gap-0">
-      {/* Social Icons Navigation */}
-      <nav>
-        <ul className="flex space-x-4">
-          {socials.map(({ id, label, url, icon }) => (
-            <li key={id}>
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground transition-colors duration-300 hover:text-primary"
-                title={`Go to ${label}`}
-                data-astro-prefetch
-              >
-                <Icon
-                  name={icon}
-                  className="text-muted-foreground h-6 w-6 transform transition-transform hover:scale-110 hover:rotate-12"
+    <div className="mt-8 space-y-6">
+        <div className="flex items-center space-x-6">
+            <div className="ring-border hover:ring-border-strong transform rounded-full shadow-lg ring-[5px] transition-transform duration-300 hover:scale-105">
+                <img
+                    className="h-16 w-16 rounded-full object-cover"
+                    src={profileImage.src}
+                    alt="Logo"
+                    fetchPriority="high"
                 />
-              </a>
-            </li>
-          ))}
-          <li>
-            <a
-              href={`mailto:info@lucapattocchio.dev`}
-              className="text-muted-foreground transition-colors duration-300 hover:text-primary"
-              title={`Send me an email! 📧`}
-            >
-              <Icon
-                name="mail"
-                className="text-muted-foreground h-6 w-6 transform transition-transform hover:scale-110 hover:rotate-12"
-              />
-            </a>
-          </li>
-        </ul>
-      </nav>
-      {/* Main Navigation */}
-      <nav>
-        <ul className="flex items-center space-x-4">
-          {navigation.map(({ id, label, url }) => {
-            const isActive = page === label.toLowerCase();
+            </div>
 
-            return (
-              <li key={id}>
-                <a
-                  href={url}
-                  className={tw(
-                    isActive
-                      ? "text-primary underline decoration-2 underline-offset-[6px]"
-                      : "text-muted-foreground",
-                    "transition-colors duration-300 hover:text-primary",
-                  )}
-                  title={`Go to ${label} page`}
-                >
-                  {label}
-                </a>
-              </li>
-            );
-          })}
-          <li>
-            <a
-              href="/CV-LucaPattocchio.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group text-secondary hover:text-secondary/80 flex items-center gap-x-1 transition duration-300"
-              title="Download Resume"
-            >
-              <span className="group-hover:border-secondary border-b border-dashed border-transparent font-medium transition-all">
-                Resume
-              </span>
-              <Icon
-                name="download"
-                className="h-3.5 w-3.5 opacity-70 transition-transform group-hover:animate-bounce"
-              />
-            </a>
-          </li>
-          <li>
-            <ThemeToggle />
-          </li>
-        </ul>
-      </nav>
+            <div className="mt-2">
+                <h1 className="text-foreground text-3xl leading-none font-semibold">Luca Pattocchio</h1>
+                <h2 className="text-subtle-foreground mt-2 items-center space-y-2 text-lg leading-none font-medium lg:mt-0 lg:flex lg:space-y-0 lg:space-x-2">
+                    <div className="whitespace-nowrap">
+                        <span>Full Stack Developer</span>
+                    </div>
+                </h2>
+            </div>
+        </div>
+
+        <div className="flex items-center space-x-2">
+            <span className="text-md text-muted-foreground">
+                I turn gibberish into web apps, outsmart stubborn terminals, but can’t fix a washing machine despite
+                what my grandma thinks.
+            </span>
+        </div>
+
+        <div className="flex flex-col items-center justify-between gap-4 lg:flex-row lg:gap-0">
+            {/* Social Icons Navigation */}
+            <nav>
+                <ul className="flex space-x-4">
+                    {socials.map(({ id, label, url, icon }) => (
+                        <li key={id}>
+                            <a
+                                href={url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                                title={`Go to ${label}`}
+                                data-astro-prefetch
+                            >
+                                <Icon
+                                    name={icon}
+                                    className="text-muted-foreground h-6 w-6 transform transition-transform hover:scale-110 hover:rotate-12"
+                                />
+                            </a>
+                        </li>
+                    ))}
+                    <li>
+                        <a
+                            href={`mailto:info@lucapattocchio.dev`}
+                            className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                            title={`Send me an email! 📧`}
+                        >
+                            <Icon
+                                name="mail"
+                                className="text-muted-foreground h-6 w-6 transform transition-transform hover:scale-110 hover:rotate-12"
+                            />
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            {/* Main Navigation */}
+            <nav>
+                <ul className="flex items-center space-x-4">
+                    {navigation.map(({ id, label, url }) => {
+                        const isActive = page === label.toLowerCase()
+
+                        return (
+                            <li key={id}>
+                                <a
+                                    href={url}
+                                    className={tw(
+                                        isActive
+                                            ? 'text-primary underline decoration-2 underline-offset-[6px]'
+                                            : 'text-muted-foreground',
+                                        'transition-colors duration-300 hover:text-primary',
+                                    )}
+                                    title={`Go to ${label} page`}
+                                >
+                                    {label}
+                                </a>
+                            </li>
+                        )
+                    })}
+                    <li>
+                        <a
+                            href="/CV-LucaPattocchio.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group text-secondary hover:text-secondary/80 flex items-center gap-x-1 transition duration-300"
+                            title="Download Resume"
+                        >
+                            <span className="group-hover:border-secondary border-b border-dashed border-transparent font-medium transition-all">
+                                Resume
+                            </span>
+                            <Icon
+                                name="download"
+                                className="h-3.5 w-3.5 opacity-70 transition-transform group-hover:animate-bounce"
+                            />
+                        </a>
+                    </li>
+                    <li>
+                        <ThemeToggle />
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
-  </div>
-);
+)

@@ -1,54 +1,54 @@
 [
-  {
-    "position": "Senior Full Stack Developer",
-    "company": "Altuofianco",
-    "companyUrl": "https://www.altuofianco.it/",
-    "workExperience": "Employee",
-    "startDate": "2022-06-10",
-    "location": "Modena, Italy"
-  },
-  {
-    "position": "Core Maintainer",
-    "company": "GDRCD",
-    "companyUrl": "https://github.com/GDRCD/GDRCD",
-    "workExperience": "Open Source Contributor",
-    "startDate": "2021-11-03",
-    "location": "Remote"
-  },
-  {
-    "position": "Mid Full Stack Developer",
-    "company": "Altuofianco",
-    "companyUrl": "https://www.altuofianco.it/",
-    "workExperience": "Employee",
-    "startDate": "2018-06-10",
-    "endDate": "2022-06-10",
-    "location": "Modena, Italy"
-  },
-  {
-    "position": "Junior Full Stack Developer",
-    "company": "Altuofianco",
-    "companyUrl": "https://www.altuofianco.it/",
-    "workExperience": "Employee",
-    "startDate": "2015-06-10",
-    "endDate": "2018-06-10",
-    "location": "Modena, Italy"
-  },
-  {
-    "position": "Embedded System Analyst",
-    "company": "Autron",
-    "companyUrl": "http://www.autron.net/",
-    "workExperience": "Internship",
-    "startDate": "2014-09-01",
-    "endDate": "2014-12-31",
-    "location": "Mirandola, Italy"
-  },
-  {
-    "position": "Embedded System Analyst",
-    "company": "Techimp Impianti",
-    "companyUrl": "https://www.techimpimpianti.it/",
-    "workExperience": "Internship",
-    "startDate": "2014-06-01",
-    "endDate": "2014-07-31",
-    "location": "Zola Predosa, Italy"
-  }
+    {
+        "position": "Senior Full Stack Developer",
+        "company": "Altuofianco",
+        "companyUrl": "https://www.altuofianco.it/",
+        "workExperience": "Employee",
+        "startDate": "2022-06-10",
+        "location": "Modena, Italy"
+    },
+    {
+        "position": "Core Maintainer",
+        "company": "GDRCD",
+        "companyUrl": "https://github.com/GDRCD/GDRCD",
+        "workExperience": "Open Source Contributor",
+        "startDate": "2021-11-03",
+        "location": "Remote"
+    },
+    {
+        "position": "Mid Full Stack Developer",
+        "company": "Altuofianco",
+        "companyUrl": "https://www.altuofianco.it/",
+        "workExperience": "Employee",
+        "startDate": "2018-06-10",
+        "endDate": "2022-06-10",
+        "location": "Modena, Italy"
+    },
+    {
+        "position": "Junior Full Stack Developer",
+        "company": "Altuofianco",
+        "companyUrl": "https://www.altuofianco.it/",
+        "workExperience": "Employee",
+        "startDate": "2015-06-10",
+        "endDate": "2018-06-10",
+        "location": "Modena, Italy"
+    },
+    {
+        "position": "Embedded System Analyst",
+        "company": "Autron",
+        "companyUrl": "http://www.autron.net/",
+        "workExperience": "Internship",
+        "startDate": "2014-09-01",
+        "endDate": "2014-12-31",
+        "location": "Mirandola, Italy"
+    },
+    {
+        "position": "Embedded System Analyst",
+        "company": "Techimp Impianti",
+        "companyUrl": "https://www.techimpimpianti.it/",
+        "workExperience": "Internship",
+        "startDate": "2014-06-01",
+        "endDate": "2014-07-31",
+        "location": "Zola Predosa, Italy"
+    }
 ]

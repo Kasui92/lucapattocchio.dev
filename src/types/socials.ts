@@ -1,6 +1,6 @@
 export interface Social {
-  id: string;
-  label: string;
-  url: string;
-  icon: string;
+    id: string
+    label: string
+    url: string
+    icon: string
 }

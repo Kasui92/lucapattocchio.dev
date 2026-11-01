@@ -1,20 +1,20 @@
 [
-  {
-    "id": "about",
-    "label": "About",
-    "url": "/",
-    "order": 1
-  },
-  {
-    "id": "works",
-    "label": "Works",
-    "url": "/works",
-    "order": 2
-  },
-  {
-    "id": "blog",
-    "label": "Blog",
-    "url": "/blog",
-    "order": 3
-  }
+    {
+        "id": "about",
+        "label": "About",
+        "url": "/",
+        "order": 1
+    },
+    {
+        "id": "works",
+        "label": "Works",
+        "url": "/works",
+        "order": 2
+    },
+    {
+        "id": "blog",
+        "label": "Blog",
+        "url": "/blog",
+        "order": 3
+    }
 ]

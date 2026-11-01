@@ -1,28 +1,28 @@
 ---
-const { project, priority = false } = Astro.props;
+const { project, priority = false } = Astro.props
 ---
 
 <a
-  href={project.url}
-  target="_blank"
-  rel="noopener noreferrer"
-  class="group flex flex-col transition-transform duration-300 hover:scale-[1.02]"
-  title={project.title}
+    href={project.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="group flex flex-col transition-transform duration-300 hover:scale-[1.02]"
+    title={project.title}
 >
-  <div class="relative aspect-video w-full overflow-hidden rounded-lg">
-    <img
-      src={project.image}
-      alt={project.title}
-      class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-      loading={priority ? "eager" : "lazy"}
-      fetchpriority={priority ? "high" : "low"}
-    />
-  </div>
+    <div class="relative aspect-video w-full overflow-hidden rounded-lg">
+        <img
+            src={project.image}
+            alt={project.title}
+            class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            loading={priority ? 'eager' : 'lazy'}
+            fetchpriority={priority ? 'high' : 'low'}
+        />
+    </div>
 
-  <div class="mt-3 flex flex-col gap-1">
-    <h4 class="text-foreground text-center text-base font-semibold transition-colors group-hover:text-primary">
-      {project.title}
-    </h4>
-    <p class="text-muted-foreground text-center text-sm">{project.description}</p>
-  </div>
+    <div class="mt-3 flex flex-col gap-1">
+        <h4 class="text-foreground group-hover:text-primary text-center text-base font-semibold transition-colors">
+            {project.title}
+        </h4>
+        <p class="text-muted-foreground text-center text-sm">{project.description}</p>
+    </div>
 </a>

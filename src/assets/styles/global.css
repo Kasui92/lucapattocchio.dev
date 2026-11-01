@@ -2,82 +2,82 @@
  * TailwindCSS Conf
  */
 
-@import "tailwindcss";
-@import "./themes/rose-pine.css";
-@import "./themes/rose-pine-dawn.css";
-@import "@lancher-dev/jaamd/themes/rose-pine.css";
+@import 'tailwindcss';
+@import './themes/rose-pine.css';
+@import './themes/rose-pine-dawn.css';
+@import '@lancher-dev/jaamd/themes/rose-pine.css';
 
 @custom-variant dark (&:is(.dark *));
 @custom-variant light (&:where([data-theme='light'], [data-theme='light'] *));
 
 @theme {
-  --font-*: initial;
-  --font-sans: Poppins, sans-serif;
+    --font-*: initial;
+    --font-sans: Poppins, sans-serif;
 
-  --animate-*: initial;
-  --animate-slide-in-section: 0.5s slideInSection forwards;
-  --animate-slide-out-section: 0.5s slideOutSection forwards;
-  --animate-bounce: bounce 1s infinite;
-  --animate-bounce-x: bounce-x 1s infinite;
+    --animate-*: initial;
+    --animate-slide-in-section: 0.5s slideInSection forwards;
+    --animate-slide-out-section: 0.5s slideOutSection forwards;
+    --animate-bounce: bounce 1s infinite;
+    --animate-bounce-x: bounce-x 1s infinite;
 
-  --color-*: initial;
+    --color-*: initial;
 
-  @keyframes slideInSection {
-    0% {
-      opacity: 0;
-      transform: translate(-20px, 0);
+    @keyframes slideInSection {
+        0% {
+            opacity: 0;
+            transform: translate(-20px, 0);
+        }
+        100% {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
     }
-    100% {
-      opacity: 1;
-      transform: translate(0, 0);
-    }
-  }
 
-  @keyframes slideOutSection {
-    0% {
-      opacity: 1;
-      transform: translate(0, 0);
+    @keyframes slideOutSection {
+        0% {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-20px, 0);
+        }
     }
-    100% {
-      opacity: 0;
-      transform: translate(-20px, 0);
-    }
-  }
 
-  @keyframes ellipsis {
-    to {
-      width: 1.25em;
+    @keyframes ellipsis {
+        to {
+            width: 1.25em;
+        }
     }
-  }
 
-  @keyframes bounce-x {
-    0%,
-    100% {
-      transform: translateX(0);
+    @keyframes bounce-x {
+        0%,
+        100% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(0.25em);
+        }
     }
-    50% {
-      transform: translateX(0.25em);
-    }
-  }
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-surface: var(--surface);
-  --color-foreground: var(--foreground);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-subtle-foreground: var(--subtle-foreground);
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-border-subtle: var(--border-subtle);
-  --color-border: var(--border);
-  --color-border-strong: var(--border-strong);
-  --color-red: var(--red);
-  --color-yellow: var(--yellow);
-  --color-green: var(--green);
-  --color-blue: var(--blue);
-  --color-purple: var(--purple);
-  --color-pink: var(--pink);
+    --color-background: var(--background);
+    --color-surface: var(--surface);
+    --color-foreground: var(--foreground);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-subtle-foreground: var(--subtle-foreground);
+    --color-primary: var(--primary);
+    --color-secondary: var(--secondary);
+    --color-border-subtle: var(--border-subtle);
+    --color-border: var(--border);
+    --color-border-strong: var(--border-strong);
+    --color-red: var(--red);
+    --color-yellow: var(--yellow);
+    --color-green: var(--green);
+    --color-blue: var(--blue);
+    --color-purple: var(--purple);
+    --color-pink: var(--pink);
 }
 
 /*
@@ -89,15 +89,15 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-border);
-  }
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-border);
+    }
 }
 
 @utility underline-transition {
-  @apply relative cursor-pointer after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full;
+    @apply relative cursor-pointer after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full;
 }
