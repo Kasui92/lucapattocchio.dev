@@ -4,16 +4,25 @@ import Layout from '@/layouts/Layout.astro'
 
 <Layout page="404">
     <div class="my-24 flex flex-col items-center justify-center space-y-4">
-        <h1 class="text-foreground text-4xl font-semibold">404</h1>
-        <h2 class="text-subtle-foreground text-xl font-medium">Oops! Page not found.</h2>
+        <h1 class="text-foreground font-mono text-4xl font-semibold">404</h1>
+        <h2 class="text-subtle-foreground text-center font-mono text-base font-medium break-all">
+            bash:{' '}
+            <span class="text-red" data-missing-path>
+                this page
+            </span>
+            : No such file or directory
+        </h2>
 
         <p class="text-muted-foreground text-center text-lg">
             Don't panic! The page you're looking for isn't here. <br />
-            <span class="text-muted-foreground">You can go back to the </span>
-            <a href="/" class="underline-transition text-primary after:bg-primary font-semibold">
-                homepage
+            <span class="text-muted-foreground">You can go back home with </span>
+            <a href="/" class="underline-transition text-primary after:bg-primary font-mono font-semibold">
+                cd ~
             </a>
-            .
         </p>
     </div>
+
+    <script is:inline>
+        document.querySelector('[data-missing-path]')?.replaceChildren(location.pathname)
+    </script>
 </Layout>
