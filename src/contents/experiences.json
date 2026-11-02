@@ -4,7 +4,7 @@
         "company": "Altuofianco",
         "companyUrl": "https://www.altuofianco.it/",
         "workExperience": "Employee",
-        "startDate": "2022-06-10",
+        "startDate": "2015-06-10",
         "location": "Modena, Italy"
     },
     {
@@ -14,24 +14,6 @@
         "workExperience": "Open Source Contributor",
         "startDate": "2021-11-03",
         "location": "Remote"
-    },
-    {
-        "position": "Mid Full Stack Developer",
-        "company": "Altuofianco",
-        "companyUrl": "https://www.altuofianco.it/",
-        "workExperience": "Employee",
-        "startDate": "2018-06-10",
-        "endDate": "2022-06-10",
-        "location": "Modena, Italy"
-    },
-    {
-        "position": "Junior Full Stack Developer",
-        "company": "Altuofianco",
-        "companyUrl": "https://www.altuofianco.it/",
-        "workExperience": "Employee",
-        "startDate": "2015-06-10",
-        "endDate": "2018-06-10",
-        "location": "Modena, Italy"
     },
     {
         "position": "Embedded System Analyst",
