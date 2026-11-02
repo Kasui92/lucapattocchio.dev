@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import ExperienceTimeline from '@/components/ExperienceTimeline.astro'
+import TerminalHeading from '@/components/TerminalHeading.astro'
 import Layout from '@/layouts/Layout.astro'
 
 const experiencesCollection = await getCollection('experiences')
@@ -10,9 +11,7 @@ const experiences = experiencesCollection.map((item) => item.data)
 <Layout page="about">
     <div class="space-y-16">
         <section class="container flex flex-col items-center">
-            <h3 class="text-foreground decoration-primary/50 w-full text-lg font-bold underline decoration-4 underline-offset-[6px]">
-                About Me
-            </h3>
+            <TerminalHeading command="cat" args="~/.profile" />
             <div class="mt-4">
                 <div class={`text-md text-muted-foreground space-y-4 text-justify leading-7`}>
                     <p>
@@ -42,9 +41,7 @@ const experiences = experiencesCollection.map((item) => item.data)
         </section>
 
         <section class="container flex flex-col items-center">
-            <h3 class="text-foreground decoration-primary/50 w-full text-lg font-bold underline decoration-4 underline-offset-[6px]">
-                Experience
-            </h3>
+            <TerminalHeading command="git log" args="--graph experience" />
             <div class="mt-6 w-full">
                 {experiences.map((experience, index) => (
                     <ExperienceTimeline key={index} experience={experience} isLast={index === experiences.length - 1} />

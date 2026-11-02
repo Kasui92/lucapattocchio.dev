@@ -13,12 +13,14 @@
 @theme {
     --font-*: initial;
     --font-sans: Poppins, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
     --animate-*: initial;
     --animate-slide-in-section: 0.5s slideInSection forwards;
     --animate-slide-out-section: 0.5s slideOutSection forwards;
     --animate-bounce: bounce 1s infinite;
     --animate-bounce-x: bounce-x 1s infinite;
+    --animate-blink: blink 1s step-end infinite;
 
     --color-*: initial;
 
@@ -47,6 +49,12 @@
     @keyframes ellipsis {
         to {
             width: 1.25em;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            opacity: 0;
         }
     }
 
@@ -95,6 +103,11 @@
     ::backdrop,
     ::file-selector-button {
         border-color: var(--color-border);
+    }
+
+    ::selection {
+        background-color: var(--color-border);
+        color: var(--color-foreground);
     }
 }
 

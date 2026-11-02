@@ -1,0 +1,22 @@
+---
+interface Props {
+    command: string
+    args?: string
+    as?: 'h1' | 'h2' | 'h3'
+}
+
+const { command, args, as: Tag = 'h3' } = Astro.props
+---
+
+<Tag class="w-full font-mono text-lg font-bold">
+    <span class="text-green select-none" aria-hidden="true">
+        ❯
+    </span>{' '}
+    <span class="text-foreground">{command}</span>
+    {args && (
+        <>
+            {' '}
+            <span class="text-secondary">{args}</span>
+        </>
+    )}
+</Tag>
