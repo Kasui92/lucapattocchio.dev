@@ -1,23 +1,8 @@
 import type { Navigation } from '@/types/navigation'
 import { type ReactElement, useState } from 'react'
 import { Icon } from '@/components/Icon'
-import { tw } from '@/libs/merge'
+import { NavLinks } from './NavLinks'
 import { ThemeToggle } from './ThemeToggle'
-
-const DownloadResume = (): ReactElement => (
-    <a
-        href="/CV-LucaPattocchio.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group text-secondary hover:text-secondary/80 flex items-center gap-x-1 transition duration-300"
-        title="Download Resume"
-    >
-        <span className="group-hover:border-secondary border-b border-dashed border-transparent font-medium transition-all">
-            Resume
-        </span>
-        <Icon name="download" className="h-3.5 w-3.5 opacity-70 transition-transform group-hover:animate-bounce" />
-    </a>
-)
 
 export const HeaderNav = ({
     page,
@@ -50,37 +35,17 @@ export const HeaderNav = ({
                                 />
                             </a>
                         </div>
-                        <div className="text-foreground flex items-center font-semibold">Luca Pattocchio</div>
+                        <div className="flex items-center font-mono font-semibold">
+                            <span className="text-primary">kasui92</span>
+                            <span className="text-muted-foreground">@dev</span>
+                        </div>
                     </div>
 
                     <div className="hidden md:flex">
                         {/* Main Navigation - Inline */}
                         <nav>
                             <ul className="flex items-center space-x-4">
-                                {navigation.map(({ id, label, url }) => {
-                                    const isActive = page === label.toLowerCase()
-
-                                    return (
-                                        <li key={id}>
-                                            <a
-                                                href={url}
-                                                className={tw(
-                                                    isActive
-                                                        ? 'text-primary underline decoration-2 underline-offset-[6px]'
-                                                        : 'text-muted-foreground',
-                                                    'transition-colors duration-300 hover:text-primary',
-                                                )}
-                                                title={`Go to ${label} page`}
-                                                data-astro-prefetch
-                                            >
-                                                {label}
-                                            </a>
-                                        </li>
-                                    )
-                                })}
-                                <li>
-                                    <DownloadResume />
-                                </li>
+                                <NavLinks page={page} navigation={navigation} prefetch />
                                 <li>
                                     <ThemeToggle />
                                 </li>
@@ -108,30 +73,7 @@ export const HeaderNav = ({
                     <div className="mt-2 py-2">
                         <nav>
                             <ul className="flex flex-col space-y-2">
-                                {navigation.map(({ id, label, url }) => {
-                                    const isActive = page === label.toLowerCase()
-
-                                    return (
-                                        <li key={id}>
-                                            <a
-                                                href={url}
-                                                className={tw(
-                                                    isActive
-                                                        ? 'text-primary underline decoration-2 underline-offset-[6px]'
-                                                        : 'text-muted-foreground',
-                                                    'transition-colors duration-300 hover:text-primary',
-                                                )}
-                                                title={`Go to ${label} page`}
-                                                data-astro-prefetch
-                                            >
-                                                {label}
-                                            </a>
-                                        </li>
-                                    )
-                                })}
-                                <li>
-                                    <DownloadResume />
-                                </li>
+                                <NavLinks page={page} navigation={navigation} prefetch />
                             </ul>
                         </nav>
                     </div>

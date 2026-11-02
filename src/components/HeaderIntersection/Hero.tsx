@@ -2,8 +2,25 @@ import type { Navigation } from '@/types/navigation'
 import type { Social } from '@/types/socials'
 import { type ReactElement } from 'react'
 import { Icon } from '@/components/Icon'
-import { tw } from '@/libs/merge'
+import { NavLinks } from './NavLinks'
 import { ThemeToggle } from './ThemeToggle'
+
+const SocialLink = ({ url, label, icon }: Pick<Social, 'url' | 'label' | 'icon'>): ReactElement => (
+    <li>
+        <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors duration-300"
+            title={`Go to ${label}`}
+        >
+            <Icon
+                name={icon}
+                className="text-muted-foreground h-5 w-5 transform transition-transform hover:scale-110 hover:rotate-12"
+            />
+        </a>
+    </li>
+)
 
 export const Hero = ({
     page,
@@ -17,23 +34,35 @@ export const Hero = ({
     avatar: string
 }): ReactElement => (
     <div className="mt-8 space-y-6">
-        <div className="flex items-center space-x-6">
-            <div className="ring-border hover:ring-border-strong transform rounded-full shadow-lg ring-[5px] transition-transform duration-300 hover:scale-105">
-                <img className="h-16 w-16 rounded-full object-cover" src={avatar} alt="Logo" fetchPriority="high" />
+        <div className="flex items-center space-x-4 sm:space-x-6">
+            <div className="ring-border hover:ring-border-strong shrink-0 transform rounded-full shadow-lg ring-[5px] transition-transform duration-300 hover:scale-105">
+                <img
+                    className="h-14 w-14 rounded-full object-cover sm:h-16 sm:w-16"
+                    src={avatar}
+                    alt="Logo"
+                    fetchPriority="high"
+                />
             </div>
 
-            <div className="mt-2">
-                <h1 className="text-foreground text-3xl leading-none font-semibold">Luca Pattocchio</h1>
-                <h2 className="text-subtle-foreground mt-2 items-center space-y-2 text-lg leading-none font-medium lg:mt-0 lg:flex lg:space-y-0 lg:space-x-2">
-                    <div className="whitespace-nowrap">
-                        <span>Full Stack Developer</span>
+            <div>
+                <h1 className="text-foreground text-2xl leading-none font-semibold sm:text-3xl">Luca Pattocchio</h1>
+                <h2 className="text-subtle-foreground mt-2 text-lg leading-none font-medium">
+                    <div className="font-mono whitespace-nowrap">
+                        <span>@</span>
+                        <span className="text-secondary">kasui92</span>
+                        <span className="text-primary animate-blink motion-reduce:animate-none" aria-hidden="true">
+                            ▌
+                        </span>
                     </div>
                 </h2>
             </div>
         </div>
 
-        <div className="flex items-center space-x-2">
-            <span className="text-md text-muted-foreground">
+        <div className="flex items-start space-x-2">
+            <span className="text-subtle-foreground font-mono leading-6 select-none" aria-hidden="true">
+                #
+            </span>
+            <span className="text-md text-muted-foreground leading-6">
                 I turn gibberish into web apps, outsmart stubborn terminals, but can’t fix a washing machine despite
                 what my grandma thinks.
             </span>
@@ -42,24 +71,20 @@ export const Hero = ({
         <div className="flex flex-col items-center justify-between gap-4 lg:flex-row lg:gap-0">
             {/* Social Icons Navigation */}
             <nav>
-                <ul className="flex space-x-4">
-                    {socials.map(({ id, label, url, icon }) => (
-                        <li key={id}>
-                            <a
-                                href={url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                                title={`Go to ${label}`}
-                                data-astro-prefetch
-                            >
-                                <Icon
-                                    name={icon}
-                                    className="text-muted-foreground h-6 w-6 transform transition-transform hover:scale-110 hover:rotate-12"
-                                />
-                            </a>
-                        </li>
-                    ))}
+                <ul className="flex items-center gap-3">
+                    {socials
+                        .filter(({ group }) => group === 'code')
+                        .map(({ id, label, url, icon }) => (
+                            <SocialLink key={id} url={url} label={label} icon={icon} />
+                        ))}
+                    <li className="text-border-strong font-mono select-none" aria-hidden="true">
+                        │
+                    </li>
+                    {socials
+                        .filter(({ group }) => group === 'social')
+                        .map(({ id, label, url, icon }) => (
+                            <SocialLink key={id} url={url} label={label} icon={icon} />
+                        ))}
                     <li>
                         <a
                             href={`mailto:info@lucapattocchio.dev`}
@@ -68,7 +93,7 @@ export const Hero = ({
                         >
                             <Icon
                                 name="mail"
-                                className="text-muted-foreground h-6 w-6 transform transition-transform hover:scale-110 hover:rotate-12"
+                                className="text-muted-foreground h-5 w-5 transform transition-transform hover:scale-110 hover:rotate-12"
                             />
                         </a>
                     </li>
@@ -77,43 +102,7 @@ export const Hero = ({
             {/* Main Navigation */}
             <nav>
                 <ul className="flex items-center space-x-4">
-                    {navigation.map(({ id, label, url }) => {
-                        const isActive = page === label.toLowerCase()
-
-                        return (
-                            <li key={id}>
-                                <a
-                                    href={url}
-                                    className={tw(
-                                        isActive
-                                            ? 'text-primary underline decoration-2 underline-offset-[6px]'
-                                            : 'text-muted-foreground',
-                                        'transition-colors duration-300 hover:text-primary',
-                                    )}
-                                    title={`Go to ${label} page`}
-                                >
-                                    {label}
-                                </a>
-                            </li>
-                        )
-                    })}
-                    <li>
-                        <a
-                            href="/CV-LucaPattocchio.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group text-secondary hover:text-secondary/80 flex items-center gap-x-1 transition duration-300"
-                            title="Download Resume"
-                        >
-                            <span className="group-hover:border-secondary border-b border-dashed border-transparent font-medium transition-all">
-                                Resume
-                            </span>
-                            <Icon
-                                name="download"
-                                className="h-3.5 w-3.5 opacity-70 transition-transform group-hover:animate-bounce"
-                            />
-                        </a>
-                    </li>
+                    <NavLinks page={page} navigation={navigation} />
                     <li>
                         <ThemeToggle />
                     </li>
