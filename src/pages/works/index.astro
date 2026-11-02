@@ -1,22 +1,43 @@
 ---
 import { getCollection } from 'astro:content'
 import ProjectsCard from '@/components/ProjectCard.astro'
+import TerminalHeading from '@/components/TerminalHeading.astro'
 import Layout from '@/layouts/Layout.astro'
 
 const worksCollection = await getCollection('works')
-const works = worksCollection.map((item) => item.data)
+const works = worksCollection.toSorted((a, b) => Number(a.id) - Number(b.id)).map((item) => item.data)
+
+const categories = ['tools', 'websites'] as const
 ---
 
 <Layout page="works">
     <div class="space-y-16">
         <section class="container flex flex-col items-center">
-            <h3 class="text-foreground decoration-primary/50 w-full text-lg font-bold underline decoration-4 underline-offset-[6px]">
-                Works
-            </h3>
-            <div class="mt-6 grid w-full grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2">
-                {works &&
-                    works.map((project, index) => <ProjectsCard key={index} project={project} priority={index < 3} />)}
-            </div>
+            <TerminalHeading command="cat" args="~/works/README.md" />
+            <p class="text-muted-foreground text-md mt-4 w-full text-justify leading-7">
+                A selection of projects I've worked on, split into{' '}
+                <a href="#tools" class="underline-transition text-primary after:bg-primary font-bold">
+                    tools
+                </a>{' '}
+                and{' '}
+                <a href="#websites" class="underline-transition text-primary after:bg-primary font-bold">
+                    websites
+                </a>
+                .
+            </p>
         </section>
+
+        {categories.map((category, categoryIndex) => (
+            <section id={category} class="container flex scroll-mt-24 flex-col items-center">
+                <TerminalHeading command="ls" args={`~/works/${category}`} />
+                <div class="mt-6 grid w-full grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2">
+                    {works
+                        .filter((project) => project.category === category)
+                        .map((project, index) => (
+                            <ProjectsCard project={project} priority={categoryIndex === 0 && index < 2} />
+                        ))}
+                </div>
+            </section>
+        ))}
     </div>
 </Layout>

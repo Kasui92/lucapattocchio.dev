@@ -11,20 +11,30 @@ const { project, priority = false } = Astro.props
     class="group flex flex-col transition-transform duration-300 hover:scale-[1.02]"
     title={project.title}
 >
-    <div class="relative aspect-video w-full overflow-hidden rounded-lg">
-        <Image
-            src={project.image}
-            alt={project.title}
-            widths={[400, 800]}
-            sizes="(min-width: 768px) 324px, 100vw"
-            loading={priority ? 'eager' : 'lazy'}
-            fetchpriority={priority ? 'high' : 'auto'}
-            class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-        />
+    <div class="border-border-subtle overflow-hidden rounded-lg border">
+        <div class="bg-surface border-border-subtle text-subtle-foreground flex items-center gap-2 border-b px-3 py-1.5 font-mono text-xs">
+            <span class="text-green select-none" aria-hidden="true">
+                ❯
+            </span>
+            <span class="truncate">
+                ~/works/{project.category}/{project.title}
+            </span>
+        </div>
+        <div class="relative aspect-video w-full overflow-hidden">
+            <Image
+                src={project.image}
+                alt={project.title}
+                widths={[400, 800]}
+                sizes="(min-width: 768px) 324px, 100vw"
+                loading={priority ? 'eager' : 'lazy'}
+                fetchpriority={priority ? 'high' : 'auto'}
+                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+        </div>
     </div>
 
     <div class="mt-3 flex flex-col gap-1">
-        <h4 class="text-foreground group-hover:text-primary text-center text-base font-semibold transition-colors">
+        <h4 class="text-foreground group-hover:text-primary text-center font-mono text-base font-semibold transition-colors">
             {project.title}
         </h4>
         <p class="text-muted-foreground text-center text-sm">{project.description}</p>

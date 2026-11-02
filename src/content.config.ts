@@ -71,6 +71,7 @@ const works = defineCollection({
             description: z.string(),
             image: image(),
             url: z.string().url(),
+            category: z.enum(['tools', 'websites']),
         }),
 })
 

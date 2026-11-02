@@ -3,72 +3,84 @@
         "title": "jaad",
         "description": "Just Another Astro Docs",
         "image": "../assets/projects/jaad.png",
-        "url": "https://jaad.lancher.dev"
+        "url": "https://jaad.lancher.dev",
+        "category": "tools"
     },
     {
         "title": "jaamd",
         "description": "Just Another Astro Markdown",
         "image": "../assets/projects/jaamd.png",
-        "url": "https://jaamd.lancher.dev"
+        "url": "https://jaamd.lancher.dev",
+        "category": "tools"
     },
     {
         "title": "annamariaesimone.it",
         "description": "A wedding website for Anna Maria & Simone.",
         "image": "../assets/projects/annamariaesimone.jpg",
-        "url": "https://annamariaesimone.it"
+        "url": "https://annamariaesimone.it",
+        "category": "websites"
     },
     {
         "title": "giornogaming.it",
         "description": "GiornoGaming’s website, home of an Italian video game streamer and content creator.",
         "image": "../assets/projects/giornogaming.jpg",
-        "url": "https://giornogaming.it"
+        "url": "https://giornogaming.it",
+        "category": "websites"
     },
     {
         "title": "lancher",
         "description": "A minimal, local project-template manager written in Go.",
         "image": "../assets/projects/lancher.png",
-        "url": "https://lancher.dev"
+        "url": "https://lancher.dev",
+        "category": "tools"
     },
     {
         "title": "omabuntu",
         "description": "A fork of Omakub, more flexible and refined.",
         "image": "../assets/projects/omabuntu.png",
-        "url": "https://omabuntu.omakasui.org"
+        "url": "https://omabuntu.omakasui.org",
+        "category": "tools"
     },
     {
         "title": "omadeb",
         "description": "A Modern, Elegant, Development-Focused Setup for Debian and Gnome",
         "image": "../assets/projects/omadeb.png",
-        "url": "https://omadeb.omakasui.org"
+        "url": "https://omadeb.omakasui.org",
+        "category": "tools"
     },
     {
         "title": "icon-launcher",
         "description": "Add a clickable icon to GNOME top bar to launch a custom command.",
         "image": "../assets/projects/icon-launcher.png",
-        "url": "https://github.com/Kasui92/icon-launcher"
+        "url": "https://github.com/Kasui92/icon-launcher",
+        "category": "tools"
     },
     {
         "title": "omakasui.org",
         "description": "A curated collection of resources and tools for Linux enthusiasts.",
         "image": "../assets/projects/omakasui.png",
-        "url": "https://omakasui.org"
+        "url": "https://omakasui.org",
+        "category": "tools"
     },
     {
         "title": "slicendice.it",
         "description": "A small directory of game systems for aspiring play by chat admin. This is a porting of the original project built with WordPress, now with Next.js & MDX.",
         "image": "../assets/projects/slicendice.png",
-        "url": "https://slicendice.it/"
+        "url": "https://slicendice.it/",
+        "category": "websites"
     },
     {
         "title": "lucapattocchio.dev",
         "description": "My personal website.",
         "image": "../assets/projects/portfolio.png",
-        "url": "https://lucapattocchio.dev/"
+        "url": "https://lucapattocchio.dev/",
+        "category": "websites"
     },
     {
         "title": "GDRCD",
         "description": "A PHP framework for creating \"play by chat role-playing game\" browser games.",
         "image": "../assets/projects/gdrcd.png",
-        "url": "https://gdrcd.org"
+        "url": "https://gdrcd.org",
+        "category": "tools"
     }
 ]
