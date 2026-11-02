@@ -1,37 +1,49 @@
 ---
 import CalendarIcon from '@/assets/icons/calendar.svg'
 import MapPinIcon from '@/assets/icons/map-pin.svg'
-import { date2Period } from '@/libs/utils'
+import { date2Period, shortHash } from '@/libs/utils'
 
 const { experience, isLast } = Astro.props
+
+const hash = shortHash(`${experience.company}${experience.startDate}`)
 ---
 
 <div class="relative flex gap-4">
-    <div class="relative w-3 shrink-0">
-        {!isLast && <div class="bg-border-subtle absolute top-1.5 left-1/2 h-full w-0.5 -translate-x-1/2" />}
-        <div class="bg-primary ring-primary/20 relative z-10 mt-1.5 h-3 w-3 rounded-full ring-4"></div>
+    <div class="relative w-3 shrink-0 font-mono" aria-hidden="true">
+        {!isLast && (
+            <div class="border-border-strong absolute top-5 bottom-0 left-1/2 -translate-x-1/2 border-l border-dashed" />
+        )}
+        <div class="text-yellow relative z-10 text-center text-base leading-6 font-bold">*</div>
     </div>
 
     <div class="flex-1 pb-8">
-        {experience.companyUrl ? (
-            <a
-                href={experience.companyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="underline-transition text-primary after:bg-primary text-base font-semibold transition-colors"
-            >
-                {experience.company}
-            </a>
-        ) : (
-            <div class="text-foreground text-base font-semibold">{experience.company}</div>
-        )}
+        <div class="flex flex-wrap items-baseline gap-x-2">
+            <span class="text-yellow font-mono text-xs">{hash}</span>
+            {experience.companyUrl ? (
+                <a
+                    href={experience.companyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="underline-transition text-primary after:bg-primary text-base font-semibold transition-colors"
+                >
+                    {experience.company}
+                </a>
+            ) : (
+                <span class="text-foreground text-base font-semibold">{experience.company}</span>
+            )}
+            {!experience.endDate && (
+                <span class="font-mono text-xs">
+                    (<span class="text-secondary">HEAD</span> -&gt; <span class="text-purple">main</span>)
+                </span>
+            )}
+        </div>
         <div class="text-muted-foreground mt-1 text-sm">{experience.position}</div>
-        <div class="text-subtle-foreground mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+        <div class="text-subtle-foreground mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs">
             <div class="flex items-center gap-1">
                 <CalendarIcon class="h-3.5 w-3.5" />
                 <span>
                     {date2Period(experience.startDate, true)} -{' '}
-                    {experience.endDate ? date2Period(experience.endDate, true) : <b>Present</b>}
+                    {experience.endDate ? date2Period(experience.endDate, true) : <b>now</b>}
                 </span>
             </div>
             {experience.location && (
