@@ -4,34 +4,47 @@
         "label": "Github",
         "url": "https://github.com/Kasui92",
         "icon": "github",
-        "group": "code"
+        "group": "code",
+        "order": 1
     },
     {
         "id": "gitlab",
         "label": "Gitlab",
         "url": "https://gitlab.com/Kasui92",
         "icon": "gitlab",
-        "group": "code"
+        "group": "code",
+        "order": 2
     },
     {
         "id": "codeberg",
         "label": "Codeberg",
         "url": "https://codeberg.org/Kasui92",
         "icon": "codeberg",
-        "group": "code"
+        "group": "code",
+        "order": 3
     },
     {
         "id": "linkedin",
         "label": "Linkedin",
         "url": "https://www.linkedin.com/in/lucapattocchio/",
         "icon": "linkedin",
-        "group": "social"
+        "group": "social",
+        "order": 4
     },
     {
         "id": "youtube",
         "label": "Youtube",
         "url": "https://www.youtube.com/@kasui92",
         "icon": "youtube",
-        "group": "social"
+        "group": "social",
+        "order": 5
+    },
+    {
+        "id": "mail",
+        "label": "Mail",
+        "url": "mailto:info@lucapattocchio.dev",
+        "icon": "mail",
+        "group": "contact",
+        "order": 6
     }
 ]

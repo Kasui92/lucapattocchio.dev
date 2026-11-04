@@ -1,11 +1,15 @@
 ---
 import { getCollection } from 'astro:content'
 import ExperienceTimeline from '@/components/ExperienceTimeline.astro'
+import LinksList from '@/components/LinksList.astro'
 import TerminalHeading from '@/components/TerminalHeading.astro'
 import Layout from '@/layouts/Layout.astro'
 
 const experiencesCollection = await getCollection('experiences')
 const experiences = experiencesCollection.map((item) => item.data)
+
+const socialsCollection = await getCollection('socials')
+const socials = socialsCollection.map((item) => item.data)
 ---
 
 <Layout page="about">
@@ -46,6 +50,13 @@ const experiences = experiencesCollection.map((item) => item.data)
                 {experiences.map((experience, index) => (
                     <ExperienceTimeline key={index} experience={experience} isLast={index === experiences.length - 1} />
                 ))}
+            </div>
+        </section>
+
+        <section id="links" class="container flex scroll-mt-24 flex-col items-center">
+            <TerminalHeading command="ls" args="-l ~/links" />
+            <div class="mt-4 w-full">
+                <LinksList socials={socials} />
             </div>
         </section>
     </div>

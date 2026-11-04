@@ -1,3 +1,5 @@
+import type { Social } from '@/types/socials'
+
 export function date2Period(date: string, short = false): string {
     const [year, month] = date.split('-')
 
@@ -35,4 +37,14 @@ export function shortHash(input: string): string {
     }
 
     return (hash >>> 0).toString(16).padStart(8, '0').slice(0, 7)
+}
+
+export function displayUrl(url: string): string {
+    return url.replace(/^(https?:\/\/(www\.)?|mailto:)/, '').replace(/\/$/, '')
+}
+
+export function groupSocials(socials: Social[]): Social[][] {
+    return (['code', 'social', 'contact'] as const)
+        .map((group) => socials.filter((social) => social.group === group).toSorted((a, b) => a.order - b.order))
+        .filter((items) => items.length > 0)
 }

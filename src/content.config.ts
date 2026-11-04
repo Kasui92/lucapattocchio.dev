@@ -9,7 +9,8 @@ const socials = defineCollection({
         label: z.string(),
         url: z.string().url(),
         icon: z.string(),
-        group: z.enum(['code', 'social']),
+        group: z.enum(['code', 'social', 'contact']),
+        order: z.number(),
     }),
 })
 

@@ -1,0 +1,58 @@
+---
+import type { Social } from '@/types/socials'
+import { displayUrl, groupSocials } from '@/libs/utils'
+
+interface Props {
+    socials: Social[]
+}
+
+const { socials } = Astro.props
+
+const groups = groupSocials(socials)
+---
+
+<div class="w-full space-y-4 font-mono text-sm leading-7">
+    {groups.map((items) => (
+        <ul>
+            {items.map(({ id, label, url }) => {
+                const isExternal = url.startsWith('http')
+
+                return (
+                    <li class="flex gap-x-2 sm:gap-x-3">
+                        <span class="text-subtle-foreground hidden shrink-0 select-none sm:inline" aria-hidden="true">
+                            lrwxrwxrwx
+                        </span>
+                        <span class="text-foreground w-[8ch] shrink-0">{id}</span>
+                        <span class="text-subtle-foreground shrink-0 select-none" aria-hidden="true">
+                            -&gt;
+                        </span>
+                        <a
+                            href={url}
+                            class="underline-transition text-primary after:bg-primary min-w-0 break-all"
+                            title={`Go to ${label}`}
+                            target={isExternal ? '_blank' : undefined}
+                            rel={isExternal ? 'noopener noreferrer' : undefined}
+                        >
+                            {displayUrl(url)}
+                        </a>
+                    </li>
+                )
+            })}
+        </ul>
+    ))}
+    <ul>
+        <li class="flex gap-x-2 sm:gap-x-3">
+            <span class="text-subtle-foreground hidden shrink-0 select-none sm:inline" aria-hidden="true">
+                -rw-r--r--
+            </span>
+            <a
+                href="/CV-LucaPattocchio.pdf"
+                class="underline-transition text-primary after:bg-primary"
+                title="Download my CV"
+                download
+            >
+                cv.pdf
+            </a>
+        </li>
+    </ul>
+</div>
