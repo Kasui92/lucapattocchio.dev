@@ -3,8 +3,7 @@ import { getCollection } from 'astro:content'
 import HeaderIntersection from '@/components/HeaderIntersection'
 import { getAvatar } from '@/libs/avatar'
 
-const socialsCollection = await getCollection('socials')
-const socials = socialsCollection.map((item) => item.data)
+const github = (await getCollection('socials')).find((item) => item.id === 'github')?.data
 
 const navigationCollection = await getCollection('navigation')
 const navigation = navigationCollection.map((item) => item.data).toSorted((a, b) => a.order - b.order)
@@ -14,4 +13,4 @@ const { page } = Astro.props
 const avatar = (await getAvatar()).src
 ---
 
-<HeaderIntersection client:load page={page} socials={socials} navigation={navigation} avatar={avatar} />
+<HeaderIntersection client:load page={page} github={github} navigation={navigation} avatar={avatar} />

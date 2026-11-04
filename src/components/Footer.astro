@@ -1,8 +1,37 @@
 ---
-import { currentYear } from '@/libs/utils'
+import { getCollection } from 'astro:content'
+import { currentYear, groupSocials } from '@/libs/utils'
+
+const socials = (await getCollection('socials')).map((item) => item.data)
+
+const links = groupSocials(socials.filter((social) => social.group !== 'contact')).flat()
 ---
 
-<footer class="mt-12 mb-6">
+<footer class="mt-12 mb-6 space-y-3">
+    <nav aria-label="Links">
+        <ul class="text-muted-foreground flex flex-wrap items-center justify-center gap-x-2 gap-y-1 font-mono text-xs">
+            {links.map(({ id, label, url }, index) => (
+                <>
+                    {index > 0 && (
+                        <li class="text-subtle-foreground select-none" aria-hidden="true">
+                            ·
+                        </li>
+                    )}
+                    <li>
+                        <a
+                            href={url}
+                            class="hover:text-primary transition-colors duration-300"
+                            title={`Go to ${label}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {id}
+                        </a>
+                    </li>
+                </>
+            ))}
+        </ul>
+    </nav>
     <div class="text-subtle-foreground flex justify-center font-mono text-xs">
         <span>© {currentYear} Luca Pattocchio. All Rights Reserved.</span>
     </div>

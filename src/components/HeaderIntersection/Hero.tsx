@@ -5,31 +5,30 @@ import { Icon } from '@/components/Icon'
 import { NavLinks } from './NavLinks'
 import { ThemeToggle } from './ThemeToggle'
 
-const SocialLink = ({ url, label, icon }: Pick<Social, 'url' | 'label' | 'icon'>): ReactElement => (
-    <li>
-        <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors duration-300"
-            title={`Go to ${label}`}
-        >
-            <Icon
-                name={icon}
-                className="text-muted-foreground h-5 w-5 transform transition-transform hover:scale-110 hover:rotate-12"
-            />
-        </a>
-    </li>
+const GithubLink = ({ url, label, icon }: Pick<Social, 'url' | 'label' | 'icon'>): ReactElement => (
+    <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group border-border-strong bg-surface/60 text-foreground hover:border-primary hover:text-primary flex items-center gap-x-2 rounded-full border px-2 py-1.5 font-mono text-sm font-semibold shadow-sm transition-colors duration-300 sm:px-3"
+        title={`Go to ${label}`}
+    >
+        <Icon
+            name={icon}
+            className="h-5 w-5 transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
+        />
+        <span className="hidden sm:inline">{label.toLowerCase()}</span>
+    </a>
 )
 
 export const Hero = ({
     page,
-    socials,
+    github,
     navigation,
     avatar,
 }: {
     page: string
-    socials: Social[]
+    github?: Social
     navigation: Navigation[]
     avatar: string
 }): ReactElement => (
@@ -68,37 +67,8 @@ export const Hero = ({
             </span>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-4 lg:flex-row lg:gap-0">
-            {/* Social Icons Navigation */}
-            <nav>
-                <ul className="flex items-center gap-3">
-                    {socials
-                        .filter(({ group }) => group === 'code')
-                        .map(({ id, label, url, icon }) => (
-                            <SocialLink key={id} url={url} label={label} icon={icon} />
-                        ))}
-                    <li className="text-border-strong font-mono select-none" aria-hidden="true">
-                        │
-                    </li>
-                    {socials
-                        .filter(({ group }) => group === 'social')
-                        .map(({ id, label, url, icon }) => (
-                            <SocialLink key={id} url={url} label={label} icon={icon} />
-                        ))}
-                    <li>
-                        <a
-                            href={`mailto:info@lucapattocchio.dev`}
-                            className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                            title={`Send me an email! 📧`}
-                        >
-                            <Icon
-                                name="mail"
-                                className="text-muted-foreground h-5 w-5 transform transition-transform hover:scale-110 hover:rotate-12"
-                            />
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+        <div className="flex items-center justify-between gap-4">
+            {github ? <GithubLink url={github.url} label={github.label} icon={github.icon} /> : <span />}
             {/* Main Navigation */}
             <nav>
                 <ul className="flex items-center space-x-4">

@@ -8,12 +8,12 @@ import { Hero } from './Hero'
 
 export default function Header({
     page,
-    socials,
+    github,
     navigation,
     avatar,
 }: {
     page: string
-    socials: Social[]
+    github?: Social
     navigation: Navigation[]
     avatar: string
 }): ReactElement {
@@ -43,7 +43,7 @@ export default function Header({
                         'opacity-100 delay-100': !showPrimary,
                     })}
                 >
-                    <Hero page={page} socials={socials} navigation={navigation} avatar={avatar} />
+                    <Hero page={page} github={github} navigation={navigation} avatar={avatar} />
                 </div>
             </div>
         </>
