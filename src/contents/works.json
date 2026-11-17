@@ -3,14 +3,14 @@
         "title": "jaad",
         "description": "Just Another Astro Docs",
         "image": "../assets/projects/jaad.png",
-        "url": "https://jaad.lancher.dev",
+        "url": "https://jaadmd.org",
         "category": "tools"
     },
     {
         "title": "jaamd",
         "description": "Just Another Astro Markdown",
         "image": "../assets/projects/jaamd.png",
-        "url": "https://jaamd.lancher.dev",
+        "url": "https://jaamd.org",
         "category": "tools"
     },
     {
@@ -60,7 +60,7 @@
         "description": "A curated collection of resources and tools for Linux enthusiasts.",
         "image": "../assets/projects/omakasui.png",
         "url": "https://omakasui.org",
-        "category": "tools"
+        "category": "websites"
     },
     {
         "title": "slicendice.it",
