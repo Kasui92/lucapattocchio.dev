@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'url'
 import cloudflare from '@astrojs/cloudflare'
 import react from '@astrojs/react'
-import jaamd from '@lancher-dev/jaamd'
+import jaamd from '@jaamd/astro'
 import tailwindcss from '@tailwindcss/vite'
 // @ts-check
 import { defineConfig } from 'astro/config'
